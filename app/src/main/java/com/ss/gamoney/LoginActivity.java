@@ -163,12 +163,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    private void updateUI(FirebaseUser user) {
-        if(user != null){
-            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-            startActivity(intent);
-        }else {
-            Toast.makeText(this,"Please sign in to continue.",Toast.LENGTH_SHORT).show();
-        }
-    }
 }

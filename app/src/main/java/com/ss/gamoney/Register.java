@@ -22,7 +22,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.hbb20.CountryCodePicker;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +34,6 @@ public class Register extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseFirestore fstore;
     String userID;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +49,7 @@ public class Register extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         progressBar = findViewById(R.id.progressBar);
+
         if (mAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
@@ -129,7 +128,7 @@ public class Register extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),LoginActivity.class));
 
                         }else{
-                            Toast.makeText(Register.this,"Error!" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this,"Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
 
                         }
@@ -137,8 +136,6 @@ public class Register extends AppCompatActivity {
                 });
             }
         });
-
-
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
