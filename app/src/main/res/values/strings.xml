@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Gamoney</string>
+    <string name="earn_money_while_playing">Earn money, while playing</string>
+    <string name="gamoney">Gamoney</string>
+    <string name="already_have_an_account_login">Already have an account? LogIn</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="phone_no">Phone No</string>
+    <string name="email">Email</string>
+    <string name="full_name">Full name</string>
+    <string name="signup_and_start_earning">SignUp and start earning</string>
+    <string name="welcome">Welcome</string>
+</resources>
