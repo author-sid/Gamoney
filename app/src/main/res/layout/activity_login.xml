@@ -11,10 +11,10 @@
 
     <ImageView
         android:id="@+id/logo_image"
+        android:src="@drawable/logo"
         android:layout_width="217dp"
         android:layout_height="157dp"
-        android:transitionName="logo_image"
-        android:src="@drawable/logo" />
+        android:transitionName="logo_image" />
 
     <TextView
         android:id="@+id/logo_name"
