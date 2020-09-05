@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,19 +7,142 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:id="@+id/relativeLayout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
     
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:padding="20dp">
-        
+        android:padding="20dp"
+        android:background="#000">
+
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
             android:id="@+id/profile_pic"
-            android:layout_centerVertical="true"/>
+            android:layout_width="111dp"
+            android:src="@drawable/profilepic_sam"
+            android:layout_height="105dp"
+            android:layout_centerVertical="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/change_profile"
+            android:layout_below="@+id/profile_pic"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-22dp"
+            android:layout_marginRight="260dp"
+            android:src="@drawable/edit_image"
+            app:tint="#fff" />
+
+        <TextView
+            android:id="@+id/full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/profile_pic"
+            android:fontFamily="@font/bungee"
+            android:includeFontPadding="false"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/full_namefield"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/username_small_icon"
+                android:drawablePadding="10dp"
+                android:hint="Full Name">
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:id="@+id/email_field"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/email_small_icon"
+                android:drawablePadding="10dp"
+                android:hint="Email">
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phone_field"
+                android:drawableLeft="@drawable/phone_small_icon"
+                android:drawablePadding="10dp"
+                android:hint="Number">
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:fontFamily="@font/bungee"
+            android:background="#000"
+            android:textColor="#fff"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:fontFamily="@font/bungee"
+            android:text="LOGOUT"
+            android:onClick="logout"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#222222"
+        app:itemIconTint="#da3f3d"
+        app:itemTextColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu" />
+
+
+</RelativeLayout>
