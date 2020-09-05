@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar2);
         forgotPass = findViewById(R.id.forgotPassword);
         mAuth = FirebaseAuth.getInstance();
-        final FirebaseUser user = mAuth.getCurrentUser();
+        final FirebaseUser[] user = {mAuth.getCurrentUser()};
 
         if (mAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
                 String email = mEmail.getEditText().getText().toString().trim();
                 String password = mPassword.getEditText().getText().toString().trim();
 
@@ -88,18 +88,18 @@ public class LoginActivity extends AppCompatActivity {
                 mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            assert user != null;
-                            if(user.isEmailVerified()){
-                                Toast.makeText(LoginActivity.this,"Login Successful",Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()){
+                            user[0] = mAuth.getCurrentUser();
+                            assert user[0] != null;
+                            if (user[0].isEmailVerified()){
+                                Toast.makeText(LoginActivity.this,"Logged in Successfully",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
                             }else {
-                                Toast.makeText(LoginActivity.this,"Please Verify Your Email",Toast.LENGTH_SHORT).show();
-                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(LoginActivity.this,"Please verify your email",Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.INVISIBLE);
                             }
                         }else {
-                            Toast.makeText(LoginActivity.this,"Error!" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(LoginActivity.this,"Error !"+" " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                         }
 
                     }
