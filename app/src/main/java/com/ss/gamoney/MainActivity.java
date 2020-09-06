@@ -1,25 +1,29 @@
 package com.ss.gamoney;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -30,16 +34,22 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String TAG = "TAG";
     TextView FullNameLabel;
     EditText FullName, PhoneNo,Email;
     FirebaseAuth mAuth;
     FirebaseFirestore mStore;
     String userID;
+    FirebaseUser user;
     StorageReference storageReference;
     ImageView profileImage, changeProfileImage;
+    Button saveBtn;
+    ProgressBar progressBar;
 
 
     @Override
@@ -53,10 +63,13 @@ public class MainActivity extends AppCompatActivity {
         FullNameLabel = findViewById(R.id.full_name);
         profileImage = findViewById(R.id.profile_pic);
         changeProfileImage = findViewById(R.id.change_profile);
+        progressBar = findViewById(R.id.progressBar3);
 
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+        user = mAuth.getCurrentUser();
+        saveBtn= findViewById(R.id.update);
 
 
         StorageReference profileRef = storageReference.child("users/"+ Objects.requireNonNull(mAuth.getCurrentUser()).getUid()+"/profile.jpg");
@@ -76,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
                 assert value != null;
                 PhoneNo.setText(value.getString("phone"));
                 FullName.setText(value.getString("fullName"));
-                 Email.setText(value.getString("email"));
-                 FullNameLabel.setText(value.getString("fullName"));
+                Email.setText(value.getString("email"));
+                FullNameLabel.setText(value.getString("fullName"));
 
             }
         });
@@ -121,6 +134,60 @@ public class MainActivity extends AppCompatActivity {
                 // open gallery
                 Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(openGalleryIntent,1000) ;
+            }
+        });
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (FullName.getText().toString().isEmpty() || Email.getText().toString().isEmpty() || PhoneNo.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"One or many fields are empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                final String email=Email.getText().toString();
+                user.updateEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        DocumentReference docRef = mStore.collection("users").document(user.getUid());
+                        Map<String,Object> edited = new HashMap<>();
+                        edited.put("email",email);
+                        edited.put("fullName",FullName.getText().toString());
+                        edited.put("phone",PhoneNo.getText().toString());
+                        docRef.update(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(MainActivity.this,"Profile Updated",Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        FirebaseUser fuser = mAuth.getCurrentUser();
+                        fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(MainActivity.this,"Verfication Email Has been Sent",Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d(TAG,"On Failure : Email not sent "+ e.getMessage());
+                            }
+                        });
+                        progressBar.setVisibility(View.VISIBLE);
+                        Toast.makeText(MainActivity.this,"Email is changed",Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                });
+
             }
         });
 
