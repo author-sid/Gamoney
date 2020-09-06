@@ -14,7 +14,8 @@
         android:src="@drawable/logo"
         android:layout_width="217dp"
         android:layout_height="157dp"
-        android:transitionName="logo_image" />
+        android:transitionName="logo_image"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/logo_name"
@@ -22,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-40dp"
         android:fontFamily="@font/bungee"
-        android:text="Hello there, Welcome Back"
+        android:text="@string/hello_there_welcome_back"
         android:transitionName="logo_text"
         android:textColor="#000"
         android:textSize="40sp" />
@@ -32,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-30dp"
-        android:text="SignIn to start earning"
+        android:text="@string/signin_to_start_earning"
         android:transitionName="logo_desc"
         android:textSize="18sp" />
 
@@ -52,7 +53,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"/>
+                android:hint="@string/email"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,7 +67,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -80,14 +81,15 @@
             android:background="#00000000"
             android:elevation="0dp"
             android:fontFamily="@font/singn"
-            android:text="Forget Password"
-            android:textSize="20sp" />
+            android:text="@string/forget_password"
+            android:textSize="20sp"
+            tools:ignore="RtlHardcoded" />
 
         <Button
             android:id="@+id/Login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             android:transitionName="button_trans"
             android:background="#000"
             android:textColor="#fff"
@@ -103,10 +105,11 @@
             android:background="#00000000"
             android:elevation="0dp"
             android:fontFamily="@font/singn"
-            android:text="NEW USER? SIGN UP"
+            android:text="@string/new_user_sign_up"
             android:transitionName="login_signup_trans"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="RtlHardcoded" />
 
     </LinearLayout>
 

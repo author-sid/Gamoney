@@ -27,6 +27,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class LoginActivity extends AppCompatActivity {
     Button callSignUp, mLoginBtn, forgotPass;
     ImageView image;
@@ -52,17 +54,23 @@ public class LoginActivity extends AppCompatActivity {
         forgotPass = findViewById(R.id.forgotPassword);
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser[] user = {mAuth.getCurrentUser()};
+        FirebaseUser verifieduser = mAuth.getCurrentUser();
 
-        if (mAuth.getCurrentUser().isEmailVerified()){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();
+        if (mAuth.getCurrentUser() != null){
+            assert verifieduser != null;
+            if(verifieduser.isEmailVerified()){
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }else {
+                Toast.makeText(LoginActivity.this,"Please verify your email",Toast.LENGTH_SHORT).show();
+            }
         }
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                String email = mEmail.getEditText().getText().toString().trim();
-                String password = mPassword.getEditText().getText().toString().trim();
+                String email = Objects.requireNonNull(mEmail.getEditText()).getText().toString().trim();
+                String password = Objects.requireNonNull(mPassword.getEditText()).getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is Required");
@@ -98,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                                 progressBar.setVisibility(View.INVISIBLE);
                             }
                         }else {
-                            Toast.makeText(LoginActivity.this,"Error !"+" " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"Error !"+" " + Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);
                         }
 

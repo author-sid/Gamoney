@@ -30,6 +30,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
     TextView FullNameLabel;
     EditText FullName, PhoneNo,Email;
@@ -56,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         mStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        StorageReference profileRef = storageReference.child("users/"+mAuth.getCurrentUser().getUid()+"/profile.jpg");
+
+        StorageReference profileRef = storageReference.child("users/"+ Objects.requireNonNull(mAuth.getCurrentUser()).getUid()+"/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -70,10 +73,11 @@ public class MainActivity extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-              PhoneNo.setText(value.getString("phone"));
-              FullName.setText(value.getString("fullName"));
-              Email.setText(value.getString("email"));
-              FullNameLabel.setText(value.getString("fullName"));
+                assert value != null;
+                PhoneNo.setText(value.getString("phone"));
+                FullName.setText(value.getString("fullName"));
+                 Email.setText(value.getString("email"));
+                 FullNameLabel.setText(value.getString("fullName"));
 
             }
         });
@@ -127,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1000){
             if (resultCode == Activity.RESULT_OK){
+                assert data != null;
                 Uri imageUri = data.getData();
 
                 // profileImage.setImageURI(imageUri);
@@ -139,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void uploadImageToFirebase(Uri imageUri) {
         //upload image to firebase storage
-        final StorageReference fileRef = storageReference.child("users/"+mAuth.getCurrentUser().getUid()+"/profile.jpg");
+        final StorageReference fileRef = storageReference.child("users/"+ Objects.requireNonNull(mAuth.getCurrentUser()).getUid()+"/profile.jpg");
         fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {

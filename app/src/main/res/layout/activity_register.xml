@@ -21,14 +21,14 @@
         android:layout_marginTop="-40dp"
         android:fontFamily="@font/bungee"
         android:textColor="#000"
-        android:text="Welcome"
+        android:text="@string/welcome"
         android:transitionName="logo_text"
         android:textSize="40sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SignUp and start earning"
+        android:text="@string/signup_and_start_earning"
         android:textSize="18sp"
         android:layout_marginTop="-30dp"/>
 
@@ -47,7 +47,7 @@
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Full name"
+                android:hint="@string/full_name_register"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -60,7 +60,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
+                android:hint="@string/email_register"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -73,7 +73,7 @@
                 android:id="@+id/phnNo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phone No"
+                android:hint="@string/phone_no_register"
                 android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -88,7 +88,7 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Password"
+                android:hint="@string/password_register"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -99,7 +99,7 @@
         android:id="@+id/registerbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="@string/register"
         android:transitionName="button_trans"
         android:background="#000"
         android:textColor="#fff"/>
@@ -109,7 +109,7 @@
         android:layout_width="371dp"
         android:layout_height="53dp"
         android:background="#00000000"
-        android:text="Already have an account? LogIn"
+        android:text="@string/already_have_an_account_login"
         android:transitionName="login_signup_trans" />
 
     <ProgressBar

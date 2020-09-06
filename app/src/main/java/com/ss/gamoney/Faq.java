@@ -24,8 +24,6 @@ public class Faq extends AppCompatActivity {
 
         mTitleWindow.setText("FAQ's");
 
-        StringBuilder stringBuilder = new StringBuilder();
-
         String Message = "How To Join a Tournament:" +
                 "\n " +
                 "\n" +
@@ -52,8 +50,7 @@ public class Faq extends AppCompatActivity {
                 "\n" +
                 "*For any queries feel free to contact us: \n ";
 
-        stringBuilder.append(Message);
-        mMessageWindow.setText(stringBuilder.toString());
+        mMessageWindow.setText(Message);
 
         //Initialize and assign variable
         BottomNavigationView bottomNavigationView= findViewById(R.id.bottom_navigation);

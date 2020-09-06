@@ -25,6 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Register extends AppCompatActivity {
     public static final String TAG = "TAG";
@@ -90,6 +91,7 @@ public class Register extends AppCompatActivity {
 
                             //send verification link
                             FirebaseUser fuser = mAuth.getCurrentUser();
+                            assert fuser != null;
                             fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -122,7 +124,7 @@ public class Register extends AppCompatActivity {
 
 
                         }else{
-                            Toast.makeText(Register.this,"Error!" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this,"Error!" + Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
 
                         }
