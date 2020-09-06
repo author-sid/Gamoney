@@ -6,14 +6,14 @@ This app helps user to earn while playing games, which is a lot of fun and profi
 This code is only for education purpose
 
 
-You can find me on [![Instagram][1.2]][1], or on [![LinkedIn][3.2]][3].
+You can find me on [![Instagram][1.2]][1], or on [![LinkedIn][2.2]][2].
 
 <!-- Icons -->
 
-[1.2]: https://imgur.com/JbgfGv5 ( icon without padding)
-[2.2]: https://imgur.com/o28h5Uc(LinkedIn icon without padding)
+[1.2]: https://imgur.com/JbgfGv5 
+[2.2]: https://imgur.com/o28h5Uc 
 
 <!-- Links to your social media accounts -->
 
-[1]:  https://www.instagram.com/siddhxrth.20/
+[1]: https://www.instagram.com/siddhxrth.20/
 [2]: https://www.linkedin.com/in/siddharth-sharma-921986199/
