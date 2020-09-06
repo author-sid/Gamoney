@@ -53,10 +53,9 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser[] user = {mAuth.getCurrentUser()};
 
-        if (mAuth.getCurrentUser() != null){
+        if (mAuth.getCurrentUser().isEmailVerified()){
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
-
         }
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {

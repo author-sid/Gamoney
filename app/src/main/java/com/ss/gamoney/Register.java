@@ -94,7 +94,6 @@ public class Register extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast.makeText(Register.this,"Verfication Email Has been Sent",Toast.LENGTH_SHORT).show();
-
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -102,8 +101,6 @@ public class Register extends AppCompatActivity {
                                     Log.d(TAG,"On Failure : Email not sent "+ e.getMessage());
                                 }
                             });
-
-                            Toast.makeText(Register.this,"User Created",Toast.LENGTH_SHORT).show();
                             userID = mAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fstore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
@@ -121,7 +118,8 @@ public class Register extends AppCompatActivity {
                                     Log.d(TAG, "onFailure: "+ e.toString());
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                            startActivity(new Intent(Register.this,LoginActivity.class));
+
 
                         }else{
                             Toast.makeText(Register.this,"Error!" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
