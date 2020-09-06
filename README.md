@@ -10,8 +10,8 @@ You can find me on [![Instagram][1.2]][1], or on [![LinkedIn][2.2]][2].
 
 <!-- Icons -->
 
-[1.2]: https://imgur.com/JbgfGv5 
-[2.2]: https://imgur.com/o28h5Uc 
+[1.2]: https://i.imgur.com/JbgfGv5.png?1
+[2.2]: https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/linkedin-3-16.png
 
 <!-- Links to your social media accounts -->
 
