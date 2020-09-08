@@ -14,7 +14,7 @@
     <item
         android:id="@+id/faq"
         android:title="FAQ"
-        android:icon="@drawable/ic_support"/>
+        android:icon="@drawable/faq"/>
 
     <item
         android:id="@+id/profile"

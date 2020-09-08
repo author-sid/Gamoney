@@ -140,8 +140,18 @@ public class MainActivity extends AppCompatActivity {
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final String Fullname= FullName.getText().toString();
+                final String phone = PhoneNo.getText().toString();
                 if (FullName.getText().toString().isEmpty() || Email.getText().toString().isEmpty() || PhoneNo.getText().toString().isEmpty()){
                     Toast.makeText(MainActivity.this,"One or many fields are empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (phone.length() != 10){
+                    Toast.makeText(MainActivity.this,"Phone number must be of 10 digits",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (Fullname.length() < 5){
+                    Toast.makeText(MainActivity.this,"Name must be at least 5 characters long",Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -169,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
                         fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(MainActivity.this,"Verfication Email Has been Sent",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this,"Verification Email Has been Sent",Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -202,7 +212,6 @@ public class MainActivity extends AppCompatActivity {
                 Uri imageUri = data.getData();
 
                 // profileImage.setImageURI(imageUri);
-
                 uploadImageToFirebase(imageUri);
 
             }

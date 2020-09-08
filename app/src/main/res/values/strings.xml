@@ -22,4 +22,6 @@
     <string name="already_have_an_account_login">Already have an account? LogIn</string>
     <string name="gamoney">gamoney</string>
     <string name="earn_money_while_playing">Earn Money While Playing</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

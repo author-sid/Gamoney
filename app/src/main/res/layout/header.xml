@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="#da3f3d"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logo_nav"
+        android:layout_marginStart="80dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gamoney"
+        android:textSize="24sp"
+        android:layout_marginTop="-24dp"
+        android:textColor="#000"
+        android:layout_marginStart="80dp"
+        android:fontFamily="@font/bungee"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Earn Money Through gaming"
+        android:layout_marginStart="55dp"
+        android:textColor="#000"/>
+
+</LinearLayout>

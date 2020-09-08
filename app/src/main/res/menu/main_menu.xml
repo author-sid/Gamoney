@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_tournamentinfo"
+            android:title="Tournament info"
+            android:icon="@drawable/tournament_info"/>
+
+        <item
+            android:id="@+id/nav_Faq"
+            android:title="FAQ"
+            android:icon="@drawable/faq"/>
+
+        <item
+            android:id="@+id/nav_policy"
+            android:title="Policy"
+            android:icon="@drawable/poilicy"/>
+
+        <item
+            android:id="@+id/nav_Contactus"
+            android:title="Contact Us"
+            android:icon="@drawable/contact_us"/>
+
+        <item
+            android:id="@+id/nav_Share"
+            android:title="Share"
+            android:icon="@drawable/share"/>
+
+        <item
+            android:id="@+id/nav_Supportus"
+            android:title="Support Us"
+            android:icon="@drawable/support"/>
+
+        <item
+            android:id="@+id/nav_Resetpassword"
+            android:title="Reset Password"
+            android:icon="@drawable/reset_password"/>
+
+        <item
+            android:id="@+id/nav_Logout"
+            android:title="Log Out"
+            android:icon="@drawable/log_out"/>
+    </group>
+
+</menu>

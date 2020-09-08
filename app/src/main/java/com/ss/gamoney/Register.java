@@ -80,6 +80,22 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
+                if (Fullname.length() < 5){
+                    Toast.makeText(Register.this,"Name must be at least 5 characters long",Toast.LENGTH_SHORT).show();
+                }
+
+                if (phone.length() != 10){
+                    mPhone.setError("Phone number must be 10 digits");
+                }
+
+                if (TextUtils.isEmpty(phone)){
+                    mPhone.setError("Phone Number is Required");
+                }
+
+                if (TextUtils.isEmpty(password)){
+                    mPassword.setError("Password cannot be empty");
+                }
+
                 progressBar.setVisibility(View.VISIBLE);
 
                 //register the user in firebase
