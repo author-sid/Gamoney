@@ -1,12 +1,10 @@
 package com.ss.gamoney;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -41,6 +39,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_tournamentinfo);
 
         //Initialize and assign variable
         BottomNavigationView bottomNavigationView= findViewById(R.id.bottom_navigation);
@@ -91,8 +90,6 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
 
         switch (menuitem.getItemId()){
             case R.id.nav_tournamentinfo:
-                Intent intent = new Intent(getApplicationContext(),TournamentInfo.class);
-                startActivity(intent);
                 break;
 
             case R.id.nav_Contactus:
@@ -114,6 +111,38 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 Intent intent4 = new Intent(getApplicationContext(),SupportUs.class);
                 startActivity(intent4);
                 break;
+
+            case R.id.nav_Logout:
+                AlertDialog.Builder builder = new AlertDialog.Builder(Tournaments.this);
+                builder.setTitle("Logout");
+                builder.setMessage("Are you sure you want to logout?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                builder.show();
+                break;
+
+            case R.id.nav_Share:
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                String shareBody = "Download This Application Now:- https://play.google.com/store/apps/details?id=com.battlerooms.rooms&hl=en";
+                String sharesub = "Gamoney App" ;
+
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
+                shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+
+                startActivity(Intent.createChooser(shareIntent,"Share Using"));
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

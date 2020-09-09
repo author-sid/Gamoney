@@ -5,42 +5,42 @@
 
         <item
             android:id="@+id/nav_tournamentinfo"
-            android:title="Tournament info"
+            android:title="@string/tournaments"
             android:icon="@drawable/tournament_info"/>
 
         <item
             android:id="@+id/nav_Faq"
-            android:title="FAQ"
+            android:title="@string/faq1"
             android:icon="@drawable/faq"/>
 
         <item
             android:id="@+id/nav_policy"
-            android:title="Policy"
+            android:title="@string/policy"
             android:icon="@drawable/poilicy"/>
 
         <item
             android:id="@+id/nav_Contactus"
-            android:title="Contact Us"
+            android:title="@string/contact_us"
             android:icon="@drawable/contact_us"/>
 
         <item
             android:id="@+id/nav_Share"
-            android:title="Share"
+            android:title="@string/share"
             android:icon="@drawable/share"/>
 
         <item
             android:id="@+id/nav_Supportus"
-            android:title="Support Us"
+            android:title="@string/support_us"
             android:icon="@drawable/support"/>
 
         <item
             android:id="@+id/nav_Resetpassword"
-            android:title="Reset Password"
+            android:title="@string/reset_password"
             android:icon="@drawable/reset_password"/>
 
         <item
             android:id="@+id/nav_Logout"
-            android:title="Log Out"
+            android:title="@string/log_out"
             android:icon="@drawable/log_out"/>
     </group>
 
