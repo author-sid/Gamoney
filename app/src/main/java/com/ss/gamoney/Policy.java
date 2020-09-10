@@ -7,13 +7,17 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -21,14 +25,17 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    FirebaseAuth mAuth;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_policy);
 
-        TextView mTitleWindow = (TextView) findViewById(R.id.titleWindow);
-        TextView mMessageWindow= (TextView) findViewById(R.id.messageWindow);
+        TextView mTitleWindow =findViewById(R.id.titleWindow);
+        TextView mMessageWindow=findViewById(R.id.messageWindow);
+        mAuth=FirebaseAuth.getInstance();
         mTitleWindow.setText("Policy");
         String message="Privacy Policy\n" +
                 "Siddharth sharma built the Gamoney app as a Free app. This SERVICE is provided by Siddharth sharma at no cost and is intended for use as is.\n" +
@@ -175,6 +182,36 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
                 shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
 
                 startActivity(Intent.createChooser(shareIntent,"Share Using"));
+
+            case R.id.nav_Resetpassword:
+                final EditText password = new EditText(this);
+                AlertDialog.Builder resetpassword = new AlertDialog.Builder(Policy.this);
+                resetpassword.setTitle("Reset Password");
+                resetpassword.setMessage("Are you sure you want to Reset Password?");
+                resetpassword.setView(password);
+                resetpassword.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String mail = password.getText().toString();
+                        mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(Policy.this,"Reset Link Sent to Your Email",Toast.LENGTH_SHORT).show();
+                                FirebaseAuth.getInstance().signOut();
+                                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                                finish();
+                            }
+                        });
+                    }
+                });
+                resetpassword.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                resetpassword.show();
+                break;
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

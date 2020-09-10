@@ -32,4 +32,5 @@
     <string name="support_us">Support Us</string>
     <string name="reset_password">Reset Password</string>
     <string name="log_out">Log Out</string>
+    <string name="Policy"> Policy </string>
 </resources>

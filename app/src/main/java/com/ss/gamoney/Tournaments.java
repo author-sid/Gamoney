@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,6 +24,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
         navigationView.bringToFront();
+        mAuth = FirebaseAuth.getInstance();
 
         setSupportActionBar(toolbar);
 
@@ -143,6 +147,38 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
 
                 startActivity(Intent.createChooser(shareIntent,"Share Using"));
+                break;
+
+            case R.id.nav_Resetpassword:
+                final EditText password = new EditText(this);
+                AlertDialog.Builder resetpassword = new AlertDialog.Builder(Tournaments.this);
+                resetpassword.setTitle("Reset Password");
+                resetpassword.setMessage("Are you sure you want to Reset Password?");
+                resetpassword.setView(password);
+                resetpassword.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String mail = password.getText().toString();
+                        mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(Tournaments.this,"Reset Link Sent to Your Email",Toast.LENGTH_SHORT).show();
+                                FirebaseAuth.getInstance().signOut();
+                                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                                finish();
+                            }
+                        });
+                    }
+                });
+                resetpassword.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                resetpassword.show();
+                break;
+
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

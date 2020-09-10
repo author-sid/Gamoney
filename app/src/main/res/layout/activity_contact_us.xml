@@ -22,8 +22,8 @@
         android:backgroundTint="#FFFFFF">
 
         <include
-            layout="@layout/toolbar"
-            android:id="@+id/toolbar"/>
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
 
 
     </RelativeLayout>
