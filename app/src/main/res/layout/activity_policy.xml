@@ -22,8 +22,32 @@
         android:backgroundTint="#FFFFFF">
 
         <include
-            layout="@layout/toolbar"
-            android:id="@+id/toolbar"/>
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <TextView
+            android:id="@+id/titleWindow"
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#CB9818"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/titleWindow">
+
+            <TextView
+                android:id="@+id/messageWindow"
+                android:layout_width="match_parent"
+                android:layout_height="629dp"
+                android:fontFamily="@font/century_gothic_regular"
+                android:textSize="18sp"
+                android:textColor="#CB9818"/>
+
+        </ScrollView>
 
 
     </RelativeLayout>
