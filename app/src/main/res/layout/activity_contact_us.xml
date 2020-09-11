@@ -125,7 +125,6 @@
                     android:gravity="top"
                     android:inputType="textMultiLine"
                     android:textSize="14sp" />
-
                 <Button
                     android:id="@+id/post_message"
                     android:layout_width="wrap_content"
