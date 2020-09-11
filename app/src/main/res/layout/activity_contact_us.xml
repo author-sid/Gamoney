@@ -17,14 +17,138 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF">
+        android:layout_height="wrap_content">
 
         <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-10dp"
+            android:background="@android:color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="80dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tell_us_about_your_problem"
+                    android:textSize="15sp"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginBottom="30dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/bungee"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="@string/your_name"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+
+
+                <EditText
+                    android:id="@+id/your_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginBottom="20dp"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="@string/your_email"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/your_email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginBottom="20dp"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="@string/subject"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+
+
+
+                <EditText
+                    android:id="@+id/your_subject"
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginBottom="20dp"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="3dp"
+                    android:text="@string/message"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/your_message"
+                    android:layout_width="fill_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="20dp"
+                    android:height="180dp"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/post_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:paddingBottom="1dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="1dp"
+                    android:text="@string/send_message"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
 
     </RelativeLayout>
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
