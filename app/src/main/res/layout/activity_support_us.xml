@@ -25,6 +25,47 @@
             layout="@layout/toolbar"
             android:id="@+id/toolbar"/>
 
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="150dp"
+            android:text="@string/rate_us_5_star_on_play_store"
+            android:textSize="23sp"
+            android:textColor="#000"
+            android:id="@+id/Rate_us"
+            android:fontFamily="@font/bangers"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Rate_us"
+            android:text="@string/rate_us"
+            android:id="@+id/RateBut"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="150dp"/>
+
+        <TextView
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Donate_text"
+            android:layout_below="@+id/RateBut"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/support_our_community"
+            android:textSize="23sp"
+            android:fontFamily="@font/bangers"
+            android:textColor="#000"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/donate"
+            android:id="@+id/Donate_But"
+            android:layout_below="@+id/Donate_text"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="18dp"/>
+
 
     </RelativeLayout>
 
