@@ -20,7 +20,7 @@
     <string name="password_register">Password</string>
     <string name="register">Register</string>
     <string name="already_have_an_account_login">Already have an account? LogIn</string>
-    <string name="gamoney">gamoney</string>
+    <string name="Gamoney">gamoney</string>
     <string name="earn_money_while_playing">Earn Money While Playing</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -32,5 +32,8 @@
     <string name="support_us">Support Us</string>
     <string name="reset_password">Reset Password</string>
     <string name="log_out">Log Out</string>
-    <string name="Policy"> Policy </string>
+    <string name="rate_us_5_star_on_play_store">Rate Us 5 Star on Play Store</string>
+    <string name="rate_us">Rate us</string>
+    <string name="support_our_community">Support Our Community  </string>
+    <string name="donate">Donate</string>
 </resources>

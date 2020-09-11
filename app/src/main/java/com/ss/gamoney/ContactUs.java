@@ -35,7 +35,6 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
         navigationView.bringToFront();
         mAuth = FirebaseAuth.getInstance();
 
-
         setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
