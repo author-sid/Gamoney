@@ -10,8 +10,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -42,12 +44,24 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+
+    } public void Myweb(View view)
+    {
+        openUrl ("https://www.facebook.com/");
+
+    }
+
+   public void openUrl(String url) {
+        Uri uri= Uri.parse(url);
+        Intent launchWeb=new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(launchWeb);
     }
 
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
+
         }
         else {
             super.onBackPressed();

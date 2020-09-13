@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/Rate_us"
             android:text="@string/rate_us"
+            android:onClick="Myweb"
             android:id="@+id/RateBut"
             android:layout_marginTop="15dp"
             android:layout_marginStart="150dp"/>
@@ -61,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/donate"
-            android:id="@+id/Donate_But"
+           android:id="@+id/Donate_But"
             android:layout_below="@+id/Donate_text"
             android:layout_marginStart="150dp"
             android:layout_marginTop="18dp"/>

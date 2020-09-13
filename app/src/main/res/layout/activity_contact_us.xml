@@ -109,7 +109,7 @@
 
                 <TextView
                     android:layout_width="fill_parent"
-                    android:layout_height="32dp"
+                    android:layout_height="58dp"
                     android:layout_marginStart="3dp"
                     android:text="@string/message"
                     android:textAllCaps="true"
@@ -119,26 +119,56 @@
                 <EditText
                     android:id="@+id/your_message"
                     android:layout_width="fill_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="21dp"
                     android:layout_marginBottom="20dp"
-                    android:height="180dp"
-                    android:gravity="top"
                     android:inputType="textMultiLine"
+                    android:singleLine="false"
                     android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="368dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/recaptcha" />
+
+                <CheckBox
+                    android:id="@+id/check_box"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="I'm not a robot"
+                    android:textSize="20sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="100dp"/>
+
+
                 <Button
                     android:id="@+id/post_message"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:background="@color/colorPrimary"
-                    android:paddingBottom="1dp"
                     android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
                     android:paddingTop="1dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="1dp"
                     android:text="@string/send_message"
                     android:textAllCaps="true"
                     android:textColor="@android:color/white"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    />
+
+                <Button
+                    android:id="@+id/instagram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="125dp"
+                    android:text="Instagram"
+                    android:drawableLeft="@drawable/instagram"
+                    android:layout_marginTop="38dp"/>
+
+
+
+
             </LinearLayout>
 
 

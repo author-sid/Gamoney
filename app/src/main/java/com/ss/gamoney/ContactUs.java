@@ -1,6 +1,7 @@
 package com.ss.gamoney;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,16 +9,29 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApi;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.safetynet.SafetyNet;
+import com.google.android.gms.safetynet.SafetyNetApi;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,16 +39,97 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ContactUs extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class ContactUs extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.ConnectionCallbacks {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
 
+    CheckBox checkBox;
+    GoogleApiClient googleApiClient;
+    String Sitekey = "6Lf4N8sZAAAAAFFubJUkJq6J4rS6D826Gm9cnl4X";
+    private DrawerLayout Button_insta;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
+
+
+
+
+
+
+
+
+
+        checkBox = findViewById(R.id.check_box);
+
+        googleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(SafetyNet.API)
+                .addConnectionCallbacks(ContactUs.this)
+                .build();
+        googleApiClient.connect();
+
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkBox.isChecked()) {
+                    SafetyNet.SafetyNetApi.verifyWithRecaptcha(googleApiClient,Sitekey)
+                            .setResultCallback(new ResultCallback<SafetyNetApi.RecaptchaTokenResult>() {
+                                @Override
+                                public void onResult(@NonNull SafetyNetApi.RecaptchaTokenResult recaptchaTokenResult) {
+                                    Status status = recaptchaTokenResult.getStatus();
+                                    if ((status != null )&& status.isSuccess()) {
+
+                                        Toast.makeText(getApplicationContext()
+                                                ,"Successfully Verifies..."
+                                                ,Toast.LENGTH_SHORT).show();
+
+                                        checkBox.setTextColor(Color.GREEN);
+                                    }
+                                }
+                            });
+                }else {
+                    checkBox.setTextColor(Color.BLACK);
+                }
+            }
+        });
+
+
+
+
+
+            Button insta = (Button) findViewById(R.id.instagram);
+            insta.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri uri = Uri.parse("https://www.instagram.com/accounts/login/");
+                    Intent instagram = new Intent(Intent.ACTION_VIEW, uri);
+                    instagram.setPackage("com.instagram.android");
+                    try {
+                        startActivity(instagram);
+                    } catch (ActivityNotFoundException e) {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/accounts/login/")));
+                    }
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
@@ -223,5 +318,15 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
     }
 }

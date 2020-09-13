@@ -20,7 +20,7 @@
     <string name="password_register">Password</string>
     <string name="register">Register</string>
     <string name="already_have_an_account_login">Already have an account? LogIn</string>
-    <string name="gamoney">gamoney</string>
+    <string name="Gamoney">gamoney</string>
     <string name="earn_money_while_playing">Earn Money While Playing</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -36,10 +36,11 @@
     <string name="rate_us">Rate us</string>
     <string name="support_our_community">Support Our Community  </string>
     <string name="donate">Donate</string>
-    <string name="send_message">Send Message</string>
-    <string name="your_email">" Your Email :"</string>
-    <string name="your_name">" Your Name :"</string>
-    <string name="subject">" Subject :"</string>
-    <string name="message">" Message :"</string>
-    <string name="tell_us_about_your_problem">Tell Us About your Problem</string>
+    <string name="gamoney">Gamoney</string>
+    <string name="tell_us_about_your_problem">Tell_us_your_problem</string>
+    <string name="your_name">your name</string>
+    <string name="your_email">your email</string>
+    <string name="subject">subject</string>
+    <string name="message">message</string>
+    <string name="send_message">send message</string>
 </resources>
