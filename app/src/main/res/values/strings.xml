@@ -37,10 +37,18 @@
     <string name="support_our_community">Support Our Community  </string>
     <string name="donate">Donate</string>
     <string name="gamoney">Gamoney</string>
-    <string name="tell_us_about_your_problem">Tell_us_your_problem</string>
+    <string name="tell_us_about_your_problem">Tell us your problem</string>
     <string name="your_name">your name</string>
     <string name="your_email">your email</string>
     <string name="subject">subject</string>
     <string name="message">message</string>
     <string name="send_message">send message</string>
+    <string name="entry_price">Entry price:-</string>
+    <string name="entry_price1">Entry price</string>
+    <string name="description">Description:-</string>
+    <string name="description1">Description</string>
+    <string name="prize">Prize:-</string>
+    <string name="prize1">Prize</string>
+    <string name="time">Time:-</string>
+    <string name="time1">Time</string>
 </resources>

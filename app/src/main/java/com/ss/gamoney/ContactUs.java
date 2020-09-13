@@ -51,18 +51,10 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
     private DrawerLayout Button_insta;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
-
-
-
-
-
-
-
 
 
         checkBox = findViewById(R.id.check_box);
@@ -77,57 +69,42 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public void onClick(View v) {
                 if (checkBox.isChecked()) {
-                    SafetyNet.SafetyNetApi.verifyWithRecaptcha(googleApiClient,Sitekey)
+                    SafetyNet.SafetyNetApi.verifyWithRecaptcha(googleApiClient, Sitekey)
                             .setResultCallback(new ResultCallback<SafetyNetApi.RecaptchaTokenResult>() {
                                 @Override
                                 public void onResult(@NonNull SafetyNetApi.RecaptchaTokenResult recaptchaTokenResult) {
                                     Status status = recaptchaTokenResult.getStatus();
-                                    if ((status != null )&& status.isSuccess()) {
+                                    if ((status != null) && status.isSuccess()) {
 
                                         Toast.makeText(getApplicationContext()
-                                                ,"Successfully Verifies..."
-                                                ,Toast.LENGTH_SHORT).show();
+                                                , "Successfully Verifies..."
+                                                , Toast.LENGTH_SHORT).show();
 
                                         checkBox.setTextColor(Color.GREEN);
                                     }
                                 }
                             });
-                }else {
+                } else {
                     checkBox.setTextColor(Color.BLACK);
                 }
             }
         });
 
 
-
-
-
-            Button insta = (Button) findViewById(R.id.instagram);
-            insta.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Uri uri = Uri.parse("https://www.instagram.com/accounts/login/");
-                    Intent instagram = new Intent(Intent.ACTION_VIEW, uri);
-                    instagram.setPackage("com.instagram.android");
-                    try {
-                        startActivity(instagram);
-                    } catch (ActivityNotFoundException e) {
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/accounts/login/")));
-                    }
+        Button insta = findViewById(R.id.instagram);
+        insta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://www.instagram.com/accounts/login/");
+                Intent instagram = new Intent(Intent.ACTION_VIEW, uri);
+                instagram.setPackage("com.instagram.android");
+                try {
+                    startActivity(instagram);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/accounts/login/")));
                 }
-            });
-
-
-
-
-
-
-
-
-
-
-
-
+            }
+        });
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -143,7 +120,7 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
 
         setSupportActionBar(toolbar);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -158,19 +135,19 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                 String subject = your_subject.getText().toString();
                 String message = your_message.getText().toString();
 
-                if (TextUtils.isEmpty(name)){
+                if (TextUtils.isEmpty(name)) {
                     your_name.setError("Name required");
                     your_name.requestFocus();
                     return;
                 }
 
 
-                if (!isValidEmail(email)){
+                if (!isValidEmail(email)) {
                     your_email.setError("Invalid email");
                     return;
                 }
 
-                if (TextUtils.isEmpty(subject)){
+                if (TextUtils.isEmpty(subject)) {
                     your_subject.setError("Enter Your Subject");
                     your_subject.requestFocus();
                     return;
@@ -181,29 +158,29 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                 //Fill it with Data
                 sendEmail.setType("plain/text");
                 sendEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{"posttosiddharthsharma@gmail.com"});
-                sendEmail.putExtra(Intent.EXTRA_SUBJECT,subject);
+                sendEmail.putExtra(Intent.EXTRA_SUBJECT, subject);
                 sendEmail.putExtra(Intent.EXTRA_TEXT,
-                        "name:" +name + '\n'+"Email ID:" + email + '\n' + "Message:" + '\n' + message );
+                        "name:" + name + '\n' + "Email ID:" + email + '\n' + "Message:" + '\n' + message);
 
                 //send it off to Activity Chooser
-                startActivity(Intent.createChooser(sendEmail,"Send mail..."));
+                startActivity(Intent.createChooser(sendEmail, "Send mail..."));
             }
         });
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         //Get a Tracker (Should auto-report)
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
     }
 
     @Override
-    protected void onStop(){
+    protected void onStop() {
         super.onStop();
     }
 
@@ -219,19 +196,18 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
-        switch (menuitem.getItemId()){
+        switch (menuitem.getItemId()) {
             case R.id.nav_tournamentinfo:
-                Intent intent4 = new Intent(getApplicationContext(),Tournaments.class);
+                Intent intent4 = new Intent(getApplicationContext(), Tournaments.class);
                 startActivity(intent4);
                 break;
 
@@ -239,17 +215,17 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                 break;
 
             case R.id.nav_Faq:
-                Intent intent2 = new Intent(getApplicationContext(),Faq.class);
+                Intent intent2 = new Intent(getApplicationContext(), Faq.class);
                 startActivity(intent2);
                 break;
 
             case R.id.nav_policy:
-                Intent intent1 = new Intent(getApplicationContext(),Policy.class);
+                Intent intent1 = new Intent(getApplicationContext(), Policy.class);
                 startActivity(intent1);
                 break;
 
             case R.id.nav_Supportus:
-                Intent intent3 = new Intent(getApplicationContext(),SupportUs.class);
+                Intent intent3 = new Intent(getApplicationContext(), SupportUs.class);
                 startActivity(intent3);
                 break;
 
@@ -261,7 +237,7 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         finish();
                     }
                 });
@@ -278,12 +254,12 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 String shareBody = "Download This Application Now:- https://play.google.com/store/apps/details?id=com.battlerooms.rooms&hl=en";
-                String sharesub = "Gamoney App" ;
+                String sharesub = "Gamoney App";
 
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
-                shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, sharesub);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
 
-                startActivity(Intent.createChooser(shareIntent,"Share Using"));
+                startActivity(Intent.createChooser(shareIntent, "Share Using"));
 
             case R.id.nav_Resetpassword:
                 final EditText password = new EditText(this);
@@ -298,9 +274,9 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                         mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(ContactUs.this,"Reset Link Sent to Your Email",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ContactUs.this, "Reset Link Sent to Your Email", Toast.LENGTH_SHORT).show();
                                 FirebaseAuth.getInstance().signOut();
-                                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                 finish();
                             }
                         });
