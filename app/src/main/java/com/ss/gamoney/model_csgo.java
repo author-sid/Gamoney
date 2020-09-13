@@ -1,13 +1,13 @@
 package com.ss.gamoney;
 
-public class model_pubg {
+public class model_csgo {
     String price, prize, image, description, time;
 
-    model_pubg() {
+    model_csgo() {
         //Blank constructor
     }
 
-    public model_pubg(String price, String prize, String image, String description, String time) {
+    public model_csgo(String price, String prize, String image, String description, String time) {
         this.price = price;
         this.prize = prize;
         this.image = image;
@@ -54,5 +54,4 @@ public class model_pubg {
     public void setTime(String time) {
         this.time = time;
     }
-
 }

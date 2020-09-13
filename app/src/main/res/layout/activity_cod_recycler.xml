@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PubgRecycler">
+    tools:context=".CodRecycler">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recview1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recview"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"/>
+        tools:layout_editor_absoluteY="1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

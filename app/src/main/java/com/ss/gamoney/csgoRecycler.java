@@ -9,26 +9,25 @@ import android.os.Bundle;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class PubgRecycler extends AppCompatActivity {
+public class csgoRecycler extends AppCompatActivity {
     RecyclerView recview;
-    adapter_pubg adapter;
+    adapter_csgo adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pubg_recycler);
+        setContentView(R.layout.activity_csgo_recycler);
 
-        recview = findViewById(R.id.recview);
+        recview = findViewById(R.id.recview3);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<model_pubg> options =
-                new FirebaseRecyclerOptions.Builder<model_pubg>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Pubg Tournaments"), model_pubg.class)
+        FirebaseRecyclerOptions<model_csgo> options =
+                new FirebaseRecyclerOptions.Builder<model_csgo>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("CSGO Tournaments"), model_csgo.class)
                         .build();
 
-        adapter = new adapter_pubg(options);
+        adapter = new adapter_csgo(options);
         recview.setAdapter(adapter);
-
     }
 
     @Override
