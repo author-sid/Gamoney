@@ -1,44 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Faq"
-    android:background="#ffff">
+    android:background="#ffff"
+    tools:context=".Faq">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#222222"
-        app:itemIconTint="#da3f3d"
-        app:itemTextColor="#FFFFFF"
-        app:menu="@menu/menu" />
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu" />
 
-    <TextView
-        android:id="@+id/titleWindow"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textColor="#CB9818"
-        android:textSize="26sp"
-        android:textStyle="bold" />
-
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/titleWindow"
-        android:layout_above="@+id/bottom_navigation">
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF">
 
-        <TextView
-            android:id="@+id/messageWindow"
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="629dp"
-            android:fontFamily="@font/century_gothic_regular"
-            android:textSize="18sp"
-            android:textColor="#CB9818"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#222222"
+            app:itemIconTint="#da3f3d"
+            app:itemTextColor="#FFFFFF"
+            app:menu="@menu/menu" />
 
-    </ScrollView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_navigation"
+            android:layout_below="@+id/toolbar">
 
-</RelativeLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/messageWindow"
+                    android:layout_width="match_parent"
+                    android:layout_height="629dp"
+                    android:fontFamily="@font/century_gothic_regular"
+                    android:textColor="#CB9818"
+                    android:textSize="18sp" />
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

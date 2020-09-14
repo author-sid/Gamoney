@@ -1,15 +1,14 @@
 package com.ss.gamoney;
 
 public class model_csgo {
-    String price, prize, image, description, time;
+    String price, image, description, time;
 
     model_csgo() {
         //Blank constructor
     }
 
-    public model_csgo(String price, String prize, String image, String description, String time) {
+    public model_csgo(String price, String image, String description, String time) {
         this.price = price;
-        this.prize = prize;
         this.image = image;
         this.description = description;
         this.time = time;
@@ -21,14 +20,6 @@ public class model_csgo {
 
     public void setPrice(String price) {
         this.price = price;
-    }
-
-    public String getPrize() {
-        return prize;
-    }
-
-    public void setPrize(String prize) {
-        this.prize = prize;
     }
 
     public String getImage() {

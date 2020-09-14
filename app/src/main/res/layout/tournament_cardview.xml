@@ -1,141 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    app:cardCornerRadius="20dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="vertical"
-        android:background="@drawable/border">
+        android:layout_height="160dp"
+        android:background="@drawable/border"
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/Tournament_image"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_width="95dp"
+            android:layout_height="140dp"
             android:layout_margin="10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/cardviewsample" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:id="@+id/layout_description"
+            android:layout_width="280dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="-150dp"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:gravity="start"
-                android:text="@string/entry_price"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:fontFamily="@font/bungee" />
-
-            <TextView
-                android:id="@+id/Tournament_price"
-                android:layout_marginStart="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/entry_price1"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:fontFamily="@font/antic"
                 android:gravity="start"
                 android:text="@string/description"
                 android:textColor="#000000"
-                android:layout_marginStart="5dp"
-                android:textSize="18sp"
-                android:fontFamily="@font/bungee" />
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/Tournament_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:textSize="18sp"
+                android:layout_marginStart="1dp"
                 android:text="@string/description1"
-                android:textStyle="bold" />
+                android:textSize="17sp"
+                android:textColor="#000"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginStart="110dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
 
             <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="start"
-                android:layout_marginStart="5dp"
-                android:text="@string/prize"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:fontFamily="@font/bungee" />
-
-            <TextView
-                android:id="@+id/Tournament_prize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
+                android:fontFamily="@font/antic"
+                android:gravity="start"
+                android:text="@string/entry_price"
+                android:textColor="#000000"
                 android:textSize="18sp"
-                android:text="@string/prize1"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Tournament_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/entry_price1"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#da3f3d"/>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginStart="245dp"
+        android:orientation="vertical"
+        android:layout_marginTop="-71dp">
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:fontFamily="@font/antic"
+            android:gravity="start"
+            android:text="@string/time"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="start"
-                android:layout_marginStart="5dp"
-                android:text="@string/time"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:fontFamily="@font/bungee" />
+        <TextView
+            android:id="@+id/Tournament_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time1"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#da3f3d"/>
 
-            <TextView
-                android:id="@+id/Tournament_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:text="@string/time1"
-                android:textStyle="bold" />
-
-        </LinearLayout>
 
     </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

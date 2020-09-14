@@ -44,11 +44,11 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
+    ImageView Insta;
 
     CheckBox checkBox;
     GoogleApiClient googleApiClient;
     String Sitekey = "6Lf4N8sZAAAAAFFubJUkJq6J4rS6D826Gm9cnl4X";
-    private DrawerLayout Button_insta;
 
 
     @Override
@@ -75,11 +75,7 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                                 public void onResult(@NonNull SafetyNetApi.RecaptchaTokenResult recaptchaTokenResult) {
                                     Status status = recaptchaTokenResult.getStatus();
                                     if ((status != null) && status.isSuccess()) {
-
-                                        Toast.makeText(getApplicationContext()
-                                                , "Successfully Verifies..."
-                                                , Toast.LENGTH_SHORT).show();
-
+                                        Toast.makeText(getApplicationContext(), "Successfully Verifies...", Toast.LENGTH_SHORT).show();
                                         checkBox.setTextColor(Color.GREEN);
                                     }
                                 }
@@ -87,14 +83,15 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                 } else {
                     checkBox.setTextColor(Color.BLACK);
                 }
+
             }
         });
 
 
-        Button insta = findViewById(R.id.instagram);
-        insta.setOnClickListener(new View.OnClickListener() {
+        Insta = findViewById(R.id.instagram);
+        Insta.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Uri uri = Uri.parse("https://www.instagram.com/accounts/login/");
                 Intent instagram = new Intent(Intent.ACTION_VIEW, uri);
                 instagram.setPackage("com.instagram.android");

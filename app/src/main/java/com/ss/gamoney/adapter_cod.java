@@ -21,7 +21,6 @@ public class adapter_cod extends FirebaseRecyclerAdapter<model_cod,adapter_cod.c
     @Override
     protected void onBindViewHolder(@NonNull codholder holder, int position, @NonNull model_cod model_cod) {
         holder.price.setText(model_cod.getPrice());
-        holder.prize.setText(model_cod.getPrize());
         holder.description.setText(model_cod.getDescription());
         holder.time.setText(model_cod.getTime());
         Glide.with(holder.img.getContext()).load(model_cod.getImage()).into(holder.img);
@@ -36,12 +35,11 @@ public class adapter_cod extends FirebaseRecyclerAdapter<model_cod,adapter_cod.c
 
     static class codholder extends RecyclerView.ViewHolder{
         ImageView img;
-        TextView price,prize,description,time;
+        TextView price,description,time;
         public codholder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.Tournament_image);
             price = itemView.findViewById(R.id.Tournament_price);
-            prize = itemView.findViewById(R.id.Tournament_prize);
             description = itemView.findViewById(R.id.Tournament_description);
             time = itemView.findViewById(R.id.Tournament_time);
         }

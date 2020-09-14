@@ -22,7 +22,6 @@ public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg,adapter_pub
     @Override
     protected void onBindViewHolder(@NonNull pubgviewholder holder, int position, @NonNull model_pubg model_pubg) {
         holder.price.setText(model_pubg.getPrice());
-        holder.prize.setText(model_pubg.getPrize());
         holder.description.setText(model_pubg.getDescription());
         holder.time.setText(model_pubg.getTime());
         Glide.with(holder.img.getContext()).load(model_pubg.getImage()).into(holder.img);
@@ -38,13 +37,12 @@ public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg,adapter_pub
 
     static class pubgviewholder extends RecyclerView.ViewHolder{
         ImageView img;
-        TextView price,prize,description,time;
+        TextView price,description,time;
 
         public pubgviewholder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.Tournament_image);
             price = itemView.findViewById(R.id.Tournament_price);
-            prize = itemView.findViewById(R.id.Tournament_prize);
             description = itemView.findViewById(R.id.Tournament_description);
             time = itemView.findViewById(R.id.Tournament_time);
         }
