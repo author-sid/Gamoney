@@ -52,4 +52,5 @@
     <string name="time">Time:-</string>
     <string name="time1">Time</string>
     <string name="i_m_not_a_robot">I\'m not a robot</string>
+    <string name="tournament_image">Tournament Image</string>
 </resources>

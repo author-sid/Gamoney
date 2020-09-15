@@ -38,7 +38,7 @@ public class adapter_csgo extends FirebaseRecyclerAdapter<model_csgo,adapter_csg
         return new csgoholder(view);
     }
 
-    class csgoholder extends RecyclerView.ViewHolder {
+    static class csgoholder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView price,description, time;
 

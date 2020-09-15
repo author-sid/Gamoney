@@ -1,5 +1,21 @@
 package com.ss.gamoney;
 
+import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -8,25 +24,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.app.AlertDialog;
-import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Color;
-import android.media.Image;
-import android.net.Uri;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.MenuItem;
-import android.view.View;
-import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
@@ -44,7 +41,7 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
-    ImageView Insta;
+    ImageView Insta, Facebook;
 
     CheckBox checkBox;
     GoogleApiClient googleApiClient;
@@ -84,6 +81,21 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                     checkBox.setTextColor(Color.BLACK);
                 }
 
+            }
+        });
+
+        Facebook = findViewById(R.id.facebook);
+        Facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://www.facebook.com/");
+                Intent facebook = new Intent(Intent.ACTION_VIEW, uri);
+                facebook.setPackage("com.facebook.katana");
+                try {
+                    startActivity(facebook);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/")));
+                }
             }
         });
 

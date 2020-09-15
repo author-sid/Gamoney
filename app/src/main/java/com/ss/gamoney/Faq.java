@@ -21,7 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Faq extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class Faq extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
@@ -39,14 +39,14 @@ public class Faq extends AppCompatActivity implements NavigationView.OnNavigatio
         mAuth = FirebaseAuth.getInstance();
 
         setSupportActionBar(toolbar);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        TextView mMessageWindow = (TextView) findViewById(R.id.messageWindow);
+        TextView mMessageWindow =findViewById(R.id.messageWindow);
 
 
         String Message = "How To Join a Tournament:" +
@@ -115,14 +115,14 @@ public class Faq extends AppCompatActivity implements NavigationView.OnNavigatio
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
 
-        switch (menuitem.getItemId()){
+        switch (menuitem.getItemId()) {
             case R.id.nav_tournamentinfo:
-                Intent intent2 = new Intent(getApplicationContext(),Tournaments.class);
+                Intent intent2 = new Intent(getApplicationContext(), Tournaments.class);
                 startActivity(intent2);
                 break;
 
             case R.id.nav_Contactus:
-                Intent intent1 = new Intent(getApplicationContext(),ContactUs.class);
+                Intent intent1 = new Intent(getApplicationContext(), ContactUs.class);
                 startActivity(intent1);
                 break;
 
@@ -130,12 +130,12 @@ public class Faq extends AppCompatActivity implements NavigationView.OnNavigatio
                 break;
 
             case R.id.nav_policy:
-                Intent intent3 = new Intent(getApplicationContext(),Policy.class);
+                Intent intent3 = new Intent(getApplicationContext(), Policy.class);
                 startActivity(intent3);
                 break;
 
             case R.id.nav_Supportus:
-                Intent intent4 = new Intent(getApplicationContext(),SupportUs.class);
+                Intent intent4 = new Intent(getApplicationContext(), SupportUs.class);
                 startActivity(intent4);
                 break;
 
@@ -147,7 +147,7 @@ public class Faq extends AppCompatActivity implements NavigationView.OnNavigatio
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         finish();
                     }
                 });
@@ -164,12 +164,12 @@ public class Faq extends AppCompatActivity implements NavigationView.OnNavigatio
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 String shareBody = "Download This Application Now:- https://play.google.com/store/apps/details?id=com.battlerooms.rooms&hl=en";
-                String sharesub = "Gamoney App" ;
+                String sharesub = "Gamoney App";
 
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
-                shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, sharesub);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
 
-                startActivity(Intent.createChooser(shareIntent,"Share Using"));
+                startActivity(Intent.createChooser(shareIntent, "Share Using"));
                 break;
 
             case R.id.nav_Resetpassword:
@@ -214,10 +214,9 @@ public class Faq extends AppCompatActivity implements NavigationView.OnNavigatio
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
     }
