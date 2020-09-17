@@ -34,7 +34,7 @@ public class PubgRecycler extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Pubg Tournaments"), model_pubg.class)
                         .build();
 
-        adapter = new adapter_pubg(options);
+        adapter = new adapter_pubg(options,getApplicationContext());
         recview.setAdapter(adapter);
 
     }

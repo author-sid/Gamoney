@@ -7,7 +7,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="160dp"
-
         android:orientation="vertical">
 
         <ImageView
@@ -16,7 +15,6 @@
             android:layout_height="140dp"
             android:layout_margin="10dp"
             android:scaleType="centerCrop"
-
             android:contentDescription="@string/tournament_image" />
 
         <LinearLayout
