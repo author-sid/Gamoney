@@ -66,7 +66,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         BTN3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent categoryintent = new Intent(Tournaments.this, csgoRecycler.class);
+                Intent categoryintent = new Intent(Tournaments.this, FreefireRecycler.class);
                 startActivity(categoryintent);
                 finish();
             }
@@ -78,7 +78,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         BTN4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent categoryintent = new Intent(Tournaments.this, FreefireRecycler.class);
+                Intent categoryintent = new Intent(Tournaments.this, csgoRecycler.class);
                 startActivity(categoryintent);
                 finish();
             }

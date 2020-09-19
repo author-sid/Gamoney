@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
@@ -18,28 +17,27 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 
-public class PubgDescription extends AppCompatActivity {
-    private String receiverUserID;
-    ImageView Tournament_img,Facebook,Insta;
-    TextView description;
-    DatabaseReference UserRef;
+public class CsgoDescription extends AppCompatActivity {
+    private String recieveUserId;
+    ImageView Tournament_img3,Insta,Facebook;
+    TextView description3;
+    DatabaseReference UserRef3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pubg_description);
+        setContentView(R.layout.activity_csgo_description);
 
-        UserRef = FirebaseDatabase.getInstance().getReference().child("Pubg Tournaments");
-        receiverUserID = getIntent().getExtras().get("visit_user_id").toString();
+        UserRef3 = FirebaseDatabase.getInstance().getReference().child("CSGO Tournaments");
+        recieveUserId = getIntent().getExtras().get("user_id").toString();
 
-        Tournament_img = findViewById(R.id.image_recycler);
-        description = findViewById(R.id.image_description);
-        
+        Tournament_img3 = findViewById(R.id.image_recycler3);
+        description3 = findViewById(R.id.image_description3);
+
         RetrieveUserInfo();
 
-        Facebook = findViewById(R.id.facebook1);
+        Facebook = findViewById(R.id.facebook3);
         Facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +52,7 @@ public class PubgDescription extends AppCompatActivity {
             }
         });
 
-        Insta = findViewById(R.id.instagram1);
+        Insta = findViewById(R.id.instagram3);
         Insta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,16 +69,15 @@ public class PubgDescription extends AppCompatActivity {
     }
 
     private void RetrieveUserInfo() {
-        UserRef.child(receiverUserID).addValueEventListener(new ValueEventListener() {
+        UserRef3.child(recieveUserId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if ((snapshot.exists()) && (snapshot.hasChild("image"))){
+                if ((snapshot.exists()) && (snapshot.hasChild("image"))) {
                     String tournamentimg = snapshot.child("image").getValue().toString();
-                    String Description = snapshot.child("description").getValue().toString();
-                    description.setText(Description);
-                    Glide.with(PubgDescription.this).load(tournamentimg).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).override(200,200).centerCrop().into(Tournament_img);
+                    String Description3 = snapshot.child("description").getValue().toString();
+                    description3.setText(Description3);
+                    Glide.with(CsgoDescription.this).load(tournamentimg).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).override(200,200).centerCrop().into(Tournament_img3);
                 }
-
             }
 
             @Override
@@ -88,6 +85,5 @@ public class PubgDescription extends AppCompatActivity {
 
             }
         });
-
     }
 }

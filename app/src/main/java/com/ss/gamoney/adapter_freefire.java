@@ -1,5 +1,7 @@
 package com.ss.gamoney;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +16,28 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class adapter_freefire extends FirebaseRecyclerAdapter<model_freefire,adapter_freefire.freefireholder> {
-
-    public adapter_freefire(@NonNull FirebaseRecyclerOptions<model_freefire> options) {
+    Context context;
+    public adapter_freefire(@NonNull FirebaseRecyclerOptions<model_freefire> options, Context context) {
         super(options);
+        this.context = context;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull freefireholder holder, int position, @NonNull model_freefire model_freefire) {
+    protected void onBindViewHolder(@NonNull freefireholder holder, final int position, @NonNull model_freefire model_freefire) {
         holder.price.setText(model_freefire.getPrice());
         holder.description.setText(model_freefire.getDescription());
         holder.time.setText(model_freefire.getTime());
         Glide.with(holder.img.getContext()).load(model_freefire.getImage()).into(holder.img);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user_id = getRef(position).getKey();
+                Intent profileIntent = new Intent(context, FreefireDescription.class);
+                profileIntent.putExtra("user_id", user_id);
+                profileIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(profileIntent);
+            }
+        });
     }
 
     @NonNull

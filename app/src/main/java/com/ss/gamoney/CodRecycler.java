@@ -26,7 +26,7 @@ public class CodRecycler extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Cod Tournaments"), model_cod.class)
                         .build();
 
-        adapter = new adapter_cod(options);
+        adapter = new adapter_cod(options,getApplicationContext());
         recview.setAdapter(adapter);
 
     }

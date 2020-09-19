@@ -1,5 +1,7 @@
 package com.ss.gamoney;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,16 +16,29 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class adapter_cod extends FirebaseRecyclerAdapter<model_cod,adapter_cod.codholder> {
-    public adapter_cod(@NonNull FirebaseRecyclerOptions<model_cod> options) {
+    Context context;
+    public adapter_cod(@NonNull FirebaseRecyclerOptions<model_cod> options,Context context) {
         super(options);
+        this.context=context;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull codholder holder, int position, @NonNull model_cod model_cod) {
+    protected void onBindViewHolder(@NonNull codholder holder, final int position, @NonNull model_cod model_cod) {
         holder.price.setText(model_cod.getPrice());
         holder.description.setText(model_cod.getDescription());
         holder.time.setText(model_cod.getTime());
         Glide.with(holder.img.getContext()).load(model_cod.getImage()).into(holder.img);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user_id = getRef(position).getKey();
+                Intent profileIntent = new Intent(context,CodDescription.class);
+                profileIntent.putExtra("user_id",user_id);
+                profileIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(profileIntent);
+            }
+        });
     }
 
     @NonNull

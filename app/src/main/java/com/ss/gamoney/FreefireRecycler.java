@@ -26,7 +26,7 @@ public class FreefireRecycler extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Freefire Tournaments"), model_freefire.class)
                         .build();
 
-        adapter = new adapter_freefire(options);
+        adapter = new adapter_freefire(options,getApplicationContext());
         recview.setAdapter(adapter);
     }
 

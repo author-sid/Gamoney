@@ -15,10 +15,11 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg,adapter_pubg.pubgviewholder> {
+public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg, adapter_pubg.pubgviewholder> {
 
     Context context;
-    public adapter_pubg(@NonNull FirebaseRecyclerOptions<model_pubg> options,Context context) {
+
+    public adapter_pubg(@NonNull FirebaseRecyclerOptions<model_pubg> options, Context context) {
         super(options);
         this.context = context;
     }
@@ -33,8 +34,8 @@ public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg,adapter_pub
             @Override
             public void onClick(View view) {
                 String visit_user_id = getRef(position).getKey();
-                Intent profileIntent = new Intent(context,PubgDescription.class);
-                profileIntent.putExtra("visit_user_id",visit_user_id);
+                Intent profileIntent = new Intent(context, PubgDescription.class);
+                profileIntent.putExtra("visit_user_id", visit_user_id);
                 profileIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(profileIntent);
             }
@@ -46,13 +47,13 @@ public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg,adapter_pub
     @NonNull
     @Override
     public pubgviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.tournament_cardview,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tournament_cardview, parent, false);
         return new pubgviewholder(view);
     }
 
-    static class pubgviewholder extends RecyclerView.ViewHolder{
+    static class pubgviewholder extends RecyclerView.ViewHolder {
         ImageView img;
-        TextView price,description,time;
+        TextView price, description, time;
 
         public pubgviewholder(@NonNull View itemView) {
             super(itemView);

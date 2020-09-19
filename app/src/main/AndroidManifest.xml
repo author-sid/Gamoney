@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PubgDescription"></activity>
+        <activity android:name=".CsgoDescription"></activity>
+        <activity android:name=".FreefireDescription" />
+        <activity android:name=".CodDescription" />
+        <activity android:name=".PubgDescription" />
         <activity android:name=".csgoRecycler" />
         <activity android:name=".FreefireRecycler" />
         <activity android:name=".CodRecycler" />
