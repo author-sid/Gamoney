@@ -120,6 +120,7 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
         navigationView.bringToFront();
+        navigationView.setCheckedItem(R.id.nav_Contactus);
         mAuth = FirebaseAuth.getInstance();
 
         final EditText your_name = findViewById(R.id.your_name);

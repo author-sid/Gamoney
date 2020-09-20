@@ -44,6 +44,7 @@ public class Faq extends AppCompatActivity implements NavigationView.OnNavigatio
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_Faq);
 
 
         TextView mMessageWindow =findViewById(R.id.messageWindow);

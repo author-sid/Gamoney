@@ -44,6 +44,7 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_Supportus);
 
     } public void Myweb(View view)
     {

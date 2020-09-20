@@ -113,6 +113,7 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_policy);
     }
 
     @Override
