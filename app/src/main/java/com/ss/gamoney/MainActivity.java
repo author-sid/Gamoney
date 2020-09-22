@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.faq:
-                        startActivity(new Intent(getApplicationContext(), PubgRecycler.class));
+                        startActivity(new Intent(getApplicationContext(), Faq.class));
                         overridePendingTransition(0, 0);
                         return true;
 
