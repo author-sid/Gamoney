@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ public class CodDescription extends AppCompatActivity {
     ImageView Tournament_img1,Facebook,Insta;
     TextView description1;
     DatabaseReference UserRef1;
+    Button jointournament;
 
 
     @Override
@@ -35,6 +37,7 @@ public class CodDescription extends AppCompatActivity {
 
         Tournament_img1 = findViewById(R.id.image_recycler1);
         description1 = findViewById(R.id.image_description1);
+        jointournament = findViewById(R.id.jointournament1);
 
         RetrieveUserInfo();
 
@@ -67,6 +70,14 @@ public class CodDescription extends AppCompatActivity {
                 }
             }
         });
+
+        jointournament.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CodDescription.this,CodAfterdes.class));
+            }
+        });
+
     }
 
     private void RetrieveUserInfo() {

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
@@ -23,6 +24,7 @@ public class FreefireDescription extends AppCompatActivity {
     ImageView Tournament_img2,Facebook,Insta;
     TextView description2;
     DatabaseReference UserRef2;
+    Button jointournament;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class FreefireDescription extends AppCompatActivity {
 
         Tournament_img2 = findViewById(R.id.image_recycler2);
         description2 = findViewById(R.id.image_description2);
+        jointournament = findViewById(R.id.jointournament2);
 
         RetrieveUserInfo();
 
@@ -64,6 +67,12 @@ public class FreefireDescription extends AppCompatActivity {
                 } catch (ActivityNotFoundException e) {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/accounts/login/")));
                 }
+            }
+        });
+        jointournament.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(FreefireDescription.this,FreefireAfterdes.class));
             }
         });
     }

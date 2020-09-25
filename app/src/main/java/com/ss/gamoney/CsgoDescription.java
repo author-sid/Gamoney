@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ public class CsgoDescription extends AppCompatActivity {
     ImageView Tournament_img3,Insta,Facebook;
     TextView description3;
     DatabaseReference UserRef3;
+    Button jointournament;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class CsgoDescription extends AppCompatActivity {
 
         Tournament_img3 = findViewById(R.id.image_recycler3);
         description3 = findViewById(R.id.image_description3);
+        jointournament = findViewById(R.id.jointournament3);
 
         RetrieveUserInfo();
 
@@ -64,6 +67,13 @@ public class CsgoDescription extends AppCompatActivity {
                 } catch (ActivityNotFoundException e) {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/accounts/login/")));
                 }
+            }
+        });
+
+        jointournament.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CsgoDescription.this,CsgoAfterdes.class));
             }
         });
     }

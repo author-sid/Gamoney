@@ -58,4 +58,14 @@
     <string name="join_tournament">Join Tournament</string>
     <string name="Rules">1. Room id and password will be displayed 15 minutes before match on tournaments section.Players need to join room 10 minutes prior match.\n2. If you find any Hackers or cheaters, Please report them in app.\n3. No rematch in case of hackers or cheaters.\n4. Hackers will be permanently banned from the app and wont able to participate further.\n4. Rewards will be given on basis of rank and number of kills.Rewards will be credited same day after the match.\n5. Rewards are liable to change if there are less players.\n \n In case of any further queries or offers follow us on: \n \n</string>
     <string name="Emptyview">Sorry, No tournaments are available right now, Check again Later</string>
+    <string name="player_1">PLAYER-1</string>
+    <string name="player_2">PLAYER-2</string>
+    <string name="player_3">PLAYER-3</string>
+    <string name="player_4">PLAYER-4</string>
+    <string name="NameWarning">*Please mention names correctly, wrong names will be \n \tdisqualified</string>
+    <string name="please_enter_your_team_details">Please Enter Your team details</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="phone_number1">Phone Number:</string>
+    <string name="this_number_will_be_used_for_prize_distribution">*This number will be used for Prize distribution</string>
+    <string name="proceed_to_payment">Proceed To Payment</string>
 </resources>
