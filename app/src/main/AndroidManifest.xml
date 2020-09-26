@@ -44,6 +44,11 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Faq" />
         <activity android:name=".Tournaments" />
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_L7rUAT54uR8uKu" />
+
     </application>
 
 </manifest>

@@ -3,6 +3,7 @@ package com.ss.gamoney;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,24 +11,30 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.razorpay.Checkout;
+import com.razorpay.PaymentResultListener;
+
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class PubgAfterdes extends AppCompatActivity {
+public class PubgAfterdes extends AppCompatActivity implements PaymentResultListener {
     EditText Player1,Player2,Player3,Player4,PhoneNo;
     FirebaseAuth mAuth;
     FirebaseFirestore fstore;
     Button payment;
     String userID;
-    public static final String TAG = "TAG";
+    public static final String TAG1 = "TAG";
+    private String TAG = PubgAfterdes.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,16 +88,49 @@ public class PubgAfterdes extends AppCompatActivity {
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.d(TAG, "Team information Added Successfully"+ userID);
+                        Log.d(TAG1, "Team information Added Successfully"+ userID);
                     }
                 }) .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.d(TAG, "onFailure: "+ e.toString());
+                        Log.d(TAG1, "onFailure: "+ e.toString());
                     }
                 });
-                startActivity(new Intent(PubgAfterdes.this,Tournaments.class));
+                startPayment();
             }
         });
+    }
+
+    public void startPayment(){
+        Activity activity = this;
+        Checkout co = new Checkout();
+        try {
+            JSONObject options = new JSONObject();
+
+            options.put("name", "Merchant Name");
+            options.put("description", "Reference No. #123456");
+            options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+            options.put("theme.color", "#3399cc");
+            options.put("currency", "INR");
+            options.put("amount", "50000");//pass amount in currency subunits
+            co.open(activity, options);
+
+
+        }catch (Exception e){
+            Log.e("error","error"+e.toString());
+        }
+
+    }
+
+    @Override
+    public void onPaymentSuccess(String s) {
+        Toast.makeText(this,"Payment Successful",Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onPaymentError(int i, String s) {
+        Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show();
+
     }
 }
