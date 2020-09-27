@@ -19,20 +19,24 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class CsgoDescription extends AppCompatActivity {
     private String recieveUserId;
-    ImageView Tournament_img3,Insta,Facebook;
-    TextView description3;
+    ImageView Tournament_img3, Insta, Facebook;
+    TextView description3, Pricedes3;
     DatabaseReference UserRef3;
     Button jointournament;
+    String price3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_csgo_description);
+        Pricedes3 = findViewById(R.id.priceinput3);
 
         UserRef3 = FirebaseDatabase.getInstance().getReference().child("CSGO Tournaments");
-        recieveUserId = getIntent().getExtras().get("user_id").toString();
+        recieveUserId = Objects.requireNonNull(Objects.requireNonNull(getIntent().getExtras()).get("user_id")).toString();
 
         Tournament_img3 = findViewById(R.id.image_recycler3);
         description3 = findViewById(R.id.image_description3);
@@ -73,7 +77,9 @@ public class CsgoDescription extends AppCompatActivity {
         jointournament.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(CsgoDescription.this,CsgoAfterdes.class));
+                Intent intent = new Intent(CsgoDescription.this, CsgoAfterdes.class);
+                intent.putExtra("price4", price3);
+                startActivity(intent);
             }
         });
     }
@@ -83,10 +89,12 @@ public class CsgoDescription extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if ((snapshot.exists()) && (snapshot.hasChild("image"))) {
-                    String tournamentimg = snapshot.child("image").getValue().toString();
-                    String Description3 = snapshot.child("description").getValue().toString();
+                    price3 = Objects.requireNonNull(snapshot.child("price").getValue()).toString();
+                    String tournamentimg = Objects.requireNonNull(snapshot.child("image").getValue()).toString();
+                    String Description3 = Objects.requireNonNull(snapshot.child("description").getValue()).toString();
+                    Pricedes3.setText(price3);
                     description3.setText(Description3);
-                    Glide.with(CsgoDescription.this).load(tournamentimg).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).override(200,200).centerCrop().into(Tournament_img3);
+                    Glide.with(CsgoDescription.this).load(tournamentimg).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).override(200, 200).centerCrop().into(Tournament_img3);
                 }
             }
 

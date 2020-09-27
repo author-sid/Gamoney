@@ -164,10 +164,10 @@
                     android:id="@+id/facebook"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="180dp"
+                    android:layout_marginTop="-23.5dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:layout_marginTop="-23.5dp"
-                    android:layout_marginStart="180dp"
                     android:src="@drawable/facebook" />
 
 

@@ -38,69 +38,64 @@
 
 
         <Button
+            android:id="@+id/BTN1"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:id="@+id/BTN1"
+            android:layout_alignBaseline="@id/bottom_navigation"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/roundedcorner"
             android:text="Pubg"
             android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:background="@drawable/roundedcorner"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_alignBaseline="@id/bottom_navigation"/>
+            android:textStyle="bold" />
 
 
         <Button
+            android:id="@+id/BTN2"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:id="@+id/BTN2"
+            android:layout_alignBaseline="@id/bottom_navigation"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/roundedcorner"
             android:text="COD"
             android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_alignBaseline="@id/bottom_navigation"
-            android:background="@drawable/roundedcorner"
-            android:layout_marginTop="250dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            />
+            android:textStyle="bold" />
 
 
         <Button
+            android:id="@+id/BTN3"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:id="@+id/BTN3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/roundedcorner"
             android:text="FREEFIRE"
             android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:background="@drawable/roundedcorner"
-            android:layout_marginTop="400dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-           />
+            android:textStyle="bold" />
 
         <Button
+            android:id="@+id/BTN4"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:id="@+id/BTN4"
-            android:text="CSGO"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-          android:layout_marginTop="550dp"
+            android:layout_alignBaseline="@id/bottom_navigation"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="550dp"
             android:layout_marginRight="20dp"
-
             android:background="@drawable/roundedcorner"
-            android:layout_alignBaseline="@id/bottom_navigation"/>
+            android:text="CSGO"
 
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
 
 
-
-
-    </androidx.drawerlayout.widget.DrawerLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
 
 
 

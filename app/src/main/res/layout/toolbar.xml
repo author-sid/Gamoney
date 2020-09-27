@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:elevation="4dp"
-    app:navigationIcon="@drawable/ic_menu"
-    android:theme="@style/ToolbarTheme">
+    android:theme="@style/ToolbarTheme"
+    app:navigationIcon="@drawable/ic_menu">
 
 </androidx.appcompat.widget.Toolbar>

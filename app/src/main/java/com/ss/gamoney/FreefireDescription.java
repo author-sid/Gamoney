@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,20 +20,24 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class FreefireDescription extends AppCompatActivity {
     private String recieveUserId;
-    ImageView Tournament_img2,Facebook,Insta;
-    TextView description2;
+    ImageView Tournament_img2, Facebook, Insta;
+    TextView description2, pricedes2;
     DatabaseReference UserRef2;
     Button jointournament;
+    String price2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_freefire_description);
+        pricedes2 = findViewById(R.id.priceinput2);
 
         UserRef2 = FirebaseDatabase.getInstance().getReference().child("Freefire Tournaments");
-        recieveUserId = getIntent().getExtras().get("user_id").toString();
+        recieveUserId = Objects.requireNonNull(Objects.requireNonNull(getIntent().getExtras()).get("user_id")).toString();
 
         Tournament_img2 = findViewById(R.id.image_recycler2);
         description2 = findViewById(R.id.image_description2);
@@ -72,7 +77,9 @@ public class FreefireDescription extends AppCompatActivity {
         jointournament.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(FreefireDescription.this,FreefireAfterdes.class));
+                Intent intent = new Intent(FreefireDescription.this, FreefireAfterdes.class);
+                intent.putExtra("price3", price2);
+                startActivity(intent);
             }
         });
     }
@@ -82,10 +89,12 @@ public class FreefireDescription extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if ((snapshot.exists()) && (snapshot.hasChild("image"))) {
-                    String tournamentimg = snapshot.child("image").getValue().toString();
-                    String Description2 = snapshot.child("description").getValue().toString();
+                    price2 = Objects.requireNonNull(snapshot.child("price").getValue()).toString();
+                    String tournamentimg = Objects.requireNonNull(snapshot.child("image").getValue()).toString();
+                    String Description2 = Objects.requireNonNull(snapshot.child("description").getValue()).toString();
+                    pricedes2.setText(price2);
                     description2.setText(Description2);
-                    Glide.with(FreefireDescription.this).load(tournamentimg).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).override(200,200).centerCrop().into(Tournament_img2);
+                    Glide.with(FreefireDescription.this).load(tournamentimg).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).override(200, 200).centerCrop().into(Tournament_img2);
                 }
             }
 

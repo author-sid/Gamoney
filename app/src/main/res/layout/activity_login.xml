@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
     android:background="#ffff"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/logo_image"
-        android:src="@drawable/logo"
         android:layout_width="217dp"
         android:layout_height="157dp"
+        android:src="@drawable/logo"
         android:transitionName="logo_image"
         tools:ignore="ContentDescription" />
 
@@ -24,9 +24,9 @@
         android:layout_marginTop="-40dp"
         android:fontFamily="@font/bungee"
         android:text="@string/hello_there_welcome_back"
-        android:transitionName="logo_text"
         android:textColor="#000"
-        android:textSize="40sp" />
+        android:textSize="40sp"
+        android:transitionName="logo_text" />
 
     <TextView
         android:id="@+id/slogan_name"
@@ -34,8 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-30dp"
         android:text="@string/signin_to_start_earning"
-        android:transitionName="logo_desc"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:transitionName="logo_desc" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,30 +45,30 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/email_main"
             android:transitionName="email_trans">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email"/>
+                android:hint="@string/email" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password_main"
-            app:passwordToggleEnabled="true"
-            android:transitionName="password_trans">
+            android:transitionName="password_trans"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,12 +89,12 @@
             android:id="@+id/Login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login"
-            android:transitionName="button_trans"
-            android:background="#000"
-            android:textColor="#fff"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:background="#000"
+            android:text="@string/login"
+            android:textColor="#fff"
+            android:transitionName="button_trans" />
 
         <Button
             android:id="@+id/signup"
@@ -106,9 +106,9 @@
             android:elevation="0dp"
             android:fontFamily="@font/singn"
             android:text="@string/new_user_sign_up"
-            android:transitionName="login_signup_trans"
             android:textColor="#000"
             android:textSize="20sp"
+            android:transitionName="login_signup_trans"
             tools:ignore="RtlHardcoded" />
 
     </LinearLayout>

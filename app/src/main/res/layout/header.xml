@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gamoney"
+        android:text="@string/gamoney"
         android:textSize="24sp"
         android:layout_marginTop="-24dp"
         android:textColor="#000"
@@ -26,7 +26,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Earn Money Through gaming"
+        android:text="@string/earn_money_through_gaming"
         android:layout_marginStart="55dp"
         android:textColor="#000"/>
 

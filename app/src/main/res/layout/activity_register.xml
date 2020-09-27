@@ -4,40 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register"
     android:background="#ffff"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    tools:context=".Register">
 
     <ImageView
         android:layout_width="217dp"
         android:layout_height="157dp"
         android:src="@drawable/logo"
-        android:transitionName="logo_image"/>
+        android:transitionName="logo_image" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-40dp"
         android:fontFamily="@font/bungee"
-        android:textColor="#000"
         android:text="@string/welcome"
-        android:transitionName="logo_text"
-        android:textSize="40sp" />
+        android:textColor="#000"
+        android:textSize="40sp"
+        android:transitionName="logo_text" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
         android:text="@string/signup_and_start_earning"
-        android:textSize="18sp"
-        android:layout_marginTop="-30dp"/>
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -81,8 +81,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            android:transitionName="password_trans">
+            android:transitionName="password_trans"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
@@ -99,10 +99,10 @@
         android:id="@+id/registerbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:transitionName="button_trans"
         android:background="#000"
-        android:textColor="#fff"/>
+        android:text="@string/register"
+        android:textColor="#fff"
+        android:transitionName="button_trans" />
 
     <Button
         android:id="@+id/alreadybtn"

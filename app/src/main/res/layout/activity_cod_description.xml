@@ -11,95 +11,118 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/tournamenttext1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAllCaps="true"
-            android:text="@string/tournaments"
-            android:textStyle="bold"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="30dp"
             android:fontFamily="@font/bungee"
+            android:text="@string/tournaments"
+            android:textAllCaps="true"
             android:textColor="#000"
             android:textSize="25sp"
-            android:layout_marginStart="100dp"
-            android:id="@+id/tournamenttext1" />
+            android:textStyle="bold" />
 
         <ImageView
-            android:layout_below="@id/tournamenttext1"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@mipmap/ic_launcher"
             android:id="@+id/image_recycler1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/tournamenttext1"
             android:scaleType="centerCrop"
-            android:layout_marginTop="-10dp"/>
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
+            android:id="@+id/price11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/image_recycler1"
-            android:textSize="18sp"
-            android:text="@string/TestText"
-            android:fontFamily="@font/antic"
-            android:layout_marginTop="20dp"
-            android:textColor="#000"
+            android:layout_below="@+id/image_recycler1"
             android:layout_marginStart="18dp"
-            android:id="@+id/image_description1"/>
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/bungee"
+            android:text="@string/entry_fees"
+            android:textColor="#000"
+            android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/priceinput1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:fontFamily="@font/bungee"
+            android:layout_below="@+id/image_recycler1"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="21.5dp"
+            android:text="@string/TestText"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/image_description1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price11"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/antic"
+            android:text="@string/TestText"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/generalrule1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/image_description1"
             android:layout_marginStart="18dp"
-            android:textColor="#000"
+            android:fontFamily="@font/bungee"
             android:text="@string/Generalrules"
-            android:id="@+id/generalrule1"/>
+            android:textColor="#000"
+            android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/rules1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
             android:layout_below="@+id/generalrule1"
             android:layout_marginStart="18dp"
             android:fontFamily="@font/antic"
-            android:textColor="#000"
             android:text="@string/Rules"
-            android:id="@+id/rules1"/>
+            android:textColor="#000"
+            android:textSize="16sp" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="18dp"
-            android:src="@drawable/instagram"
-            android:layout_below="@id/rules1"
-            android:layout_marginTop="-35dp"
-            android:layout_marginStart="160dp"
             android:id="@+id/instagram1"
-            android:clickable="true"
-            android:focusable="true"/>
-
-        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="18dp"
-            android:src="@drawable/facebook"
             android:layout_below="@id/rules1"
+            android:layout_marginStart="160dp"
             android:layout_marginTop="-35dp"
-            android:layout_marginStart="190dp"
-            android:id="@+id/facebook1"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:src="@drawable/instagram" />
+
+        <ImageView
+            android:id="@+id/facebook1"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_below="@id/rules1"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="-35dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/facebook" />
 
         <Button
-            app:cornerRadius="400dp"
+            android:id="@+id/jointournament1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/facebook1"
-            android:text="@string/join_tournament"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="30dp"
             android:background="#000"
+            android:fontFamily="@font/bungee"
+            android:text="@string/join_tournament"
             android:textColor="#fff"
             android:textSize="13sp"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="135dp"
-            android:fontFamily="@font/bungee"
-            android:id="@+id/jointournament1"/>
+            app:cornerRadius="400dp" />
 
     </RelativeLayout>
 

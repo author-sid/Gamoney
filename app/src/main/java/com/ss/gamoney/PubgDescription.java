@@ -1,8 +1,5 @@
 package com.ss.gamoney;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
@@ -19,27 +18,30 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
 
 public class PubgDescription extends AppCompatActivity {
     private String receiverUserID;
-    ImageView Tournament_img,Facebook,Insta;
-    TextView description;
+    ImageView Tournament_img, Facebook, Insta;
+    TextView description, PriceDes;
     DatabaseReference UserRef;
     Button jointournament;
+    String price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pubg_description);
+        PriceDes = findViewById(R.id.price1);
 
         UserRef = FirebaseDatabase.getInstance().getReference().child("Pubg Tournaments");
-        receiverUserID = getIntent().getExtras().get("visit_user_id").toString();
+        receiverUserID = Objects.requireNonNull(Objects.requireNonNull(getIntent().getExtras()).get("visit_user_id")).toString();
 
         Tournament_img = findViewById(R.id.image_recycler);
         description = findViewById(R.id.image_description);
         jointournament = findViewById(R.id.jointournament);
-        
+
         RetrieveUserInfo();
 
         Facebook = findViewById(R.id.facebook1);
@@ -75,7 +77,9 @@ public class PubgDescription extends AppCompatActivity {
         jointournament.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PubgDescription.this,PubgAfterdes.class));
+                Intent intent = new Intent(PubgDescription.this, PubgAfterdes.class);
+                intent.putExtra("Price1", price);
+                startActivity(intent);
             }
         });
     }
@@ -84,11 +88,13 @@ public class PubgDescription extends AppCompatActivity {
         UserRef.child(receiverUserID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if ((snapshot.exists()) && (snapshot.hasChild("image"))){
-                    String tournamentimg = snapshot.child("image").getValue().toString();
-                    String Description = snapshot.child("description").getValue().toString();
+                if ((snapshot.exists()) && (snapshot.hasChild("image"))) {
+                    price = Objects.requireNonNull(snapshot.child("price").getValue()).toString();
+                    String tournamentimg = Objects.requireNonNull(snapshot.child("image").getValue()).toString();
+                    String Description = Objects.requireNonNull(snapshot.child("description").getValue()).toString();
                     description.setText(Description);
-                    Glide.with(PubgDescription.this).load(tournamentimg).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).override(200,200).centerCrop().into(Tournament_img);
+                    PriceDes.setText(price);
+                    Glide.with(PubgDescription.this).load(tournamentimg).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).override(200, 200).centerCrop().into(Tournament_img);
                 }
 
             }

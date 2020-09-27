@@ -19,21 +19,25 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class CodDescription extends AppCompatActivity {
     private String recieveUserId;
     ImageView Tournament_img1,Facebook,Insta;
-    TextView description1;
+    TextView description1,Pricedes1;
     DatabaseReference UserRef1;
     Button jointournament;
+    String price1;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cod_description);
+        Pricedes1 = findViewById(R.id.priceinput1);
 
         UserRef1 = FirebaseDatabase.getInstance().getReference().child("Cod Tournaments");
-        recieveUserId = getIntent().getExtras().get("user_id").toString();
+        recieveUserId = Objects.requireNonNull(Objects.requireNonNull(getIntent().getExtras()).get("user_id")).toString();
 
         Tournament_img1 = findViewById(R.id.image_recycler1);
         description1 = findViewById(R.id.image_description1);
@@ -74,7 +78,9 @@ public class CodDescription extends AppCompatActivity {
         jointournament.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(CodDescription.this,CodAfterdes.class));
+                Intent intent = new Intent(CodDescription.this,CodAfterdes.class);
+                intent.putExtra("price2",price1);
+                startActivity(intent);
             }
         });
 
@@ -85,9 +91,11 @@ public class CodDescription extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if ((snapshot.exists()) && (snapshot.hasChild("image"))) {
-                    String tournamentimg = snapshot.child("image").getValue().toString();
-                    String Description1 = snapshot.child("description").getValue().toString();
+                    price1 = Objects.requireNonNull(snapshot.child("price").getValue()).toString();
+                    String tournamentimg = Objects.requireNonNull(snapshot.child("image").getValue()).toString();
+                    String Description1 = Objects.requireNonNull(snapshot.child("description").getValue()).toString();
                     description1.setText(Description1);
+                    Pricedes1.setText(price1);
                     Glide.with(CodDescription.this).load(tournamentimg).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).override(200,200).centerCrop().into(Tournament_img1);
                 }
             }
