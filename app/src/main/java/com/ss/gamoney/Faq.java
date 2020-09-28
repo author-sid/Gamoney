@@ -53,26 +53,26 @@ public class Faq extends AppCompatActivity implements NavigationView.OnNavigatio
         String Message = "How To Join a Tournament:" +
                 "\n " +
                 "\n" +
-                "1.Select the Game from tournament section you want to play.\n" +
-                "2.After selecting Game, Select the tournament type(Different tournament types have different rewards).\n" +
-                "3.Register your team correctly (Any changes after registration is not allowed).\n" +
-                "4.Pay the desired amount.\n" +
-                "5.After successful payment, You will get Match id and password through email and in tournament section, 15 minutes before match.\n" +
-                "6.Rewards will be given just after match through desired payment method.\n" +
+                "1.Select the Game from tournament section you want to play.\n\n" +
+                "2.After selecting Game, Select the tournament type(Different tournament types have different rewards).\n\n" +
+                "3.Register your team correctly (Any changes after registration is not allowed).\n\n" +
+                "4.Pay the desired amount.\n\n" +
+                "5.After successful payment, You will get Match id and password through email and in tournament section, 15 minutes before match.\n\n" +
+                "6.Rewards will be given just after match through desired payment method.\n\n" +
                 "\n Q.Will i always get reward?\n" +
-                "A.Yes! if you loose, we will be giving ₹10/kill or depends on tournament type.\n" +
+                "A.Yes! if you loose, we will be giving ₹10/kill or depends on tournament type.\n\n" +
                 "\n" +
                 "Q.Can i play without team?\n" +
-                "A.Yes! You can play without team or team up with random players.\n" +
+                "A.Yes! You can play without team or team up with random players.\n\n" +
                 "\n" +
                 "Q.How will i get reward?\n" +
-                "A.You can select your payment option while registering for tournament. \n" +
+                "A.You can select your payment option while registering for tournament. \n\n" +
                 "\n" +
                 "Q.When will rewards be credited? \n" +
-                "A.After the match, Rewards will be transferred immediately with a confirmation email. \n" +
+                "A.After the match, Rewards will be transferred immediately with a confirmation email. \n\n" +
                 "\n" +
                 "Q.If there is a mistake while registering for the tournament? \n" +
-                "A.If you enter wrong name/id of your teammates, You will be disqualified from the match.\n" +
+                "A.If you enter wrong name/id of your teammates, You will be disqualified from the match.\n\n" +
                 "\n" +
                 "*For any queries feel free to contact us: \n ";
 
