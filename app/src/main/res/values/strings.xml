@@ -25,7 +25,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="tournaments">Tournaments</string>
-    <string name="faq1">FAQ</string>
+    <string name="faq2">FAQ</string>
     <string name="policy">Policy</string>
     <string name="contact_us">Contact Us</string>
     <string name="share">Share</string>
@@ -55,7 +55,6 @@
     <string name="tournament_image">Tournament Image</string>
     <string name="TestText">This is a Test Text</string>
     <string name="Generalrules">General Rules:-</string>
-    <string name="join_tournament">Join Tournament</string>
     <string name="Rules">1. Room id and password will be displayed 15 minutes before match on tournaments section.Players need to join room 10 minutes prior match.\n2. If you find any Hackers or cheaters, Please report them in app.\n3. No rematch in case of hackers or cheaters.\n4. Hackers will be permanently banned from the app and wont able to participate further.\n4. Rewards will be given on basis of rank and number of kills.Rewards will be credited same day after the match.\n5. Rewards are liable to change if there are less players.\n \n In case of any further queries or offers follow us on: \n \n</string>
     <string name="Emptyview">Sorry, No tournaments are available right now, Check again Later</string>
     <string name="player_1">PLAYER-1</string>
@@ -71,4 +70,21 @@
     <string name="entry_fees">Entry Fees:-</string>
     <string name="earn_money_through_gaming">Earn Money Through gaming</string>
     <string name="player_5">PLAYER-5</string>
+    <string name="name1">Name</string>
+    <string name="email1">Email</string>
+    <string name="subject1">Subject</string>
+    <string name="message1">Message</string>
+    <string name="thankyou_your_payment_is_successful_n_ntransaction_id">Thankyou Your payment is successful \n \nTransaction Id :</string>
+    <string name="join_tournament">Join Tournament</string>
+    <string name="home1">Home</string>
+    <string name="payment_unsuccessful_n_n_please_try_again">Payment Unsuccessful\n \n Please try again</string>
+    <string name="retry">Retry</string>
+    <string name="csgo">CSGO</string>
+    <string name="freefire">FREEFIRE</string>
+    <string name="cod">COD</string>
+    <string name="pubg">Pubg</string>
+    <string name="tournament1">Tournament</string>
+    <string name="chat1">Chat</string>
+    <string name="faq1">FAQ</string>
+    <string name="profile1">Profile</string>
 </resources>
