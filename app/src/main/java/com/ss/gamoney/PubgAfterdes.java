@@ -21,6 +21,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.SetOptions;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
@@ -48,6 +49,7 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
         Player4 = findViewById(R.id.player1input4);
         PhoneNo = findViewById(R.id.phoneinput);
         payment = findViewById(R.id.payment);
+        Checkout.preload(getApplicationContext());
         priceafter = getIntent().getStringExtra("Price1");
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -73,19 +75,24 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
 
                 if (TextUtils.isEmpty(Player_1)) {
                     Player1.setError("Player information is required");
+                    return;
                 }
                 if (TextUtils.isEmpty(PhoneNumber)) {
                     PhoneNo.setError("Phone number is required");
+                    return;
                 }
                 if (PhoneNumber.length() != 10) {
                     PhoneNo.setError("Please Enter Valid Phone number");
+                    return;
                 }
                 if (TextUtils.isEmpty(Player_2)) {
                     Player2.setError("Player information is required");
+                    return;
                 }
 
                 if (TextUtils.isEmpty(PhoneNumber)) {
                     PhoneNo.setError("Phone number is required");
+                    return;
                 }
 
 
@@ -101,6 +108,7 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
                     @Override
                     public void onSuccess(Void aVoid) {
                         Log.d(TAG1, "Team information Added Successfully" + userID);
+                        startPayment();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -108,7 +116,6 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
                         Log.d(TAG1, "onFailure: " + e.toString());
                     }
                 });
-                startPayment();
             }
         });
     }
@@ -116,13 +123,17 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
     public void startPayment() {
         Activity activity = this;
         Checkout co = new Checkout();
+
+       /*int image = R.drawable.logo_nav; // Can be any drawable
+        co.setImage(image);*/
+
         try {
             JSONObject options = new JSONObject();
 
-            options.put("name", "Merchant Name");
+            options.put("name", "Gamoney");
             options.put("description", "Reference No. #123456");
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-            options.put("theme.color", "#3399cc");
+            options.put("theme.color", "#da3f3d");
             options.put("currency", "INR");
             double total = Double.parseDouble(priceafter);
             total = total * 100;
@@ -142,6 +153,13 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
 
     @Override
     public void onPaymentSuccess(String s) {
+        mAuth = FirebaseAuth.getInstance();
+        username = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        fstore = FirebaseFirestore.getInstance();
+        DocumentReference documentReference = fstore.collection("users").document(username);
+        Map<String, Object> map = new HashMap<>();
+        map.put("Amount PUBG", "Paid    $" + priceafter);
+        documentReference.set(map, SetOptions.merge());
         Toast.makeText(this, "Payment Successful", Toast.LENGTH_SHORT).show();
 
     }

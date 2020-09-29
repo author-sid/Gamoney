@@ -68,9 +68,10 @@
                     android:singleLine="true"
                     android:textSize="12sp"
                     android:textColor="#FFFFFF"
-                    android:hint="Name"
+                    android:hint="@string/name1"
                     android:textColorHint="#FFFFFF"
-                    android:backgroundTint="#FFFFFF"/>
+                    android:backgroundTint="#FFFFFF"
+                    android:autofillHints="@string/name1"/>
 
 
                 <TextView
@@ -91,9 +92,10 @@
                     android:singleLine="true"
                     android:textSize="12sp"
                     android:textColor="#FFFFFF"
-                    android:hint="Email"
+                    android:hint="@string/email1"
                     android:backgroundTint="#FFFFFF"
-                    android:textColorHint="#FFFFFF"/>
+                    android:textColorHint="#FFFFFF"
+                    android:autofillHints="@string/email1"/>
 
 
                 <TextView
@@ -115,8 +117,9 @@
                     android:singleLine="true"
                     android:textSize="12sp"
                     android:textColor="#FFFFFF"
-                    android:hint="Subject"
+                    android:hint="@string/subject1"
                     android:textColorHint="#FFFFFF"
+                    android:autofillHints="@string/subject1"
                     android:backgroundTint="#FFFFFF"/>
 
                 <TextView
@@ -137,9 +140,10 @@
                     android:singleLine="false"
                     android:textSize="12sp"
                     android:textColor="#FFFFFF"
-                    android:hint="Message"
+                    android:hint="@string/message1"
                     android:textColorHint="#FFFFFF"
                     android:gravity="top"
+                    android:autofillHints="@string/message1"
                     android:backgroundTint="#FFFFFF"/>
 
                 <ImageView

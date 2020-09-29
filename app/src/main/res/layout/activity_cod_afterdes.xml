@@ -55,8 +55,8 @@
             android:layout_below="@+id/player1"
             android:layout_marginStart="15dp"
             android:hint="@string/player_1"
-            android:textColorHint="#FFF"
-            android:textSize="12sp"/>
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/player2"
@@ -78,8 +78,8 @@
             android:layout_below="@+id/player2"
             android:layout_marginStart="15dp"
             android:hint="@string/player_2"
-            android:textColorHint="#FFF"
-            android:textSize="12sp"/>
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/player3"
@@ -101,8 +101,8 @@
             android:layout_below="@+id/player3"
             android:layout_marginStart="15dp"
             android:hint="@string/player_3"
-            android:textColorHint="#FFF"
-            android:textSize="12sp"/>
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/player4"
@@ -124,8 +124,8 @@
             android:layout_below="@+id/player4"
             android:layout_marginStart="15dp"
             android:hint="@string/player_4"
-            android:textColorHint="#FFF"
-            android:textSize="12sp"/>
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/warning"
@@ -156,8 +156,8 @@
             android:layout_marginStart="15dp"
             android:hint="@string/phone_number"
             android:inputType="number"
-            android:textColorHint="#FFF"
-            android:textSize="12sp"/>
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/warning1"
@@ -176,8 +176,7 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="10dp"
             android:text="@string/proceed_to_payment"
-            android:background="@drawable/smallbutons"
-            android:textColor="#FFF"/>
+            android:background="#FFFFFF"/>
 
     </RelativeLayout>
 

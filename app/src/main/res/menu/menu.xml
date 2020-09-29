@@ -3,21 +3,21 @@
 
     <item
         android:id="@+id/tournament"
-        android:title="Tournament"
+        android:title="@string/tournament1"
         android:icon="@drawable/ic_game"/>
 
     <item
         android:id="@+id/chat"
-        android:title="Chat"
+        android:title="@string/chat1"
         android:icon="@drawable/ic_chat"/>
 
     <item
         android:id="@+id/faq"
-        android:title="FAQ"
+        android:title="@string/faq2"
         android:icon="@drawable/faq"/>
 
     <item
         android:id="@+id/profile"
-        android:title="Profile"
+        android:title="@string/profile1"
         android:icon="@drawable/ic_account"/>
 </menu>
