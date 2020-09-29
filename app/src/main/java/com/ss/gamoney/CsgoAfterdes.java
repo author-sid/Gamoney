@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -20,6 +21,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.SetOptions;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
@@ -30,7 +32,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class CsgoAfterdes extends AppCompatActivity implements PaymentResultListener {
-    EditText Player1, Player2, Player3, Player4, PhoneNo;
+    EditText Player1, Player2, Player3, Player4, Player5, PhoneNo;
     FirebaseAuth mAuth;
     FirebaseFirestore fstore;
     Button payment;
@@ -45,6 +47,7 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
         Player2 = findViewById(R.id.player1input2);
         Player3 = findViewById(R.id.player1input3);
         Player4 = findViewById(R.id.player1input4);
+        Player5 = findViewById(R.id.player1input5);
         PhoneNo = findViewById(R.id.phoneinput);
         payment = findViewById(R.id.payment);
         priceafter3 = getIntent().getStringExtra("price4");
@@ -69,38 +72,63 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
                 final String Player_2 = Player2.getText().toString();
                 final String Player_3 = Player3.getText().toString();
                 final String Player_4 = Player4.getText().toString();
+                final String Player_5 = Player5.getText().toString();
                 final String PhoneNumber = PhoneNo.getText().toString();
 
                 if (TextUtils.isEmpty(Player_1)) {
                     Player1.setError("Player information is required");
+                    return;
                 }
-                if (TextUtils.isEmpty(PhoneNumber)) {
-                    PhoneNo.setError("Phone number is required");
-                }
-                if (PhoneNumber.length() != 10) {
-                    PhoneNo.setError("Please Enter Valid Phone number");
-                }
+
                 if (TextUtils.isEmpty(Player_2)) {
                     Player2.setError("Player information is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(Player_3)) {
+                    Player3.setError("Player information is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(Player_4)) {
+                    Player4.setError("Player information is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(Player_5)) {
+                    Player5.setError("Player information is required");
+                    return;
                 }
 
                 if (TextUtils.isEmpty(PhoneNumber)) {
                     PhoneNo.setError("Phone number is required");
+                    return;
+                }
+                if (PhoneNumber.length() != 10) {
+                    PhoneNo.setError("Please Enter Valid Phone number");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(PhoneNumber)) {
+                    PhoneNo.setError("Phone number is required");
+                    return;
                 }
 
 
                 userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                 DocumentReference documentReference = fstore.collection("users").document(userID).collection("Team Info").document("CsgoTeam");
                 Map<String, Object> user = new HashMap<>();
-                user.put("PUBGP1", Player_1);
-                user.put("PUBGP2", Player_2);
-                user.put("PUBGP3", Player_3);
-                user.put("PUBGP4", Player_4);
+                user.put("CSGOP1", Player_1);
+                user.put("CSGOP2", Player_2);
+                user.put("CSGOP3", Player_3);
+                user.put("CSGOP4", Player_4);
+                user.put("CSGOP5", Player_5);
                 user.put("PrizeNumber", PhoneNumber);
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Log.d(TAG, "Team information Added Successfully" + userID);
+                        startPayment();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -108,7 +136,6 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
                         Log.d(TAG, "onFailure: " + e.toString());
                     }
                 });
-                startPayment();
             }
         });
     }
@@ -119,10 +146,10 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
         try {
             JSONObject options = new JSONObject();
 
-            options.put("name", "Merchant Name");
+            options.put("name", "Gamoney");
             options.put("description", "Reference No. #123456");
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-            options.put("theme.color", "#3399cc");
+            options.put("theme.color", "#da3f3d");
             options.put("currency", "INR");
             double total = Double.parseDouble(priceafter3);
             total = total * 100;
@@ -134,7 +161,6 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
             options.put("prefill", preFill);
             co.open(activity, options);
 
-
         } catch (Exception e) {
             Log.e("error", "error" + e.toString());
         }
@@ -143,7 +169,14 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
 
     @Override
     public void onPaymentSuccess(String s) {
-
+        mAuth = FirebaseAuth.getInstance();
+        username = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        fstore = FirebaseFirestore.getInstance();
+        DocumentReference documentReference = fstore.collection("users").document(username);
+        Map<String, Object> map = new HashMap<>();
+        map.put("Amount Csgo", "Paid    $" + priceafter3);
+        documentReference.set(map, SetOptions.merge());
+        Toast.makeText(this, "Payment Successful", Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +21,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.SetOptions;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
@@ -73,34 +75,40 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
 
                 if (TextUtils.isEmpty(Player_1)) {
                     Player1.setError("Player information is required");
+                    return;
                 }
                 if (TextUtils.isEmpty(PhoneNumber)) {
                     PhoneNo.setError("Phone number is required");
+                    return;
                 }
                 if (PhoneNumber.length() != 10) {
                     PhoneNo.setError("Please Enter Valid Phone number");
+                    return;
                 }
                 if (TextUtils.isEmpty(Player_2)) {
                     Player2.setError("Player information is required");
+                    return;
                 }
 
                 if (TextUtils.isEmpty(PhoneNumber)) {
                     PhoneNo.setError("Phone number is required");
+                    return;
                 }
 
 
                 userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                 DocumentReference documentReference = fstore.collection("users").document(userID).collection("Team Info").document("CodTeam");
                 Map<String, Object> user = new HashMap<>();
-                user.put("PUBGP1", Player_1);
-                user.put("PUBGP2", Player_2);
-                user.put("PUBGP3", Player_3);
-                user.put("PUBGP4", Player_4);
+                user.put("CODP1", Player_1);
+                user.put("CODP2", Player_2);
+                user.put("CODP3", Player_3);
+                user.put("CODP4", Player_4);
                 user.put("PrizeNumber", PhoneNumber);
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Log.d(TAG, "Team information Added Successfully" + userID);
+                        startPayment();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -108,7 +116,6 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
                         Log.d(TAG, "onFailure: " + e.toString());
                     }
                 });
-                startPayment();
             }
         });
     }
@@ -119,10 +126,10 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
         try {
             JSONObject options = new JSONObject();
 
-            options.put("name", "Merchant Name");
+            options.put("name", "Gamoney");
             options.put("description", "Reference No. #123456");
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-            options.put("theme.color", "#3399cc");
+            options.put("theme.color", "#da3f3d");
             options.put("currency", "INR");
             double total = Double.parseDouble(priceafter1);
             total = total * 100;
@@ -143,6 +150,14 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
 
     @Override
     public void onPaymentSuccess(String s) {
+        mAuth = FirebaseAuth.getInstance();
+        username = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        fstore = FirebaseFirestore.getInstance();
+        DocumentReference documentReference = fstore.collection("users").document(username);
+        Map<String, Object> map = new HashMap<>();
+        map.put("Amount COD", "Paid    $" + priceafter1);
+        documentReference.set(map, SetOptions.merge());
+        Toast.makeText(this, "Payment Successful", Toast.LENGTH_SHORT).show();
 
     }
 

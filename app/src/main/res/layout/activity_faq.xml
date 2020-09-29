@@ -30,7 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:itemIconTint="#B46101"
+            android:background="#222222"
+            app:itemIconTint="#da3f3d"
             app:itemTextColor="#FFFFFF"
             app:menu="@menu/menu" />
 
@@ -55,7 +56,6 @@
             </ScrollView>
 
         </RelativeLayout>
-
 
     </RelativeLayout>
 

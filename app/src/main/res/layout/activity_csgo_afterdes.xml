@@ -54,7 +54,8 @@
             android:layout_below="@+id/player1"
             android:layout_marginStart="15dp"
             android:hint="@string/player_1"
-            android:background="#FFFFFF"/>
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/player2"
@@ -76,7 +77,8 @@
             android:layout_below="@+id/player2"
             android:layout_marginStart="15dp"
             android:hint="@string/player_2"
-            android:background="#FFFFFF"/>
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/player3"
@@ -98,7 +100,8 @@
             android:layout_below="@+id/player3"
             android:layout_marginStart="15dp"
             android:hint="@string/player_3"
-            android:background="#FFFFFF"/>
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/player4"
@@ -120,13 +123,37 @@
             android:layout_below="@+id/player4"
             android:layout_marginStart="15dp"
             android:hint="@string/player_4"
-            android:background="#FFFFFF"/>
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/player5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/player1input4"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/player_5"
+            android:textAllCaps="true"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/player1input5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/player5"
+            android:layout_marginStart="15dp"
+            android:hint="@string/player_5"
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/warning"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/player1input4"
+            android:layout_below="@+id/player1input5"
             android:layout_marginStart="18dp"
             android:text="@string/NameWarning"
             android:textColor="#FFFFFF"/>
@@ -151,7 +178,8 @@
             android:layout_marginStart="15dp"
             android:hint="@string/phone_number"
             android:inputType="number"
-            android:background="#FFFFFF"/>
+            android:textColorHint="#fff"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/warning1"

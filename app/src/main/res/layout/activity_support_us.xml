@@ -32,7 +32,7 @@
             android:layout_marginTop="150dp"
             android:fontFamily="@font/bangers"
             android:text="@string/rate_us_5_star_on_play_store"
-            android:textColor="#000"
+            android:textColor="#fff"
             android:textSize="23sp" />
 
         <Button
@@ -54,7 +54,7 @@
             android:layout_marginTop="50dp"
             android:fontFamily="@font/bangers"
             android:text="@string/support_our_community"
-            android:textColor="#000"
+            android:textColor="#fff"
             android:textSize="23sp" />
 
         <Button

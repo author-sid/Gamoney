@@ -33,10 +33,8 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_policy);
 
-        TextView mTitleWindow =findViewById(R.id.titleWindow);
         TextView mMessageWindow=findViewById(R.id.messageWindow);
         mAuth=FirebaseAuth.getInstance();
-        mTitleWindow.setText("Policy");
         String message="Privacy Policy\n" +
                 "Siddharth sharma and Lekh Nath Jha built the Gamoney app as a Free app. This SERVICE is provided by them at no cost and is intended for use as is.\n" +
                 "\n" +
