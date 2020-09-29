@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".paymentunsuccessful"
+    android:background="@drawable/backgroundgamoney">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="300dp"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/wrongg"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="150dp"
+        android:layout_alignParentTop="true">
+
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="280dp"
+        android:text="     Payment Unsuccessful\n
+           \n           Please try again"
+
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="italic"
+        android:id="@+id/text1">
+
+
+    </TextView>
+
+    <Button
+        android:id="@+id/Retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="101dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="120dp"
+        android:text="Retry"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:background="@drawable/newbutton"
+        android:textColor="#FFFFFF"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Home"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginRight="140dp"
+        android:textSize="25sp"
+        android:textStyle="italic"
+        android:textColor="#FFFFFF"
+        android:id="@+id/Backtohome">
+
+
+    </TextView>
+
+
+
+</RelativeLayout>

@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="-10dp"
-            android:background="@android:color/white"
+            android:background="@drawable/backgroundgamoney"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
@@ -35,7 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="ExtraText">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -44,7 +45,7 @@
                     android:layout_marginBottom="30dp"
                     android:fontFamily="@font/bungee"
                     android:text="@string/tell_us_about_your_problem"
-                    android:textColor="#000"
+                    android:textColor="#FFFFFF"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -54,7 +55,7 @@
                     android:layout_marginStart="3dp"
                     android:text="@string/your_name"
                     android:textAllCaps="true"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="#FFFFFF"
                     android:textSize="12sp" />
 
 
@@ -65,17 +66,21 @@
                     android:layout_marginBottom="20dp"
                     android:inputType="text"
                     android:singleLine="true"
-                    android:textSize="14sp" />
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:hint="Name"
+                    android:textColorHint="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"/>
 
 
                 <TextView
-                    android:layout_width="fill_parent"
+                    android:layout_width= "fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:text="@string/your_email"
                     android:textAllCaps="true"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="12sp" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"/>
 
                 <EditText
                     android:id="@+id/your_email"
@@ -84,7 +89,11 @@
                     android:layout_marginBottom="20dp"
                     android:inputType="textEmailAddress"
                     android:singleLine="true"
-                    android:textSize="14sp" />
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:hint="Email"
+                    android:backgroundTint="#FFFFFF"
+                    android:textColorHint="#FFFFFF"/>
 
 
                 <TextView
@@ -93,7 +102,7 @@
                     android:layout_marginStart="3dp"
                     android:text="@string/subject"
                     android:textAllCaps="true"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="#FFFFFF"
                     android:textSize="12sp" />
 
 
@@ -104,7 +113,11 @@
                     android:layout_marginBottom="20dp"
                     android:inputType="text"
                     android:singleLine="true"
-                    android:textSize="14sp" />
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:hint="Subject"
+                    android:textColorHint="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"/>
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -112,7 +125,7 @@
                     android:layout_marginStart="3dp"
                     android:text="@string/message"
                     android:textAllCaps="true"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="#FFFFFF"
                     android:textSize="12sp" />
 
                 <EditText
@@ -122,7 +135,12 @@
                     android:layout_marginBottom="20dp"
                     android:inputType="textMultiLine"
                     android:singleLine="false"
-                    android:textSize="14sp" />
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:hint="Message"
+                    android:textColorHint="#FFFFFF"
+                    android:gravity="top"
+                    android:backgroundTint="#FFFFFF"/>
 
                 <ImageView
                     android:layout_width="100dp"
@@ -137,7 +155,9 @@
                     android:layout_marginStart="100dp"
                     android:layout_marginTop="-43dp"
                     android:text="@string/i_m_not_a_robot"
-                    android:textSize="17sp" />
+                    android:textSize="17sp"
+                    android:textColor="#FFFFFF"
+                    android:buttonTint="#FFFFFF" />
 
                 <Button
                     android:id="@+id/post_message"
@@ -145,9 +165,9 @@
                     android:layout_height="35dp"
                     android:layout_marginStart="120dp"
                     android:layout_marginTop="40dp"
-                    android:background="@color/colorPrimary"
                     android:text="@string/send_message"
-                    android:textColor="@android:color/white"
+                    android:background="@drawable/backgroundgamoney"
+                    android:textColor="#FFFFFF"
                     android:textSize="15sp" />
 
                 <ImageView

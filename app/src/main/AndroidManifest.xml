@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".paymentunsuccessful"></activity>
+        <activity android:name=".Paymentsuccesssfull" />
         <activity android:name=".CsgoDescription" />
         <activity android:name=".FreefireDescription" />
         <activity android:name=".CodDescription" />
@@ -22,10 +24,10 @@
         <activity android:name=".SupportUs" />
         <activity android:name=".ContactUs" />
         <activity android:name=".Policy" />
-        <activity android:name=".FreefireAfterdes"/>
-        <activity android:name=".CodAfterdes"/>
-        <activity android:name=".CsgoAfterdes"/>
-        <activity android:name=".PubgAfterdes"/>
+        <activity android:name=".FreefireAfterdes" />
+        <activity android:name=".CodAfterdes" />
+        <activity android:name=".CsgoAfterdes" />
+        <activity android:name=".PubgAfterdes" />
         <activity
             android:name=".Register"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -48,7 +50,6 @@
         <meta-data
             android:name="com.razorpay.ApiKey"
             android:value="rzp_test_L7rUAT54uR8uKu" />
-
     </application>
 
 </manifest>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CodDescription">
+    tools:context=".CodDescription"
+    android:background="@drawable/backgroundgamoney">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
             android:fontFamily="@font/bungee"
             android:text="@string/tournaments"
             android:textAllCaps="true"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -40,7 +41,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/bungee"
             android:text="@string/entry_fees"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <TextView
@@ -51,7 +52,7 @@
             android:layout_marginStart="170dp"
             android:layout_marginTop="21.5dp"
             android:text="@string/TestText"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <TextView
@@ -63,7 +64,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/antic"
             android:text="@string/TestText"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <TextView
@@ -74,7 +75,7 @@
             android:layout_marginStart="18dp"
             android:fontFamily="@font/bungee"
             android:text="@string/Generalrules"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <TextView
@@ -85,7 +86,7 @@
             android:layout_marginStart="18dp"
             android:fontFamily="@font/antic"
             android:text="@string/Rules"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
         <ImageView
@@ -117,10 +118,10 @@
             android:layout_below="@id/facebook1"
             android:layout_marginStart="135dp"
             android:layout_marginTop="30dp"
-            android:background="#000"
+            android:background="#FFFFFF"
             android:fontFamily="@font/bungee"
             android:text="@string/join_tournament"
-            android:textColor="#fff"
+            android:textColor="#000000"
             android:textSize="13sp"
             app:cornerRadius="400dp" />
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FreefireDescription">
+    tools:context=".FreefireDescription"
+    android:background="@drawable/backgroundgamoney">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             android:text="@string/tournaments"
             android:textStyle="bold"
             android:fontFamily="@font/bungee"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:textSize="25sp"
             android:layout_marginStart="100dp"
             android:id="@+id/tournamenttext2"
@@ -41,7 +42,7 @@
             android:fontFamily="@font/bungee"
             android:layout_marginTop="10dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textColor="#FFFFFF"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,7 +53,7 @@
             android:layout_marginStart="170dp"
             android:layout_marginTop="21.5dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textColor="#FFFFFF"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,7 +63,7 @@
             android:text="@string/TestText"
             android:fontFamily="@font/antic"
             android:layout_marginTop="5dp"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:layout_marginStart="18dp"
             android:id="@+id/image_description2"/>
 
@@ -73,7 +74,7 @@
             android:fontFamily="@font/bungee"
             android:layout_below="@id/image_description2"
             android:layout_marginStart="18dp"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:text="@string/Generalrules"
             android:id="@+id/generalrule2"/>
 
@@ -84,7 +85,7 @@
             android:layout_below="@+id/generalrule2"
             android:layout_marginStart="18dp"
             android:fontFamily="@font/antic"
-            android:textColor="#000"
+            android:textColor="#FFFFFF"
             android:text="@string/Rules"
             android:id="@+id/rules2"/>
 
@@ -116,8 +117,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/facebook2"
             android:text="@string/join_tournament"
-            android:background="#000"
-            android:textColor="#fff"
+            android:background="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="13sp"
             android:layout_marginTop="30dp"
             android:layout_marginStart="135dp"

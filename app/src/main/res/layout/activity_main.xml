@@ -11,7 +11,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+       >
 
 
         <RelativeLayout
@@ -64,7 +65,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:background="#FFFFFF">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/full_namefield"
@@ -81,7 +83,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:background="#FFFFFF">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email_field"
@@ -89,7 +92,8 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/email_small_icon"
                     android:drawablePadding="10dp"
-                    android:hint="@string/email">
+                    android:hint="@string/email"
+                    android:background="#FFFFFF">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -98,7 +102,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:background="#FFFFFF">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone_field"
@@ -106,7 +111,8 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/phone_small_icon"
                     android:drawablePadding="10dp"
-                    android:hint="@string/number">
+                    android:hint="@string/number"
+                    android:background="#FFFFFF">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -117,17 +123,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="#000"
+                android:background="#000000"
                 android:fontFamily="@font/bungee"
                 android:text="@string/update"
-                android:textColor="#fff" />
+                android:textColor="#FFFFFF" />
 
             <ProgressBar
                 android:id="@+id/progressBar3"
                 style="?android:attr/progressBarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:background="#FFFFFF"/>
 
             <Button
                 android:id="@+id/logout"
