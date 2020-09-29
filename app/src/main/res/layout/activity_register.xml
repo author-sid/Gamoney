@@ -99,7 +99,7 @@
         android:id="@+id/registerbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000"
+        android:background="@drawable/smallbutons"
         android:text="@string/register"
         android:textColor="#fff"
         android:transitionName="button_trans" />
