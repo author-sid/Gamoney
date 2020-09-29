@@ -118,7 +118,7 @@
             android:layout_below="@id/facebook1"
             android:layout_marginStart="135dp"
             android:layout_marginTop="30dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/smallbutons"
             android:fontFamily="@font/bungee"
             android:text="@string/join_tournament"
             android:textColor="#fff"

@@ -123,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="#000000"
+               android:background="@drawable/smallbutons"
                 android:fontFamily="@font/bungee"
                 android:text="@string/update"
                 android:textColor="#FFFFFF" />
@@ -140,7 +140,7 @@
                 android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#000"
+                android:background="@drawable/smallbutons"
                 android:fontFamily="@font/bungee"
                 android:onClick="logout"
                 android:text="@string/logout"

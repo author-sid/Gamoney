@@ -32,7 +32,7 @@
             android:layout_marginTop="150dp"
             android:fontFamily="@font/bangers"
             android:text="@string/rate_us_5_star_on_play_store"
-            android:textColor="#000"
+            android:textColor="#FFF"
             android:textSize="23sp" />
 
         <Button
@@ -43,7 +43,9 @@
             android:layout_marginStart="150dp"
             android:layout_marginTop="15dp"
             android:onClick="Myweb"
-            android:text="@string/rate_us" />
+            android:text="@string/rate_us"
+            android:background="@drawable/smallbutons"
+            android:textColor="#FFF"/>
 
         <TextView
             android:id="@+id/Donate_text"
@@ -54,7 +56,7 @@
             android:layout_marginTop="50dp"
             android:fontFamily="@font/bangers"
             android:text="@string/support_our_community"
-            android:textColor="#000"
+            android:textColor="#FFF"
             android:textSize="23sp" />
 
         <Button
@@ -64,7 +66,9 @@
             android:layout_below="@+id/Donate_text"
             android:layout_marginStart="150dp"
             android:layout_marginTop="18dp"
-            android:text="@string/donate" />
+            android:text="@string/donate"
+            android:background="@drawable/smallbutons"
+            android:textColor="#FFF"/>
 
 
     </RelativeLayout>

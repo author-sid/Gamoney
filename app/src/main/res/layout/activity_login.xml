@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundgamoney"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".LoginActivity">
@@ -24,7 +23,7 @@
         android:layout_marginTop="-40dp"
         android:fontFamily="@font/bungee"
         android:text="@string/hello_there_welcome_back"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         android:textSize="40sp"
         android:transitionName="logo_text" />
 
@@ -36,7 +35,7 @@
         android:text="@string/signin_to_start_earning"
         android:textSize="18sp"
         android:transitionName="logo_desc"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#000"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,14 +48,12 @@
             android:id="@+id/email_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:transitionName="email_trans"
-            android:background="#FFFFFF">
+            android:transitionName="email_trans">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email"
-                android:background="#FFFFFF"/>
+                android:hint="@string/email" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,15 +62,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:transitionName="password_trans"
-            app:passwordToggleEnabled="true"
-            android:background="#FFFFFF">
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
-                android:inputType="textPassword"
-                android:background="#FFFFFF"/>
+                android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,12 +78,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_margin="5dp"
-            android:background="#FFFFFF"
             android:elevation="0dp"
             android:fontFamily="@font/singn"
             android:text="@string/forget_password"
             android:textSize="20sp"
-            tools:ignore="RtlHardcoded" />
+            tools:ignore="RtlHardcoded"
+            android:background="@drawable/smallbutons" />
 
         <Button
             android:id="@+id/Login_btn"
@@ -96,10 +91,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:background="#FFFFFF"
+           android:textSize="20sp"
             android:text="@string/login"
             android:textColor="#000000"
-            android:transitionName="button_trans" />
+            android:transitionName="button_trans"
+            android:fontFamily="@font/singn"
+            android:background="@drawable/smallbutons"/>
 
         <Button
             android:id="@+id/signup"
@@ -107,14 +104,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_margin="5dp"
-            android:background="#FFFFFF"
             android:elevation="0dp"
             android:fontFamily="@font/singn"
             android:text="@string/new_user_sign_up"
             android:textColor="#000"
             android:textSize="20sp"
             android:transitionName="login_signup_trans"
-            tools:ignore="RtlHardcoded" />
+            tools:ignore="RtlHardcoded"
+            android:background="@drawable/smallbutons"/>
 
     </LinearLayout>
 

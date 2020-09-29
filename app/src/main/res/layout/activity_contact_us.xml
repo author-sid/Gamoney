@@ -166,7 +166,7 @@
                     android:layout_marginStart="120dp"
                     android:layout_marginTop="40dp"
                     android:text="@string/send_message"
-                    android:background="@drawable/backgroundgamoney"
+                    android:background="@drawable/smallbutons"
                     android:textColor="#FFFFFF"
                     android:textSize="15sp" />
 
