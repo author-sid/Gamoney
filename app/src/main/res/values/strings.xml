@@ -87,4 +87,9 @@
     <string name="chat1">Chat</string>
     <string name="faq1">FAQ</string>
     <string name="profile1">Profile</string>
+    <string name="_500">500</string>
+    <string name="rupee">₹</string>
+    <string name="_05">05</string>
+    <string name="september">September</string>
+    <string name="map">Location</string>
 </resources>

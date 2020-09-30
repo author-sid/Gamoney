@@ -26,8 +26,11 @@ public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg, adapter_pu
 
     @Override
     protected void onBindViewHolder(@NonNull pubgviewholder holder, final int position, @NonNull model_pubg model_pubg) {
+        holder.tournamentname.setText(model_pubg.getTournamentname());
+        holder.date.setText(model_pubg.getDate());
+        holder.month.setText(model_pubg.getMonth());
+        holder.map.setText(model_pubg.getMap());
         holder.price.setText(model_pubg.getPrice());
-        holder.description.setText(model_pubg.getDescription());
         holder.time.setText(model_pubg.getTime());
         Glide.with(holder.img.getContext()).load(model_pubg.getImage()).into(holder.img);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -53,13 +56,16 @@ public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg, adapter_pu
 
     static class pubgviewholder extends RecyclerView.ViewHolder {
         ImageView img;
-        TextView price, description, time;
+        TextView price, time, date , map , month , tournamentname;
 
         public pubgviewholder(@NonNull View itemView) {
             super(itemView);
+            date = itemView.findViewById(R.id.date);
+            map = itemView.findViewById(R.id.map);
+            month = itemView.findViewById(R.id.month);
+            tournamentname = itemView.findViewById(R.id.tournamentname);
             img = itemView.findViewById(R.id.Tournament_image);
             price = itemView.findViewById(R.id.Tournament_price);
-            description = itemView.findViewById(R.id.Tournament_description);
             time = itemView.findViewById(R.id.Tournament_time);
         }
     }

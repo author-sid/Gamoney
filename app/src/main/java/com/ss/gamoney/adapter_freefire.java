@@ -24,8 +24,11 @@ public class adapter_freefire extends FirebaseRecyclerAdapter<model_freefire,ada
 
     @Override
     protected void onBindViewHolder(@NonNull freefireholder holder, final int position, @NonNull model_freefire model_freefire) {
+        holder.tournamentname.setText(model_freefire.getTournamentname());
+        holder.date.setText(model_freefire.getDate());
+        holder.month.setText(model_freefire.getMonth());
+        holder.map.setText(model_freefire.getMap());
         holder.price.setText(model_freefire.getPrice());
-        holder.description.setText(model_freefire.getDescription());
         holder.time.setText(model_freefire.getTime());
         Glide.with(holder.img.getContext()).load(model_freefire.getImage()).into(holder.img);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -49,12 +52,15 @@ public class adapter_freefire extends FirebaseRecyclerAdapter<model_freefire,ada
 
     static class freefireholder extends RecyclerView.ViewHolder{
         ImageView img;
-        TextView price,description,time;
+        TextView price, time, date , map , month , tournamentname;
         public freefireholder(@NonNull View itemView) {
             super(itemView);
+            date = itemView.findViewById(R.id.date);
+            map = itemView.findViewById(R.id.map);
+            month = itemView.findViewById(R.id.month);
+            tournamentname = itemView.findViewById(R.id.tournamentname);
             img = itemView.findViewById(R.id.Tournament_image);
             price = itemView.findViewById(R.id.Tournament_price);
-            description = itemView.findViewById(R.id.Tournament_description);
             time = itemView.findViewById(R.id.Tournament_time);
         }
     }

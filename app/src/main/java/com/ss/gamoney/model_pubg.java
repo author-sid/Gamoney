@@ -1,17 +1,20 @@
 package com.ss.gamoney;
 
 public class model_pubg {
-    String price, image, description, time;
+    String price, image,time, map, date , month, tournamentname;
 
     model_pubg() {
         //Blank constructor
     }
 
-    public model_pubg(String price, String image, String description, String time) {
+    public model_pubg(String price, String image, String time, String map, String date, String month, String tournamentname) {
         this.price = price;
         this.image = image;
-        this.description = description;
         this.time = time;
+        this.map = map;
+        this.date = date;
+        this.month = month;
+        this.tournamentname = tournamentname;
     }
 
     public String getPrice() {
@@ -30,14 +33,6 @@ public class model_pubg {
         this.image = image;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getTime() {
         return time;
     }
@@ -46,4 +41,35 @@ public class model_pubg {
         this.time = time;
     }
 
+    public String getMap() {
+        return map;
+    }
+
+    public void setMap(String map) {
+        this.map = map;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getTournamentname() {
+        return tournamentname;
+    }
+
+    public void setTournamentname(String tournamentname) {
+        this.tournamentname = tournamentname;
+    }
 }

@@ -78,12 +78,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:elevation="0dp"
             android:fontFamily="@font/singn"
             android:text="@string/forget_password"
             android:textSize="20sp"
-            tools:ignore="RtlHardcoded"
-            android:background="@drawable/smallbutons" />
+            tools:ignore="RtlHardcoded" />
 
         <Button
             android:id="@+id/Login_btn"
@@ -91,12 +91,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-           android:textSize="20sp"
+            android:background="#000"
             android:text="@string/login"
-            android:textColor="#000000"
-            android:transitionName="button_trans"
-            android:fontFamily="@font/singn"
-            android:background="@drawable/smallbutons"/>
+            android:textColor="#fff"
+            android:transitionName="button_trans" />
 
         <Button
             android:id="@+id/signup"
@@ -104,14 +102,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:elevation="0dp"
             android:fontFamily="@font/singn"
             android:text="@string/new_user_sign_up"
             android:textColor="#000"
             android:textSize="20sp"
             android:transitionName="login_signup_trans"
-            tools:ignore="RtlHardcoded"
-            android:background="@drawable/smallbutons"/>
+            tools:ignore="RtlHardcoded" />
+
 
     </LinearLayout>
 

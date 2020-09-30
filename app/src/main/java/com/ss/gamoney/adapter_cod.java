@@ -24,8 +24,11 @@ public class adapter_cod extends FirebaseRecyclerAdapter<model_cod,adapter_cod.c
 
     @Override
     protected void onBindViewHolder(@NonNull codholder holder, final int position, @NonNull model_cod model_cod) {
+        holder.tournamentname.setText(model_cod.getTournamentname());
+        holder.date.setText(model_cod.getDate());
+        holder.month.setText(model_cod.getMonth());
+        holder.map.setText(model_cod.getMap());
         holder.price.setText(model_cod.getPrice());
-        holder.description.setText(model_cod.getDescription());
         holder.time.setText(model_cod.getTime());
         Glide.with(holder.img.getContext()).load(model_cod.getImage()).into(holder.img);
 
@@ -50,12 +53,15 @@ public class adapter_cod extends FirebaseRecyclerAdapter<model_cod,adapter_cod.c
 
     static class codholder extends RecyclerView.ViewHolder{
         ImageView img;
-        TextView price,description,time;
+        TextView price, time, date , map , month , tournamentname;
         public codholder(@NonNull View itemView) {
             super(itemView);
+            date = itemView.findViewById(R.id.date);
+            map = itemView.findViewById(R.id.map);
+            month = itemView.findViewById(R.id.month);
+            tournamentname = itemView.findViewById(R.id.tournamentname);
             img = itemView.findViewById(R.id.Tournament_image);
             price = itemView.findViewById(R.id.Tournament_price);
-            description = itemView.findViewById(R.id.Tournament_description);
             time = itemView.findViewById(R.id.Tournament_time);
         }
     }

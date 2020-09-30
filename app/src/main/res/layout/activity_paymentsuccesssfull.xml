@@ -63,12 +63,7 @@
         android:id="@+id/Backtohome2"
         android:focusable="true">
 
-
-</TextView>
-
-
-
-
+    </TextView>
 
 </RelativeLayout>
 

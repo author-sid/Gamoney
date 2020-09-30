@@ -28,8 +28,11 @@ public class adapter_csgo extends FirebaseRecyclerAdapter<model_csgo,adapter_csg
 
     @Override
     protected void onBindViewHolder(@NonNull csgoholder holder, final int position, @NonNull model_csgo model_csgo) {
+        holder.tournamentname.setText(model_csgo.getTournamentname());
+        holder.date.setText(model_csgo.getDate());
+        holder.month.setText(model_csgo.getMonth());
+        holder.map.setText(model_csgo.getMap());
         holder.price.setText(model_csgo.getPrice());
-        holder.description.setText(model_csgo.getDescription());
         holder.time.setText(model_csgo.getTime());
         Glide.with(holder.img.getContext()).load(model_csgo.getImage()).into(holder.img);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -54,13 +57,16 @@ public class adapter_csgo extends FirebaseRecyclerAdapter<model_csgo,adapter_csg
 
     static class csgoholder extends RecyclerView.ViewHolder {
         ImageView img;
-        TextView price,description, time;
+        TextView price, time, date , map , month , tournamentname;
 
         public csgoholder(@NonNull View itemView) {
             super(itemView);
+            date = itemView.findViewById(R.id.date);
+            map = itemView.findViewById(R.id.map);
+            month = itemView.findViewById(R.id.month);
+            tournamentname = itemView.findViewById(R.id.tournamentname);
             img = itemView.findViewById(R.id.Tournament_image);
             price = itemView.findViewById(R.id.Tournament_price);
-            description = itemView.findViewById(R.id.Tournament_description);
             time = itemView.findViewById(R.id.Tournament_time);
         }
     }
