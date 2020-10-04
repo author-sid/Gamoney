@@ -14,7 +14,7 @@
         android:layout_height="157dp"
         android:src="@drawable/logo"
         android:transitionName="logo_image"
-        tools:ignore="ContentDescription" />
+        android:contentDescription="@string/logo" />
 
     <TextView
         android:id="@+id/logo_name"

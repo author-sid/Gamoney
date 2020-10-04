@@ -94,4 +94,11 @@
     <string name="map">Location</string>
     <string name="referencenumber">#123456</string>
     <string name="hashtag">#</string>
+    <string name="payment_successful">payment successful</string>
+    <string name="tournament_poster">Tournament Poster</string>
+    <string name="logo">Logo</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="captcha">Captcha</string>
+    <string name="instagram">Instagram</string>
+    <string name="facebook">Facebook</string>
 </resources>

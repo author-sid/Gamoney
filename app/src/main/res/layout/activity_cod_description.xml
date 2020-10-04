@@ -30,7 +30,8 @@
             android:layout_height="100dp"
             android:layout_below="@id/tournamenttext1"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher"
+            android:contentDescription="@string/tournament_poster"/>
 
         <TextView
             android:id="@+id/price11"
@@ -98,6 +99,7 @@
             android:layout_marginTop="-35dp"
             android:clickable="true"
             android:focusable="true"
+            android:contentDescription="@string/instagram"
             android:src="@drawable/instagram" />
 
         <ImageView
@@ -109,7 +111,8 @@
             android:layout_marginTop="-35dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/facebook" />
+            android:src="@drawable/facebook"
+            android:contentDescription="@string/facebook"/>
 
         <Button
             android:id="@+id/jointournament1"

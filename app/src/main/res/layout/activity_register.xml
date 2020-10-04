@@ -13,7 +13,8 @@
         android:layout_width="217dp"
         android:layout_height="157dp"
         android:src="@drawable/logo"
-        android:transitionName="logo_image" />
+        android:transitionName="logo_image"
+        android:contentDescription="@string/logo"/>
 
     <TextView
         android:layout_width="wrap_content"
