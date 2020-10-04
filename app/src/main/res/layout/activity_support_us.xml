@@ -13,7 +13,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@drawable/sidenav1"
-        app:itemTextColor="#fff"
+        app:itemTextColor="#F5F5DC"
+        app:itemIconTint="#F5F5DC"
         app:headerLayout="@layout/header"
         app:menu="@menu/main_menu" />
 

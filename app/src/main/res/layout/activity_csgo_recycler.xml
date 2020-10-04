@@ -14,7 +14,8 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/header"
         android:background="@drawable/sidenav1"
-        app:itemTextColor="#fff"
+        app:itemTextColor="#F5F5DC"
+        app:itemIconTint="#F5F5DC"
         app:menu="@menu/main_menu" />
 
     <RelativeLayout

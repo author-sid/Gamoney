@@ -156,11 +156,11 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
-        android:background="#222222"
-        app:itemIconTint="#da3f3d"
-        app:itemTextColor="#FFFFFF"
+        android:background="@drawable/bottomnav1"
+        app:itemIconTint="#F5F5DC"
+        app:itemTextColor="#F5F5DC"
         app:menu="@menu/menu" />
 
 

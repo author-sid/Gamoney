@@ -9,6 +9,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="70dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/logo_nav"
         android:contentDescription="@string/logo"/>
 
@@ -17,8 +18,8 @@
         android:layout_height="wrap_content"
         android:text="@string/gamoney"
         android:textSize="24sp"
-        android:layout_marginTop="90dp"
-        android:textColor="#fff"
+        android:layout_marginTop="126dp"
+        android:textColor="#F5F5DC"
         android:layout_marginStart="60dp"
         android:fontFamily="@font/bungee"/>
 
@@ -26,9 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:text="@string/earn_money_through_gaming"
-        android:textColor="#fff"
+        android:textColor="#F5F5DC"
         android:textSize="12sp"
-        android:layout_marginTop="140dp"
-        android:layout_marginStart="50dp"/>
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="175dp"/>
 
 </RelativeLayout>
