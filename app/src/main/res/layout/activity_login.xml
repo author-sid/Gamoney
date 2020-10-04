@@ -33,9 +33,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-30dp"
         android:text="@string/signin_to_start_earning"
+        android:textColor="#000"
         android:textSize="18sp"
-        android:transitionName="logo_desc"
-        android:textColor="#000"/>
+        android:transitionName="logo_desc" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -119,8 +119,8 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:background="#FFFFFF"/>
+        android:background="#FFFFFF"
+        android:visibility="invisible" />
 
 
 </LinearLayout>

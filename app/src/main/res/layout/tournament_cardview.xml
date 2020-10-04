@@ -9,22 +9,17 @@
     app:cardUseCompatPadding="true">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="411dp"
         android:layout_height="164dp"
         android:background="@drawable/bg1">
 
         <ImageView
             android:id="@+id/Tournament_image"
-            android:layout_width="146dp"
+            android:layout_width="140dp"
             android:layout_height="160dp"
-            android:layout_marginStart="337dp"
-            android:src="@mipmap/ic_launcher"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginStart="262dp"
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/rupee"
@@ -36,27 +31,18 @@
             android:text="@string/rupee"
             android:textColor="#000"
             android:textSize="26sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/Tournament_price"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/Tournament_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"
-            android:layout_marginEnd="107dp"
-            android:layout_marginBottom="9dp"
+            android:layout_marginStart="115dp"
             android:text="@string/_500"
             android:textColor="#000"
             android:textSize="26sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/Tournament_image"
-            app:layout_constraintStart_toEndOf="@+id/rupee"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/date"
@@ -68,32 +54,20 @@
             android:text="@string/_05"
             android:textColor="#fff"
             android:textSize="50sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/Tournament_image"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginTop="11dp"
             android:layout_marginEnd="68dp"
             android:layout_marginBottom="1dp"
             android:text="@string/september"
             android:textColor="#fff"
             android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/Tournament_time"
-            app:layout_constraintEnd_toStartOf="@+id/Tournament_image"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/date"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/Tournament_time"
@@ -101,49 +75,37 @@
             android:layout_height="wrap_content"
             android:text="@string/time1"
             android:textColor="#B9BCB4"
+            android:layout_marginStart="95dp"
+            android:layout_marginTop="35dp"
             android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.254"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.235" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tournamentname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="65dp"
             android:layout_marginEnd="116dp"
             android:text="@string/tournament1"
             android:textAllCaps="true"
             android:textColor="#F14404"
             android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/map"
-            app:layout_constraintEnd_toStartOf="@+id/Tournament_image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
+            android:layout_marginTop="86dp"
             android:layout_marginEnd="179dp"
-            android:layout_marginBottom="52dp"
             android:text="@string/map"
             android:textColor="#B9BCB4"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/Tournament_image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tournamentname" />
+            android:textSize="15sp" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 
 </androidx.cardview.widget.CardView>

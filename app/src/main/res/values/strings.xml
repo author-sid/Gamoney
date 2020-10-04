@@ -92,4 +92,6 @@
     <string name="_05">05</string>
     <string name="september">September</string>
     <string name="map">Location</string>
+    <string name="referencenumber">#123456</string>
+    <string name="hashtag">#</string>
 </resources>

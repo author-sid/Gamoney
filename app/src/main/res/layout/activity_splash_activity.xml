@@ -40,7 +40,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/antic"
-        android:text="@string/earn_money_while_playing"
+        android:text="@string/earn_money_through_gaming"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="18sp"

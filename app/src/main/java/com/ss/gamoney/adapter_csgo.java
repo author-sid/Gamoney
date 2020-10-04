@@ -28,7 +28,7 @@ public class adapter_csgo extends FirebaseRecyclerAdapter<model_csgo,adapter_csg
 
     @Override
     protected void onBindViewHolder(@NonNull csgoholder holder, final int position, @NonNull model_csgo model_csgo) {
-        holder.tournamentname.setText(model_csgo.getTournamentname());
+        holder.tournament.setText(model_csgo.getTournament());
         holder.date.setText(model_csgo.getDate());
         holder.month.setText(model_csgo.getMonth());
         holder.map.setText(model_csgo.getMap());
@@ -57,14 +57,14 @@ public class adapter_csgo extends FirebaseRecyclerAdapter<model_csgo,adapter_csg
 
     static class csgoholder extends RecyclerView.ViewHolder {
         ImageView img;
-        TextView price, time, date , map , month , tournamentname;
+        TextView price, time, date , map , month , tournament;
 
         public csgoholder(@NonNull View itemView) {
             super(itemView);
             date = itemView.findViewById(R.id.date);
             map = itemView.findViewById(R.id.map);
             month = itemView.findViewById(R.id.month);
-            tournamentname = itemView.findViewById(R.id.tournamentname);
+            tournament = itemView.findViewById(R.id.tournamentname);
             img = itemView.findViewById(R.id.Tournament_image);
             price = itemView.findViewById(R.id.Tournament_price);
             time = itemView.findViewById(R.id.Tournament_time);

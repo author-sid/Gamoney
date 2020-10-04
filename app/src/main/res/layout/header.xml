@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="@drawable/sidenavigation"
-    android:orientation="vertical"
-    android:gravity="bottom"
-    android:padding="20dp">
+    android:background="@drawable/sidenav1">
 
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/logo_nav"
-        android:layout_marginStart="80dp"/>
+        android:layout_marginStart="70dp"
+        android:src="@drawable/logo_nav" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/gamoney"
         android:textSize="24sp"
-        android:layout_marginTop="-24dp"
+        android:layout_marginTop="90dp"
         android:textColor="#fff"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="60dp"
         android:fontFamily="@font/bungee"/>
+
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="31dp"
         android:text="@string/earn_money_through_gaming"
-        android:layout_marginStart="55dp"
-        android:textColor="#000"/>
+        android:textColor="#fff"
+        android:textSize="12sp"
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="50dp"/>
 
-</LinearLayout>
+</RelativeLayout>

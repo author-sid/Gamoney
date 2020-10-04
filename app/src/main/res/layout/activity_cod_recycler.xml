@@ -9,6 +9,8 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
+        android:background="@drawable/sidenav1"
+        app:itemTextColor="#fff"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
@@ -32,6 +34,6 @@
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp" />
 
-
     </RelativeLayout>
+
 </androidx.drawerlayout.widget.DrawerLayout>

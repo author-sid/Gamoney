@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PubgDescription"
-    android:background="@drawable/backgroundgamoney">
+    android:background="@drawable/backgroundgamoney"
+    tools:context=".PubgDescription">
 
     <RelativeLayout
         android:layout_width="match_parent"

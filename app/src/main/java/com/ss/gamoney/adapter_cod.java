@@ -24,7 +24,7 @@ public class adapter_cod extends FirebaseRecyclerAdapter<model_cod,adapter_cod.c
 
     @Override
     protected void onBindViewHolder(@NonNull codholder holder, final int position, @NonNull model_cod model_cod) {
-        holder.tournamentname.setText(model_cod.getTournamentname());
+        holder.tournament.setText(model_cod.getTournament());
         holder.date.setText(model_cod.getDate());
         holder.month.setText(model_cod.getMonth());
         holder.map.setText(model_cod.getMap());
@@ -53,13 +53,13 @@ public class adapter_cod extends FirebaseRecyclerAdapter<model_cod,adapter_cod.c
 
     static class codholder extends RecyclerView.ViewHolder{
         ImageView img;
-        TextView price, time, date , map , month , tournamentname;
+        TextView price, time, date , map , month , tournament;
         public codholder(@NonNull View itemView) {
             super(itemView);
             date = itemView.findViewById(R.id.date);
             map = itemView.findViewById(R.id.map);
             month = itemView.findViewById(R.id.month);
-            tournamentname = itemView.findViewById(R.id.tournamentname);
+            tournament = itemView.findViewById(R.id.tournamentname);
             img = itemView.findViewById(R.id.Tournament_image);
             price = itemView.findViewById(R.id.Tournament_price);
             time = itemView.findViewById(R.id.Tournament_time);

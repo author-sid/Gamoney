@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CodAfterdes"
-    android:background="@drawable/backgroundgamoney">
+    android:background="@drawable/backgroundgamoney"
+    tools:context=".CodAfterdes">
 
 
     <RelativeLayout
@@ -44,9 +43,9 @@
             android:layout_marginTop="30dp"
             android:text="@string/player_1"
             android:textAllCaps="true"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"/>
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/player1input1"
@@ -55,8 +54,9 @@
             android:layout_below="@+id/player1"
             android:layout_marginStart="15dp"
             android:hint="@string/player_1"
+            android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/player2"
@@ -67,9 +67,9 @@
             android:layout_marginTop="30dp"
             android:text="@string/player_2"
             android:textAllCaps="true"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"/>
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/player1input2"
@@ -78,8 +78,9 @@
             android:layout_below="@+id/player2"
             android:layout_marginStart="15dp"
             android:hint="@string/player_2"
+            android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/player3"
@@ -90,9 +91,9 @@
             android:layout_marginTop="30dp"
             android:text="@string/player_3"
             android:textAllCaps="true"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"/>
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/player1input3"
@@ -101,8 +102,9 @@
             android:layout_below="@+id/player3"
             android:layout_marginStart="15dp"
             android:hint="@string/player_3"
+            android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/player4"
@@ -113,9 +115,9 @@
             android:layout_marginTop="30dp"
             android:text="@string/player_4"
             android:textAllCaps="true"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"/>
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/player1input4"
@@ -124,8 +126,9 @@
             android:layout_below="@+id/player4"
             android:layout_marginStart="15dp"
             android:hint="@string/player_4"
+            android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/warning"
@@ -134,7 +137,7 @@
             android:layout_below="@+id/player1input4"
             android:layout_marginStart="18dp"
             android:text="@string/NameWarning"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/PhoneNo"
@@ -144,9 +147,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:text="@string/phone_number1"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"/>
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/phoneinput"
@@ -156,8 +159,9 @@
             android:layout_marginStart="15dp"
             android:hint="@string/phone_number"
             android:inputType="number"
+            android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/warning1"
@@ -166,7 +170,7 @@
             android:layout_below="@+id/phoneinput"
             android:layout_marginStart="18dp"
             android:text="@string/this_number_will_be_used_for_prize_distribution"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/payment"
@@ -175,9 +179,9 @@
             android:layout_below="@+id/warning1"
             android:layout_marginStart="100dp"
             android:layout_marginTop="10dp"
-            android:text="@string/proceed_to_payment"
             android:background="@drawable/smallbutons"
-            android:textColor="#fff"/>
+            android:text="@string/proceed_to_payment"
+            android:textColor="#fff" />
 
     </RelativeLayout>
 

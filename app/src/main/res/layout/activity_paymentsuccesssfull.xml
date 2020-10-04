@@ -3,25 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Paymentsuccesssfull"
-    android:background="@drawable/backgroundgamoney">
+    android:background="@drawable/backgroundgamoney"
+    tools:context=".Paymentsuccesssfull">
 
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="300dp"
         android:layout_marginBottom="300dp"
-        android:src="@drawable/tick"
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="150dp"
-        android:layout_alignParentTop="true">
-
-
-    </ImageView>
-
+        android:src="@drawable/tick"/>
 
     <TextView
+        android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -29,11 +26,26 @@
         android:text="@string/thankyou_your_payment_is_successful_n_ntransaction_id"
         android:textColor="#FFFFFF"
         android:textSize="25sp"
-        android:textStyle="italic"
-        android:id="@+id/text1">
+        android:textStyle="italic"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="#fff"
+        android:text="@string/referencenumber"
+        android:layout_marginTop="370dp"
+        android:layout_marginStart="210dp"
+        android:id="@+id/referencenumber"/>
 
-    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        android:text="@string/hashtag"
+        android:layout_marginTop="370dp"
+        android:layout_marginStart="210dp"/>
 
     <Button
         android:id="@+id/Jointournament"
@@ -43,27 +55,25 @@
         android:layout_marginTop="450dp"
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="120dp"
+        android:background="@drawable/newbutton"
         android:text="@string/join_tournament"
-        android:textSize="18sp"
-        android:textStyle="italic"
         android:textColor="#FFF"
-        android:background="@drawable/newbutton"/>
+        android:textSize="18sp"
+        android:textStyle="italic" />
 
     <TextView
+        android:id="@+id/Backtohome2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:text="@string/home1"
         android:layout_marginStart="160dp"
         android:layout_marginTop="650dp"
         android:layout_marginEnd="140dp"
-        android:textSize="25sp"
-        android:textStyle="italic"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/home1"
         android:textColor="#FFFFFF"
-        android:id="@+id/Backtohome2"
-        android:focusable="true">
-
-    </TextView>
+        android:textSize="25sp"
+        android:textStyle="italic"/>
 
 </RelativeLayout>
 

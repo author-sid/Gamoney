@@ -26,7 +26,7 @@ public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg, adapter_pu
 
     @Override
     protected void onBindViewHolder(@NonNull pubgviewholder holder, final int position, @NonNull model_pubg model_pubg) {
-        holder.tournamentname.setText(model_pubg.getTournamentname());
+        holder.tournament.setText(model_pubg.getTournament());
         holder.date.setText(model_pubg.getDate());
         holder.month.setText(model_pubg.getMonth());
         holder.map.setText(model_pubg.getMap());
@@ -56,14 +56,14 @@ public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg, adapter_pu
 
     static class pubgviewholder extends RecyclerView.ViewHolder {
         ImageView img;
-        TextView price, time, date , map , month , tournamentname;
+        TextView price, time, date , map , month , tournament;
 
         public pubgviewholder(@NonNull View itemView) {
             super(itemView);
             date = itemView.findViewById(R.id.date);
             map = itemView.findViewById(R.id.map);
             month = itemView.findViewById(R.id.month);
-            tournamentname = itemView.findViewById(R.id.tournamentname);
+            tournament = itemView.findViewById(R.id.tournamentname);
             img = itemView.findViewById(R.id.Tournament_image);
             price = itemView.findViewById(R.id.Tournament_price);
             time = itemView.findViewById(R.id.Tournament_time);

@@ -1,20 +1,20 @@
 package com.ss.gamoney;
 
 public class model_csgo {
-    String price, image,time, map, date , month, tournamentname;
+    String price, image,time, map, date , month, tournament;
 
     model_csgo() {
         //Blank constructor
     }
 
-    public model_csgo(String price, String image, String time, String map, String date, String month, String tournamentname) {
+    public model_csgo(String price, String image, String time, String map, String date, String month, String tournament) {
         this.price = price;
         this.image = image;
         this.time = time;
         this.map = map;
         this.date = date;
         this.month = month;
-        this.tournamentname = tournamentname;
+        this.tournament = tournament;
     }
 
     public String getPrice() {
@@ -65,11 +65,11 @@ public class model_csgo {
         this.month = month;
     }
 
-    public String getTournamentname() {
-        return tournamentname;
+    public String getTournament() {
+        return tournament;
     }
 
-    public void setTournamentname(String tournamentname) {
-        this.tournamentname = tournamentname;
+    public void setTournament(String tournament) {
+        this.tournament = tournament;
     }
 }

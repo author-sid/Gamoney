@@ -2,19 +2,24 @@ package com.ss.gamoney;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 public class Paymentsuccesssfull extends AppCompatActivity {
-    private TextView Backtohome2;
+    TextView Backtohome2,Referenceno;
+    int reference;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paymentsuccesssfull);
-
+        reference = getIntent().getIntExtra("Referenceno",0);
+        Referenceno = findViewById(R.id.referencenumber);
+        Referenceno.setText(""+reference);
         Backtohome2 = findViewById(R.id.Backtohome2);
         Backtohome2.setOnClickListener(new View.OnClickListener() {
             @Override

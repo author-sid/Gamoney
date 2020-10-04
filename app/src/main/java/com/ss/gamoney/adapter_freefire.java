@@ -24,7 +24,7 @@ public class adapter_freefire extends FirebaseRecyclerAdapter<model_freefire,ada
 
     @Override
     protected void onBindViewHolder(@NonNull freefireholder holder, final int position, @NonNull model_freefire model_freefire) {
-        holder.tournamentname.setText(model_freefire.getTournamentname());
+        holder.tournament.setText(model_freefire.getTournament());
         holder.date.setText(model_freefire.getDate());
         holder.month.setText(model_freefire.getMonth());
         holder.map.setText(model_freefire.getMap());
@@ -52,13 +52,13 @@ public class adapter_freefire extends FirebaseRecyclerAdapter<model_freefire,ada
 
     static class freefireholder extends RecyclerView.ViewHolder{
         ImageView img;
-        TextView price, time, date , map , month , tournamentname;
+        TextView price, time, date , map , month , tournament;
         public freefireholder(@NonNull View itemView) {
             super(itemView);
             date = itemView.findViewById(R.id.date);
             map = itemView.findViewById(R.id.map);
             month = itemView.findViewById(R.id.month);
-            tournamentname = itemView.findViewById(R.id.tournamentname);
+            tournament = itemView.findViewById(R.id.tournamentname);
             img = itemView.findViewById(R.id.Tournament_image);
             price = itemView.findViewById(R.id.Tournament_price);
             time = itemView.findViewById(R.id.Tournament_time);

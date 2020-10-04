@@ -42,6 +42,7 @@
             android:id="@+id/nav_Logout"
             android:title="@string/log_out"
             android:icon="@drawable/log_out"/>
+
     </group>
 
 </menu>

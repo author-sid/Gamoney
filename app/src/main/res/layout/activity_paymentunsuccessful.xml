@@ -3,37 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".paymentunsuccessful"
-    android:background="@drawable/backgroundgamoney">
+    android:background="@drawable/backgroundgamoney"
+    tools:context=".paymentunsuccessful">
 
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="300dp"
         android:layout_marginBottom="100dp"
-        android:src="@drawable/wrongg"
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="150dp"
-        android:layout_alignParentTop="true">
-
-
-    </ImageView>
+        android:src="@drawable/wrongg"/>
 
     <TextView
+        android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="280dp"
         android:text="@string/payment_unsuccessful_n_n_please_try_again"
-
         android:textColor="#FFFFFF"
         android:textSize="25sp"
-        android:textStyle="italic"
-        android:id="@+id/text1">
-
-
-    </TextView>
+        android:textStyle="italic"/>
 
     <Button
         android:id="@+id/Retry"
@@ -43,31 +36,25 @@
         android:layout_marginTop="400dp"
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="120dp"
-        android:text="@string/retry"
-        android:textSize="18sp"
-        android:textStyle="italic"
         android:background="@drawable/newbutton"
+        android:text="@string/retry"
         android:textColor="#FFFFFF"
-
-        />
+        android:textSize="18sp"
+        android:textStyle="italic" />
 
     <TextView
+        android:id="@+id/Backtohome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:text="@string/home1"
         android:layout_marginStart="160dp"
         android:layout_marginTop="650dp"
         android:layout_marginEnd="140dp"
-        android:textSize="25sp"
-        android:textStyle="italic"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/home1"
         android:textColor="#FFFFFF"
-        android:id="@+id/Backtohome"
-        android:focusable="true">
-
-
-    </TextView>
-
+        android:textSize="25sp"
+        android:textStyle="italic"/>
 
 
 </RelativeLayout>

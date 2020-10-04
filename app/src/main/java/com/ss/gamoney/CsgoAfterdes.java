@@ -5,13 +5,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,6 +30,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 
 public class CsgoAfterdes extends AppCompatActivity implements PaymentResultListener {
     EditText Player1, Player2, Player3, Player4, Player5, PhoneNo;
@@ -37,6 +38,7 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
     FirebaseFirestore fstore;
     Button payment;
     String userID, priceafter3, username, phonenumber, email;
+    int randomNumber;
     public static final String TAG = "TAG";
 
     @Override
@@ -143,11 +145,13 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
     public void startPayment() {
         Activity activity = this;
         Checkout co = new Checkout();
+        Random random = new Random();
+        randomNumber = random.nextInt(123450 - 12340 +1)+12340;
         try {
             JSONObject options = new JSONObject();
 
             options.put("name", "Gamoney");
-            options.put("description", "Reference No. #123456");
+            options.put("description", "Reference No. #"+randomNumber);
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
             options.put("theme.color", "#da3f3d");
             options.put("currency", "INR");
@@ -176,11 +180,15 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
         Map<String, Object> map = new HashMap<>();
         map.put("Amount Csgo", "Paid    $" + priceafter3);
         documentReference.set(map, SetOptions.merge());
-        Toast.makeText(this, "Payment Successful", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(CsgoAfterdes.this,Paymentsuccesssfull.class);
+        intent.putExtra("Referenceno",randomNumber);
+        startActivity(intent);
     }
 
     @Override
     public void onPaymentError(int i, String s) {
+        Intent intent = new Intent(CsgoAfterdes.this,Paymentsuccesssfull.class);
+        startActivity(intent);
 
     }
 }
