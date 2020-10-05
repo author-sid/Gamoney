@@ -21,7 +21,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.SetOptions;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
@@ -37,7 +36,7 @@ public class FreefireAfterdes extends AppCompatActivity implements PaymentResult
     FirebaseAuth mAuth;
     FirebaseFirestore fstore;
     Button payment;
-    String userID, priceafter2, username, phonenumber, email;
+    String userID, priceafter2, username, phonenumber, email, date , time, month, location, tournament,tournamentimg;
     int randomNumber;
     public static final String TAG = "TAG";
 
@@ -52,6 +51,12 @@ public class FreefireAfterdes extends AppCompatActivity implements PaymentResult
         PhoneNo = findViewById(R.id.phoneinput);
         payment = findViewById(R.id.payment);
         priceafter2 = getIntent().getStringExtra("price3");
+        date = getIntent().getStringExtra("date3");
+        time = getIntent().getStringExtra("time3");
+        month = getIntent().getStringExtra("month3");
+        location = getIntent().getStringExtra("location3");
+        tournament = getIntent().getStringExtra("tournament3");
+        tournamentimg = getIntent().getStringExtra("img3");
 
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -155,12 +160,16 @@ public class FreefireAfterdes extends AppCompatActivity implements PaymentResult
     @Override
     public void onPaymentSuccess(String s) {
         mAuth = FirebaseAuth.getInstance();
-        username = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
-        fstore = FirebaseFirestore.getInstance();
-        DocumentReference documentReference = fstore.collection("users").document(username);
+        userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        DocumentReference documentReference = fstore.collection("users").document(userID).collection("Joined").document();
         Map<String, Object> map = new HashMap<>();
-        map.put("Amount Freefire", "Paid    $" + priceafter2);
-        documentReference.set(map, SetOptions.merge());
+        map.put("tournament", tournament);
+        map.put("month", month);
+        map.put("location", location);
+        map.put("date", date);
+        map.put("time", time);
+        map.put("image",tournamentimg);
+        documentReference.set(map);
         Intent intent = new Intent(FreefireAfterdes.this,Paymentsuccesssfull.class);
         intent.putExtra("Referenceno",randomNumber);
         startActivity(intent);

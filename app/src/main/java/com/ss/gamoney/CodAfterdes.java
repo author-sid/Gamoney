@@ -21,7 +21,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.SetOptions;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
@@ -37,7 +36,7 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
     FirebaseAuth mAuth;
     FirebaseFirestore fstore;
     Button payment;
-    String userID, priceafter1, username, phonenumber, email;
+    String userID, priceafter1, username, phonenumber, email, date , time, month, location, tournament,tournamentimg;
     int randomNumber;
     public static final String TAG = "TAG";
 
@@ -52,6 +51,12 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
         PhoneNo = findViewById(R.id.phoneinput);
         payment = findViewById(R.id.payment);
         priceafter1 = getIntent().getStringExtra("price2");
+        date = getIntent().getStringExtra("date2");
+        time = getIntent().getStringExtra("time2");
+        month = getIntent().getStringExtra("month2");
+        location = getIntent().getStringExtra("location2");
+        tournament = getIntent().getStringExtra("tournament2");
+        tournamentimg = getIntent().getStringExtra("img2");
 
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
@@ -155,12 +160,16 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
     @Override
     public void onPaymentSuccess(String s) {
         mAuth = FirebaseAuth.getInstance();
-        username = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
-        fstore = FirebaseFirestore.getInstance();
-        DocumentReference documentReference = fstore.collection("users").document(username);
+        userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        DocumentReference documentReference = fstore.collection("users").document(userID).collection("Joined").document();
         Map<String, Object> map = new HashMap<>();
-        map.put("Amount COD", "Paid    $" + priceafter1);
-        documentReference.set(map, SetOptions.merge());
+        map.put("tournament", tournament);
+        map.put("month", month);
+        map.put("location", location);
+        map.put("date", date);
+        map.put("time", time);
+        map.put("image",tournamentimg);
+        documentReference.set(map);
         Intent intent = new Intent(CodAfterdes.this,Paymentsuccesssfull.class);
         intent.putExtra("Referenceno",randomNumber);
         startActivity(intent);

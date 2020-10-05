@@ -28,7 +28,7 @@ public class FreefireDescription extends AppCompatActivity {
     TextView description2, pricedes2;
     DatabaseReference UserRef2;
     Button jointournament;
-    String price2;
+    String price2,date,month,time,tournament,location,tournamentimg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +79,12 @@ public class FreefireDescription extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(FreefireDescription.this, FreefireAfterdes.class);
                 intent.putExtra("price3", price2);
+                intent.putExtra("date3", date);
+                intent.putExtra("location3", location);
+                intent.putExtra("tournament3", tournament);
+                intent.putExtra("month3", month);
+                intent.putExtra("time3", time);
+                intent.putExtra("img3",tournamentimg);
                 startActivity(intent);
             }
         });
@@ -90,7 +96,12 @@ public class FreefireDescription extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if ((snapshot.exists()) && (snapshot.hasChild("image"))) {
                     price2 = Objects.requireNonNull(snapshot.child("price").getValue()).toString();
-                    String tournamentimg = Objects.requireNonNull(snapshot.child("image").getValue()).toString();
+                    date = Objects.requireNonNull(snapshot.child("date").getValue()).toString();
+                    location = Objects.requireNonNull(snapshot.child("map").getValue()).toString();
+                    tournament = Objects.requireNonNull(snapshot.child("tournament").getValue()).toString();
+                    month = Objects.requireNonNull(snapshot.child("month").getValue()).toString();
+                    time = Objects.requireNonNull(snapshot.child("time").getValue()).toString();
+                    tournamentimg = Objects.requireNonNull(snapshot.child("image").getValue()).toString();
                     String Description2 = Objects.requireNonNull(snapshot.child("description").getValue()).toString();
                     pricedes2.setText(price2);
                     description2.setText(Description2);

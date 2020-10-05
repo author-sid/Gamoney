@@ -27,7 +27,7 @@ public class CodDescription extends AppCompatActivity {
     TextView description1,Pricedes1;
     DatabaseReference UserRef1;
     Button jointournament;
-    String price1;
+    String price1,date,month,time,tournament,location,tournamentimg;
 
 
     @Override
@@ -80,6 +80,12 @@ public class CodDescription extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(CodDescription.this,CodAfterdes.class);
                 intent.putExtra("price2",price1);
+                intent.putExtra("date2", date);
+                intent.putExtra("location2", location);
+                intent.putExtra("tournament2", tournament);
+                intent.putExtra("month2", month);
+                intent.putExtra("time2", time);
+                intent.putExtra("img2",tournamentimg);
                 startActivity(intent);
             }
         });
@@ -92,7 +98,12 @@ public class CodDescription extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if ((snapshot.exists()) && (snapshot.hasChild("image"))) {
                     price1 = Objects.requireNonNull(snapshot.child("price").getValue()).toString();
-                    String tournamentimg = Objects.requireNonNull(snapshot.child("image").getValue()).toString();
+                    date = Objects.requireNonNull(snapshot.child("date").getValue()).toString();
+                    location = Objects.requireNonNull(snapshot.child("map").getValue()).toString();
+                    tournament = Objects.requireNonNull(snapshot.child("tournament").getValue()).toString();
+                    month = Objects.requireNonNull(snapshot.child("month").getValue()).toString();
+                    time = Objects.requireNonNull(snapshot.child("time").getValue()).toString();
+                    tournamentimg = Objects.requireNonNull(snapshot.child("image").getValue()).toString();
                     String Description1 = Objects.requireNonNull(snapshot.child("description").getValue()).toString();
                     description1.setText(Description1);
                     Pricedes1.setText(price1);

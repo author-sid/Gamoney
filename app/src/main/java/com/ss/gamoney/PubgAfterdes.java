@@ -21,7 +21,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.SetOptions;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
@@ -37,7 +36,7 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
     FirebaseAuth mAuth;
     FirebaseFirestore fstore;
     Button payment;
-    String userID, priceafter, username, phonenumber, email;
+    String userID, priceafter, username, phonenumber, email, date , time, month, location, tournament,tournamentimg;
     int randomNumber;
     public static final String TAG1 = "TAG";
 
@@ -53,6 +52,12 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
         payment = findViewById(R.id.payment);
         Checkout.preload(getApplicationContext());
         priceafter = getIntent().getStringExtra("Price1");
+        date = getIntent().getStringExtra("date1");
+        time = getIntent().getStringExtra("time1");
+        month = getIntent().getStringExtra("month1");
+        location = getIntent().getStringExtra("location1");
+        tournament = getIntent().getStringExtra("tournament1");
+        tournamentimg = getIntent().getStringExtra("img1");
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         username = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
@@ -159,12 +164,16 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
     @Override
     public void onPaymentSuccess(String s) {
         mAuth = FirebaseAuth.getInstance();
-        username = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
-        fstore = FirebaseFirestore.getInstance();
-        DocumentReference documentReference = fstore.collection("users").document(username);
+        userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        DocumentReference documentReference = fstore.collection("users").document(userID).collection("Joined").document();
         Map<String, Object> map = new HashMap<>();
-        map.put("Amount PUBG", "Paid    $" + priceafter);
-        documentReference.set(map, SetOptions.merge());
+        map.put("tournament", tournament);
+        map.put("month", month);
+        map.put("location", location);
+        map.put("date", date);
+        map.put("time", time);
+        map.put("image",tournamentimg);
+        documentReference.set(map);
         Intent intent = new Intent(PubgAfterdes.this,Paymentsuccesssfull.class);
         intent.putExtra("Referenceno",randomNumber);
         startActivity(intent);
@@ -175,6 +184,5 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
     public void onPaymentError(int i, String s) {
         Intent intent = new Intent(PubgAfterdes.this,paymentunsuccessful.class);
         startActivity(intent);
-
     }
 }

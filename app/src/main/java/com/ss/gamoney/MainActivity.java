@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.faq:
-                        startActivity(new Intent(getApplicationContext(), Faq.class));
+                        startActivity(new Intent(getApplicationContext(), joinedTournament.class));
                         overridePendingTransition(0, 0);
                         return true;
 

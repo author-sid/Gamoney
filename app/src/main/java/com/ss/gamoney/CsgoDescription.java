@@ -27,7 +27,7 @@ public class CsgoDescription extends AppCompatActivity {
     TextView description3, Pricedes3;
     DatabaseReference UserRef3;
     Button jointournament;
-    String price3;
+    String price3,date,month,time,tournament,location,tournamentimg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +79,12 @@ public class CsgoDescription extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(CsgoDescription.this, CsgoAfterdes.class);
                 intent.putExtra("price4", price3);
+                intent.putExtra("date4", date);
+                intent.putExtra("location4", location);
+                intent.putExtra("tournament4", tournament);
+                intent.putExtra("month4", month);
+                intent.putExtra("time4", time);
+                intent.putExtra("img4",tournamentimg);
                 startActivity(intent);
             }
         });
@@ -90,7 +96,12 @@ public class CsgoDescription extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if ((snapshot.exists()) && (snapshot.hasChild("image"))) {
                     price3 = Objects.requireNonNull(snapshot.child("price").getValue()).toString();
-                    String tournamentimg = Objects.requireNonNull(snapshot.child("image").getValue()).toString();
+                    date = Objects.requireNonNull(snapshot.child("date").getValue()).toString();
+                    location = Objects.requireNonNull(snapshot.child("map").getValue()).toString();
+                    tournament = Objects.requireNonNull(snapshot.child("tournament").getValue()).toString();
+                    month = Objects.requireNonNull(snapshot.child("month").getValue()).toString();
+                    time = Objects.requireNonNull(snapshot.child("time").getValue()).toString();
+                    tournamentimg = Objects.requireNonNull(snapshot.child("image").getValue()).toString();
                     String Description3 = Objects.requireNonNull(snapshot.child("description").getValue()).toString();
                     Pricedes3.setText(price3);
                     description3.setText(Description3);

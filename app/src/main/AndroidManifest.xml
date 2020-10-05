@@ -10,9 +10,8 @@
         android:label="Gamoney"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:hardwareAccelerated="false">
-        <activity android:name=".roomidpasss"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".joinedTournament"/>
         <activity android:name=".paymentunsuccessful" />
         <activity android:name=".Paymentsuccesssfull" />
         <activity android:name=".CsgoDescription" />
