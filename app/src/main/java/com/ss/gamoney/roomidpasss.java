@@ -1,15 +1,5 @@
 package com.ss.gamoney;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,73 +7,29 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Tournaments extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class roomidpasss extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
 
-    private Button BTN1;
-    private Button BTN2;
-    private Button BTN3;
-    private Button BTN4;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tournaments);
-
-        BTN1 = findViewById(R.id.BTN1);
-
-        BTN1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent categoryintent = new Intent(Tournaments.this, PubgRecycler.class);
-                startActivity(categoryintent);
-                finish();
-            }
-        });
-
-        BTN2 = findViewById(R.id.BTN2);
-
-        BTN2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent categoryintent = new Intent(Tournaments.this, CodRecycler.class);
-                startActivity(categoryintent);
-                finish();
-            }
-        });
-
-
-        BTN3 = findViewById(R.id.BTN3);
-
-        BTN3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent categoryintent = new Intent(Tournaments.this, FreefireRecycler.class);
-                startActivity(categoryintent);
-                finish();
-            }
-        });
-
-
-        BTN4 = findViewById(R.id.BTN4);
-
-        BTN4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent categoryintent = new Intent(Tournaments.this, csgoRecycler.class);
-                startActivity(categoryintent);
-                finish();
-            }
-        });
-
+        setContentView(R.layout.activity_roomidpasss);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -132,6 +78,8 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 return false;
             }
         });
+
+
     }
 
     @Override
@@ -170,7 +118,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 break;
 
             case R.id.nav_Logout:
-                AlertDialog.Builder builder = new AlertDialog.Builder(Tournaments.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(roomidpasss.this);
                 builder.setTitle("Logout");
                 builder.setMessage("Are you sure you want to logout?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -204,7 +152,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
 
             case R.id.nav_Resetpassword:
                 final EditText password = new EditText(this);
-                AlertDialog.Builder resetpassword = new AlertDialog.Builder(Tournaments.this);
+                AlertDialog.Builder resetpassword = new AlertDialog.Builder(roomidpasss.this);
                 resetpassword.setTitle("Reset Password");
                 resetpassword.setMessage("Enter your Email");
                 resetpassword.setView(password);
@@ -218,7 +166,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                             mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Toast.makeText(Tournaments.this, "Reset Link Sent to Your Email", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(roomidpasss.this, "Reset Link Sent to Your Email", Toast.LENGTH_SHORT).show();
                                     FirebaseAuth.getInstance().signOut();
                                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                     finish();

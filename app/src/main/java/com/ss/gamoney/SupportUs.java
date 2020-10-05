@@ -14,18 +14,21 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SupportUs extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class SupportUs extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
+    private Button newbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,36 +38,46 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
         navigationView.bringToFront();
-        mAuth= FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+
+        newbutton = findViewById(R.id.newbutton);
+        newbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentnewbutton = new Intent(SupportUs.this, roomidpasss.class);
+                startActivity(intentnewbutton);
+                finish();
+            }
+        });
+
 
         setSupportActionBar(toolbar);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_Supportus);
 
-    } public void Myweb(View view)
-    {
-        openUrl ("https://www.facebook.com/");
+    }
+
+    public void Myweb(View view) {
+        openUrl("https://www.facebook.com/");
 
     }
 
-   public void openUrl(String url) {
-        Uri uri= Uri.parse(url);
-        Intent launchWeb=new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+    public void openUrl(String url) {
+        Uri uri = Uri.parse(url);
+        Intent launchWeb = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(launchWeb);
     }
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
 
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
     }
@@ -72,24 +85,24 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
-        switch (menuitem.getItemId()){
+        switch (menuitem.getItemId()) {
             case R.id.nav_tournamentinfo:
-                Intent intent4 = new Intent(getApplicationContext(),Tournaments.class);
+                Intent intent4 = new Intent(getApplicationContext(), Tournaments.class);
                 startActivity(intent4);
                 break;
 
             case R.id.nav_Contactus:
-                Intent intent1 = new Intent(getApplicationContext(),ContactUs.class);
+                Intent intent1 = new Intent(getApplicationContext(), ContactUs.class);
                 startActivity(intent1);
                 break;
 
             case R.id.nav_Faq:
-                Intent intent2 = new Intent(getApplicationContext(),Faq.class);
+                Intent intent2 = new Intent(getApplicationContext(), Faq.class);
                 startActivity(intent2);
                 break;
 
             case R.id.nav_policy:
-                Intent intent3 = new Intent(getApplicationContext(),Policy.class);
+                Intent intent3 = new Intent(getApplicationContext(), Policy.class);
                 startActivity(intent3);
                 break;
 
@@ -104,7 +117,7 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         finish();
                     }
                 });
@@ -121,12 +134,12 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 String shareBody = "Download This Application Now:- https://play.google.com/store/apps/details?id=com.battlerooms.rooms&hl=en";
-                String sharesub = "Gamoney App" ;
+                String sharesub = "Gamoney App";
 
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
-                shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, sharesub);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
 
-                startActivity(Intent.createChooser(shareIntent,"Share Using"));
+                startActivity(Intent.createChooser(shareIntent, "Share Using"));
 
             case R.id.nav_Resetpassword:
                 final EditText password = new EditText(this);
@@ -141,9 +154,9 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
                         mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(SupportUs.this,"Reset Link Sent to Your Email",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SupportUs.this, "Reset Link Sent to Your Email", Toast.LENGTH_SHORT).show();
                                 FirebaseAuth.getInstance().signOut();
-                                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                 finish();
                             }
                         });
