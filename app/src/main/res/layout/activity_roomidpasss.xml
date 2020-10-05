@@ -21,7 +21,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundgamoney">
 
         <include
             android:id="@+id/toolbar"
@@ -32,33 +33,78 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/toolbar"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/linearlayout">
 
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/newlogo" />
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/logo_nav"
+                android:contentDescription="@string/logo"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="40dp"
-                android:text="Room ID :- 123456"
-                android:textColor="#000000"
+                android:layout_marginStart="15dp"
+                android:text="@string/room_id"
+                android:textColor="#fff"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="-24dp"
+                android:text="@string/available_soon"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:id="@+id/roomid"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/copybttn"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="-21dp"
+                android:contentDescription="@string/copy"
+                android:id="@+id/copyroomid"
+                android:clickable="true"
+                android:focusable="true"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:text="Password :- ABCDEFGH"
-                android:textColor="#000000"
+                android:text="@string/password3"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:id="@+id/tournamentpass"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/copybttn"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="-21dp"
+                android:contentDescription="@string/copy"
+                android:id="@+id/copypass"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="-24.5dp"
+                android:text="@string/available_soon"
+                android:textColor="#fff"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -67,11 +113,13 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearlayout"
+            android:layout_marginTop="5dp">
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -80,29 +128,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="100dp"
-                    android:layout_marginTop="370dp"
                     android:fontFamily="@font/bungee"
-                    android:text="All The Best !"
-                    android:textColor="#000000"
+                    android:text="@string/all_the_best"
+                    android:textColor="#fff"
                     android:textSize="25sp" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:text="Please read the following rules before entering into the game :-"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:text="@string/Generalrules"
-                    android:textColor="#000000"
+                    android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -112,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:text="@string/Rules"
-                    android:textColor="#000000"
+                    android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

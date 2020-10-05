@@ -87,6 +87,13 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
                 holder.tournament.setText(model.getTournament());
                 holder.time.setText(model.getTime());
                 Glide.with(holder.image.getContext()).load(model.getImage()).into(holder.image);
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(joinedTournament.this,roomidpasss.class);
+                        startActivity(intent);
+                    }
+                });
 
 
             }
@@ -197,7 +204,7 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
     }
 
     private static class joinedViewHolder extends RecyclerView.ViewHolder{
-        TextView date,map,month,tournament,time,loaction;
+        TextView date,map,month,tournament,time;
         ImageView image;
 
         public joinedViewHolder(@NonNull View itemView) {
@@ -209,6 +216,7 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
             month = itemView.findViewById(R.id.paidmonth);
             tournament = itemView.findViewById(R.id.paidtournamentname);
             time = itemView.findViewById(R.id.paidtime);
+
         }
     }
 

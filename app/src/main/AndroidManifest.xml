@@ -29,6 +29,7 @@
         <activity android:name=".CodAfterdes" />
         <activity android:name=".CsgoAfterdes" />
         <activity android:name=".PubgAfterdes" />
+        <activity android:name=".roomidpasss"/>
         <activity
             android:name=".Register"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

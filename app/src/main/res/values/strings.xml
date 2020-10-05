@@ -55,7 +55,7 @@
     <string name="tournament_image">Tournament Image</string>
     <string name="TestText">This is a Test Text</string>
     <string name="Generalrules">General Rules:-</string>
-    <string name="Rules">1. Room id and password will be displayed 15 minutes before match on tournaments section.Players need to join room 10 minutes prior match.\n2. If you find any Hackers or cheaters, Please report them in app.\n3. No rematch in case of hackers or cheaters.\n4. Hackers will be permanently banned from the app and wont able to participate further.\n4. Rewards will be given on basis of rank and number of kills.Rewards will be credited same day after the match.\n5. Rewards are liable to change if there are less players.\n \n In case of any further queries or offers follow us on: \n \n</string>
+    <string name="Rules">1. Room id and password will be displayed 15 minutes before match on tournaments section.Players need to join room 10 minutes prior match.\n\n2. If you find any Hackers or cheaters, Please report them in app.\n\n3. No rematch in case of hackers or cheaters.\n\n4. Hackers will be permanently banned from the app and wont able to participate further.\n\n4. Rewards will be given on basis of rank and number of kills.Rewards will be credited same day after the match.\n\n5. Rewards are liable to change if there are less players.\n \n In case of any further queries or offers follow us on: \n \n</string>
     <string name="Emptyview">Sorry, No tournaments are available right now, Check again Later</string>
     <string name="player_1">PLAYER-1</string>
     <string name="player_2">PLAYER-2</string>
@@ -101,4 +101,9 @@
     <string name="captcha">Captcha</string>
     <string name="instagram">Instagram</string>
     <string name="facebook">Facebook</string>
+    <string name="available_soon">Available Soon</string>
+    <string name="room_id">Room ID :-</string>
+    <string name="password3">Password :-</string>
+    <string name="all_the_best">All The Best !</string>
+    <string name="copy">Copy</string>
 </resources>

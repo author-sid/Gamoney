@@ -8,11 +8,17 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -25,12 +31,21 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
+    ImageView copyroomid,copypass;
+    TextView Roomid,Tournamentpass;
+    String roomidstring, tournamentpassString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roomidpasss);
 
+        copyroomid = findViewById(R.id.copyroomid);
+        copypass = findViewById(R.id.copypass);
+        Roomid = findViewById(R.id.roomid);
+        roomidstring = Roomid.getText().toString();
+        Tournamentpass = findViewById(R.id.tournamentpass);
+        tournamentpassString = Tournamentpass.getText().toString();
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
@@ -76,6 +91,28 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
 
                 }
                 return false;
+            }
+        });
+
+        copyroomid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager roomid = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData roomid1 = ClipData.newPlainText("Roomid",roomidstring);
+                roomid.setPrimaryClip(roomid1);
+
+                Toast.makeText(roomidpasss.this,"Copied",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        copypass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager tournamentpass = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData tournamentpass1 = ClipData.newPlainText("Tournmentpass",tournamentpassString);
+                tournamentpass.setPrimaryClip(tournamentpass1);
+
+                Toast.makeText(roomidpasss.this,"Copied",Toast.LENGTH_SHORT).show();
             }
         });
 
