@@ -36,7 +36,7 @@ import java.util.Objects;
 public class joinedTournament extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     RecyclerView joinedtournaments;
     FirebaseFirestore firebaseFirestore;
-    String userID;
+    String userID,tournamentid;
     FirebaseAuth mAuth;
     FirestoreRecyclerAdapter adapter;
     DrawerLayout drawerLayout;
@@ -79,7 +79,7 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull joinedViewHolder holder, int position, @NonNull joinedtournamentsModel model) {
+            protected void onBindViewHolder(@NonNull joinedViewHolder holder, final int position, @NonNull joinedtournamentsModel model) {
 
                 holder.date.setText(model.getDate());
                 holder.map.setText(model.getLocation());
@@ -91,6 +91,8 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(joinedTournament.this,roomidpasss.class);
+                        tournamentid = getSnapshots().get(position).getTournament();
+                        intent.putExtra("tournamentID",tournamentid);
                         startActivity(intent);
                     }
                 });
@@ -203,7 +205,7 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
         return true;
     }
 
-    private static class joinedViewHolder extends RecyclerView.ViewHolder{
+    public static class joinedViewHolder extends RecyclerView.ViewHolder{
         TextView date,map,month,tournament,time;
         ImageView image;
 

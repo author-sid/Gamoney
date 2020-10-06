@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@drawable/loginbg">
 
     <ImageView
         android:id="@+id/logo_image"
@@ -14,16 +15,17 @@
         android:layout_height="157dp"
         android:src="@drawable/logo"
         android:transitionName="logo_image"
-        android:contentDescription="@string/logo" />
+        android:contentDescription="@string/logo"
+        android:layout_marginTop="-10dp"/>
 
     <TextView
         android:id="@+id/logo_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="-20dp"
         android:fontFamily="@font/bungee"
         android:text="@string/hello_there_welcome_back"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="40sp"
         android:transitionName="logo_text" />
 
@@ -33,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-30dp"
         android:text="@string/signin_to_start_earning"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="18sp"
         android:transitionName="logo_desc" />
 
@@ -48,12 +50,17 @@
             android:id="@+id/email_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:transitionName="email_trans">
+            android:transitionName="email_trans"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:background="@drawable/edittextbg">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email" />
+                android:hint="@string/email"
+                android:textColorHint="#fff"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,13 +69,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:transitionName="password_trans"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            android:textColorHint="#fff"
+            android:background="@drawable/edittextbg"
+            android:layout_marginTop="5dp"
+            app:passwordToggleTint="#fff"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColorHint="#fff"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

@@ -25,6 +25,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class roomidpasss extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
@@ -33,7 +35,8 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
     FirebaseAuth mAuth;
     ImageView copyroomid,copypass;
     TextView Roomid,Tournamentpass;
-    String roomidstring, tournamentpassString;
+    String roomidstring, tournamentpassString,tournamentid;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,7 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
         toolbar = findViewById(R.id.toolbar);
         navigationView.bringToFront();
         mAuth = FirebaseAuth.getInstance();
+        tournamentid = getIntent().getStringExtra("tournamentID");
 
         setSupportActionBar(toolbar);
 
