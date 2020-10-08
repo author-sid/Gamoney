@@ -1,12 +1,5 @@
 package com.ss.gamoney;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -21,43 +14,74 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class roomidpasss extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    TextView Roomidshow, Passwordshow;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
-    ImageView copyroomid,copypass;
-    TextView Roomid,Tournamentpass;
-    String roomidstring, tournamentpassString,tournamentid;
-    DatabaseReference databaseReference;
+    String tournamentid,pricejoined,checktournament;
+    DatabaseReference reff;
+    String ID;
+    String Password;
+    ImageView copyRoomID, copyPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roomidpasss);
 
-        copyroomid = findViewById(R.id.copyroomid);
-        copypass = findViewById(R.id.copypass);
-        Roomid = findViewById(R.id.roomid);
-        roomidstring = Roomid.getText().toString();
-        Tournamentpass = findViewById(R.id.tournamentpass);
-        tournamentpassString = Tournamentpass.getText().toString();
+        Roomidshow = findViewById(R.id.roomid);
+        Passwordshow = findViewById(R.id.roompassword);
+        tournamentid = getIntent().getStringExtra("tournamentID");
+        pricejoined = getIntent().getStringExtra("pricejoined");
+        checktournament = tournamentid+" "+pricejoined;
+        toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-        toolbar = findViewById(R.id.toolbar);
-        navigationView.bringToFront();
         mAuth = FirebaseAuth.getInstance();
-        tournamentid = getIntent().getStringExtra("tournamentID");
+        copyRoomID = findViewById(R.id.copyroomid);
+        copyPassword = findViewById(R.id.copypass);
+
+        reff = FirebaseDatabase.getInstance().getReference().child("RoomID").child(checktournament);
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    ID = Objects.requireNonNull(snapshot.child("roomid").getValue()).toString();
+                    Password = Objects.requireNonNull(snapshot.child("password").getValue()).toString();
+
+                    Roomidshow.setText(ID);
+                    Passwordshow.setText(Password);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
         setSupportActionBar(toolbar);
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -65,71 +89,27 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_tournamentinfo);
 
-        //Initialize and assign variable
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        //Set Tournament Selected
-        bottomNavigationView.setSelectedItemId(R.id.tournament);
-
-        //perform ItemSelectedListener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-                switch (menuItem.getItemId()) {
-                    case R.id.tournament:
-                        return true;
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-
-                    case R.id.faq:
-                        startActivity(new Intent(getApplicationContext(), Faq.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-
-                    case R.id.chat:
-                        Toast.makeText(getApplicationContext(), "ComingSoon!", Toast.LENGTH_LONG).show();
-                        return true;
-
-                }
-                return false;
-            }
-        });
-
-        copyroomid.setOnClickListener(new View.OnClickListener() {
+        copyRoomID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ClipboardManager roomid = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData roomid1 = ClipData.newPlainText("Roomid",roomidstring);
+                ClipData roomid1  = ClipData.newPlainText("Roomid",ID);
                 roomid.setPrimaryClip(roomid1);
-
                 Toast.makeText(roomidpasss.this,"Copied",Toast.LENGTH_SHORT).show();
             }
         });
 
-        copypass.setOnClickListener(new View.OnClickListener() {
+        copyPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ClipboardManager tournamentpass = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData tournamentpass1 = ClipData.newPlainText("Tournmentpass",tournamentpassString);
+                ClipData tournamentpass1 = ClipData.newPlainText("Tournmentpass",Password);
                 tournamentpass.setPrimaryClip(tournamentpass1);
 
                 Toast.makeText(roomidpasss.this,"Copied",Toast.LENGTH_SHORT).show();
             }
         });
 
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
     }
 
     @Override
@@ -230,4 +210,14 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 }

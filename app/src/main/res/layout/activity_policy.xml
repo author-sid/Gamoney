@@ -42,7 +42,6 @@
 
         </ScrollView>
 
-
     </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

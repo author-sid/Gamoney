@@ -173,6 +173,7 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
         map.put("date", date);
         map.put("time", time);
         map.put("image",tournamentimg);
+        map.put("price",priceafter);
         documentReference.set(map);
         Intent intent = new Intent(PubgAfterdes.this,Paymentsuccesssfull.class);
         intent.putExtra("Referenceno",randomNumber);

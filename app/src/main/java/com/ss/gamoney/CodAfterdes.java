@@ -169,6 +169,7 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
         map.put("date", date);
         map.put("time", time);
         map.put("image",tournamentimg);
+        map.put("price",priceafter1);
         documentReference.set(map);
         Intent intent = new Intent(CodAfterdes.this,Paymentsuccesssfull.class);
         intent.putExtra("Referenceno",randomNumber);

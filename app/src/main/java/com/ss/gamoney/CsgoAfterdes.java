@@ -188,6 +188,7 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
         map.put("date", date);
         map.put("time", time);
         map.put("image",tournamentimg);
+        map.put("price",priceafter3);
         documentReference.set(map);
         Intent intent = new Intent(CsgoAfterdes.this,Paymentsuccesssfull.class);
         intent.putExtra("Referenceno",randomNumber);

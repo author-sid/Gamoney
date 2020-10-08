@@ -106,7 +106,8 @@
                 android:text="@string/available_soon"
                 android:textColor="#fff"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/roompassword"/>
 
 
         </LinearLayout>
@@ -156,15 +157,6 @@
 
         </ScrollView>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/bottomnav1"
-            app:itemIconTint="#F5F5DC"
-            app:itemTextColor="#F5F5DC"
-            app:menu="@menu/menu" />
 
     </RelativeLayout>
 

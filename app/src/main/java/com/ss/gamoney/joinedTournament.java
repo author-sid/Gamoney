@@ -36,7 +36,7 @@ import java.util.Objects;
 public class joinedTournament extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     RecyclerView joinedtournaments;
     FirebaseFirestore firebaseFirestore;
-    String userID,tournamentid;
+    String userID,tournamentid,priceid;
     FirebaseAuth mAuth;
     FirestoreRecyclerAdapter adapter;
     DrawerLayout drawerLayout;
@@ -80,7 +80,7 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
 
             @Override
             protected void onBindViewHolder(@NonNull joinedViewHolder holder, final int position, @NonNull joinedtournamentsModel model) {
-
+                holder.price.setText(model.getPrice());
                 holder.date.setText(model.getDate());
                 holder.map.setText(model.getLocation());
                 holder.month.setText(model.getMonth());
@@ -92,7 +92,9 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
                     public void onClick(View v) {
                         Intent intent = new Intent(joinedTournament.this,roomidpasss.class);
                         tournamentid = getSnapshots().get(position).getTournament();
+                        priceid = getSnapshots().get(position).getPrice();
                         intent.putExtra("tournamentID",tournamentid);
+                        intent.putExtra("pricejoined",priceid);
                         startActivity(intent);
                     }
                 });
@@ -206,7 +208,7 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
     }
 
     public static class joinedViewHolder extends RecyclerView.ViewHolder{
-        TextView date,map,month,tournament,time;
+        TextView date,map,month,tournament,time,price;
         ImageView image;
 
         public joinedViewHolder(@NonNull View itemView) {
@@ -218,6 +220,7 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
             month = itemView.findViewById(R.id.paidmonth);
             tournament = itemView.findViewById(R.id.paidtournamentname);
             time = itemView.findViewById(R.id.paidtime);
+            price = itemView.findViewById(R.id.pricejoined);
 
         }
     }

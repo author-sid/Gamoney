@@ -169,6 +169,7 @@ public class FreefireAfterdes extends AppCompatActivity implements PaymentResult
         map.put("date", date);
         map.put("time", time);
         map.put("image",tournamentimg);
+        map.put("price",priceafter2);
         documentReference.set(map);
         Intent intent = new Intent(FreefireAfterdes.this,Paymentsuccesssfull.class);
         intent.putExtra("Referenceno",randomNumber);

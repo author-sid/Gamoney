@@ -56,7 +56,8 @@
             android:hint="@string/player_1"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="12sp" />
+            android:textSize="16sp"
+            android:backgroundTint="#fff"/>
 
         <TextView
             android:id="@+id/player2"
@@ -80,7 +81,8 @@
             android:hint="@string/player_2"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="12sp" />
+            android:textSize="16sp"
+            android:backgroundTint="#fff"/>
 
         <TextView
             android:id="@+id/player3"
@@ -104,7 +106,8 @@
             android:hint="@string/player_3"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="12sp" />
+            android:textSize="16sp"
+            android:backgroundTint="#fff"/>
 
         <TextView
             android:id="@+id/player4"
@@ -128,7 +131,8 @@
             android:hint="@string/player_4"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="12sp" />
+            android:textSize="16sp"
+            android:backgroundTint="#fff"/>
 
         <TextView
             android:id="@+id/warning"
@@ -161,7 +165,8 @@
             android:inputType="number"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="12sp" />
+            android:textSize="16sp"
+            android:backgroundTint="#fff"/>
 
         <TextView
             android:id="@+id/warning1"

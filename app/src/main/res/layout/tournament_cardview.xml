@@ -15,11 +15,12 @@
 
         <ImageView
             android:id="@+id/Tournament_image"
-            android:layout_width="140dp"
-            android:layout_height="160dp"
+            android:layout_width="141dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="262dp"
-            android:src="@mipmap/ic_launcher"
-            android:contentDescription="@string/tournament_poster"/>
+            android:contentDescription="@string/tournament_poster"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/rupee"

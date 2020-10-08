@@ -1,19 +1,20 @@
 package com.ss.gamoney;
 
 public class joinedtournamentsModel {
-    String time,date , month, tournament,image,location;
+    String time,date , month, tournament,image,location,price;
 
     joinedtournamentsModel(){
 
     }
 
-    public joinedtournamentsModel(String time, String date, String month, String tournament, String image, String location) {
+    public joinedtournamentsModel(String time, String date, String month, String tournament, String image, String location, String price) {
         this.time = time;
         this.date = date;
         this.month = month;
         this.tournament = tournament;
         this.image = image;
         this.location = location;
+        this.price = price;
     }
 
     public String getTime() {
@@ -34,6 +35,14 @@ public class joinedtournamentsModel {
 
     public String getMonth() {
         return month;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public void setMonth(String month) {
