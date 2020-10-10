@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     StorageReference storageReference;
     ImageView profileImage, changeProfileImage;
     Button saveBtn;
-    ProgressBar progressBar;
+    ProgressBar progressBar4;
 
 
     @Override
@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         FullNameLabel = findViewById(R.id.full_name);
         profileImage = findViewById(R.id.profile_pic);
         changeProfileImage = findViewById(R.id.change_profile);
-        progressBar = findViewById(R.id.progressBar3);
+        progressBar4= findViewById(R.id.progressBar4);
+        final LoadingDialog loadingDialog = new LoadingDialog(MainActivity.this);
 
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Uri uri) {
                 Picasso.get().load(uri).into(profileImage);
+                loadingDialog.startLoadingDialog();
             }
         });
 
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 FullName.setText(value.getString("fullName"));
                 Email.setText(value.getString("email"));
                 FullNameLabel.setText(value.getString("fullName"));
+                loadingDialog.startLoadingDialog();
 
             }
         });
@@ -110,17 +113,21 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.tournament:
                         startActivity(new Intent(getApplicationContext(), Tournaments.class));
                         overridePendingTransition(0, 0);
+                        loadingDialog.startLoadingDialog();
                         return true;
                     case R.id.profile:
+                        loadingDialog.startLoadingDialog();
                         return true;
 
                     case R.id.faq:
                         startActivity(new Intent(getApplicationContext(), joinedTournament.class));
                         overridePendingTransition(0, 0);
+                        loadingDialog.startLoadingDialog();
                         return true;
 
                     case R.id.chat:
                         Toast.makeText(getApplicationContext(), "ComingSoon!", Toast.LENGTH_SHORT).show();
+                        loadingDialog.startLoadingDialog();
                         return true;
 
                 }
@@ -187,9 +194,9 @@ public class MainActivity extends AppCompatActivity {
                                 Log.d(TAG, "On Failure : Email not sent " + e.getMessage());
                             }
                         });
-                        progressBar.setVisibility(View.VISIBLE);
+                        loadingDialog.startLoadingDialog();
                         Toast.makeText(MainActivity.this, "Email is changed", Toast.LENGTH_SHORT).show();
-                        progressBar.setVisibility(View.GONE);
+                        loadingDialog.startLoadingDialog();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

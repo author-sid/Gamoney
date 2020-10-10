@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     ImageView image;
     TextView logoText,sloganText;
     TextInputLayout mEmail,mPassword;
-    ProgressBar progressBar;
+    ProgressBar progressBar4;
     FirebaseAuth mAuth;
 
 
@@ -50,11 +50,12 @@ public class LoginActivity extends AppCompatActivity {
         mEmail = findViewById(R.id.email_main);
         mPassword = findViewById(R.id.password_main);
         mLoginBtn = findViewById(R.id.Login_btn);
-        progressBar = findViewById(R.id.progressBar2);
+        progressBar4 = findViewById(R.id.progressBar4);
         forgotPass = findViewById(R.id.forgotPassword);
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser[] user = {mAuth.getCurrentUser()};
         FirebaseUser verifieduser = mAuth.getCurrentUser();
+        final LoadingDialog loadingDialog = new LoadingDialog(LoginActivity.this);
 
         if (mAuth.getCurrentUser() != null){
             assert verifieduser != null;
@@ -63,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }else {
                 Toast.makeText(LoginActivity.this,"Please verify your email",Toast.LENGTH_SHORT).show();
+                loadingDialog.startLoadingDialog();
             }
         }
 
@@ -88,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
 
-                progressBar.setVisibility(View.VISIBLE);
+                loadingDialog.startLoadingDialog();
 
                 //authenticate the user
 
@@ -103,11 +105,11 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
                             }else {
                                 Toast.makeText(LoginActivity.this,"Please verify your email",Toast.LENGTH_SHORT).show();
-                                progressBar.setVisibility(View.INVISIBLE);
+
                             }
                         }else {
                             Toast.makeText(LoginActivity.this,"Error !"+" " + Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.INVISIBLE);
+
                         }
 
                     }
@@ -133,11 +135,13 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(LoginActivity.this,"Reset Link Sent to Your Email",Toast.LENGTH_SHORT).show();
+
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Toast.makeText(LoginActivity.this,"Error! Reset Link is Not Sent" + e.getMessage(),Toast.LENGTH_SHORT).show();
+
                             }
                         });
                     }
@@ -172,7 +176,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this,pairs);
                 startActivity(intent,options.toBundle());
-
             }
         });
     }

@@ -47,6 +47,7 @@
             android:layout_marginTop="15dp"
             android:onClick="Myweb"
             android:text="@string/rate_us"
+            android:textColor="#fff"
             android:background="@drawable/smallbutons"/>
 
         <TextView
@@ -69,6 +70,7 @@
             android:layout_marginStart="150dp"
             android:layout_marginTop="18dp"
             android:text="@string/donate"
+            android:textColor="#fff"
             android:background="@drawable/smallbutons" />
 
         <Button
@@ -78,6 +80,14 @@
             android:text="newbutton"
             android:textColor="#000000"
             android:id="@+id/newbutton"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar4"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:visibility="invisible" />
 
 
 

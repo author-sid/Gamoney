@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
     Toolbar toolbar;
     FirebaseAuth mAuth;
     private Button newbutton;
+    ProgressBar progressBar4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
         toolbar = findViewById(R.id.toolbar);
         navigationView.bringToFront();
         mAuth = FirebaseAuth.getInstance();
+        progressBar4= findViewById(R.id.progressBar4);
+        final LoadingDialog loadingDialog = new LoadingDialog(SupportUs.this);
 
         newbutton = findViewById(R.id.newbutton);
         newbutton.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +51,7 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
                 Intent intentnewbutton = new Intent(SupportUs.this, roomidpasss.class);
                 startActivity(intentnewbutton);
                 finish();
+                loadingDialog.startLoadingDialog();
             }
         });
 

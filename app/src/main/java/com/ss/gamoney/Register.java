@@ -32,7 +32,7 @@ public class Register extends AppCompatActivity {
     EditText mFullName, mEmail, mPassword, mPhone;
     Button mRegisterBtn, mLoginBtn;
     FirebaseAuth mAuth;
-    ProgressBar progressBar;
+    ProgressBar progressBar4;
     FirebaseFirestore fstore;
     String userID;
 
@@ -50,7 +50,8 @@ public class Register extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
-        progressBar = findViewById(R.id.progressBar);
+        progressBar4 = findViewById(R.id.progressBar4);
+        final LoadingDialog loadingDialog = new LoadingDialog(Register.this);
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,8 +96,7 @@ public class Register extends AppCompatActivity {
                 if (TextUtils.isEmpty(password)){
                     mPassword.setError("Password cannot be empty");
                 }
-
-                progressBar.setVisibility(View.VISIBLE);
+                    loadingDialog.startLoadingDialog();
 
                 //register the user in firebase
 
@@ -137,22 +137,23 @@ public class Register extends AppCompatActivity {
                                 }
                             });
                             startActivity(new Intent(Register.this,LoginActivity.class));
+                            loadingDialog.startLoadingDialog();
 
 
                         }else{
                             Toast.makeText(Register.this,"Error!" + Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
+                            loadingDialog.startLoadingDialog();
 
                         }
                     }
                 });
             }
         });
-
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                loadingDialog.startLoadingDialog();
             }
         });
     }

@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,16 +28,20 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
+    ProgressBar progressBar4;
 
     private Button BTN1;
     private Button BTN2;
     private Button BTN3;
     private Button BTN4;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tournaments);
+        progressBar4= findViewById(R.id.progressBar4);
+        final LoadingDialog loadingDialog = new LoadingDialog(Tournaments.this);
 
         BTN1 = findViewById(R.id.BTN1);
 
@@ -46,6 +51,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 Intent categoryintent = new Intent(Tournaments.this, PubgRecycler.class);
                 startActivity(categoryintent);
                 finish();
+                loadingDialog.startLoadingDialog();
             }
         });
 
@@ -57,6 +63,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 Intent categoryintent = new Intent(Tournaments.this, CodRecycler.class);
                 startActivity(categoryintent);
                 finish();
+                loadingDialog.startLoadingDialog();
             }
         });
 
@@ -69,6 +76,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 Intent categoryintent = new Intent(Tournaments.this, FreefireRecycler.class);
                 startActivity(categoryintent);
                 finish();
+                loadingDialog.startLoadingDialog();
             }
         });
 
@@ -81,6 +89,8 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 Intent categoryintent = new Intent(Tournaments.this, csgoRecycler.class);
                 startActivity(categoryintent);
                 finish();
+
+                loadingDialog.startLoadingDialog();
             }
         });
 
