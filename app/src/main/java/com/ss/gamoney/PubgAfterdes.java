@@ -40,7 +40,6 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
     String userID, priceafter, username, phonenumber, email, date , time, month, location, tournament,tournamentimg;
     int randomNumber;
     public static final String TAG1 = "TAG";
-    ProgressBar progressBar4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +61,6 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
         tournamentimg = getIntent().getStringExtra("img1");
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
-        progressBar4= findViewById(R.id.progressBar4);
-        final LoadingDialog loadingDialog = new LoadingDialog(PubgAfterdes.this);
         username = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
         DocumentReference documentReference = fstore.collection("users").document(username);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -72,7 +69,6 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
                 assert value != null;
                 email = Objects.requireNonNull(value.get("email")).toString();
                 phonenumber = Objects.requireNonNull(value.get("phone")).toString();
-                loadingDialog.startLoadingDialog();
             }
         });
 
@@ -84,7 +80,6 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
                 final String Player_3 = Player3.getText().toString();
                 final String Player_4 = Player4.getText().toString();
                 final String PhoneNumber = PhoneNo.getText().toString();
-                loadingDialog.startLoadingDialog();
 
                 if (TextUtils.isEmpty(Player_1)) {
                     Player1.setError("Player information is required");
@@ -122,13 +117,11 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
                     public void onSuccess(Void aVoid) {
                         Log.d(TAG1, "Team information Added Successfully" + userID);
                         startPayment();
-                        loadingDialog.startLoadingDialog();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.d(TAG1, "onFailure: " + e.toString());
-                        loadingDialog.startLoadingDialog();
                     }
                 });
             }

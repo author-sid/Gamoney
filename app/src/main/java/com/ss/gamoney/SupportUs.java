@@ -30,7 +30,6 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
     Toolbar toolbar;
     FirebaseAuth mAuth;
     private Button newbutton;
-    ProgressBar progressBar4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,21 +40,6 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
         toolbar = findViewById(R.id.toolbar);
         navigationView.bringToFront();
         mAuth = FirebaseAuth.getInstance();
-        progressBar4= findViewById(R.id.progressBar4);
-        final LoadingDialog loadingDialog = new LoadingDialog(SupportUs.this);
-
-        newbutton = findViewById(R.id.newbutton);
-        newbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentnewbutton = new Intent(SupportUs.this, roomidpasss.class);
-                startActivity(intentnewbutton);
-                finish();
-                loadingDialog.startLoadingDialog();
-            }
-        });
-
-
         setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
