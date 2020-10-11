@@ -1,6 +1,7 @@
 package com.ss.gamoney;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     StorageReference storageReference;
     ImageView profileImage, changeProfileImage;
     Button saveBtn;
+    ProgressDialog progressDialog;
 
 
     @Override
@@ -152,6 +153,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Name must be at least 5 characters long", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                progressDialog = new ProgressDialog(MainActivity.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
                 final String email = Email.getText().toString();
                 user.updateEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -186,11 +191,13 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                         Toast.makeText(MainActivity.this, "Email is changed", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                     }
                 });
 
@@ -221,6 +228,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void uploadImageToFirebase(Uri imageUri) {
+        progressDialog = new ProgressDialog(MainActivity.this);
+        progressDialog.show();
+        progressDialog.setContentView(R.layout.activity_progress_dialog);
+        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         //upload image to firebase storage
         final StorageReference fileRef = storageReference.child("users/" + Objects.requireNonNull(mAuth.getCurrentUser()).getUid() + "/profile.jpg");
         fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -237,6 +248,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         });
 

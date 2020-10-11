@@ -1,6 +1,7 @@
 package com.ss.gamoney;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -39,6 +40,7 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
     String userID, priceafter1, username, phonenumber, email, date , time, month, location, tournament,tournamentimg;
     int randomNumber;
     public static final String TAG = "TAG";
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +104,10 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
                     return;
                 }
 
+                progressDialog = new ProgressDialog(CodAfterdes.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
                 userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                 DocumentReference documentReference = fstore.collection("users").document(userID).collection("Team Info").document("CodTeam");
@@ -159,6 +165,10 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
 
     @Override
     public void onPaymentSuccess(String s) {
+        progressDialog = new ProgressDialog(CodAfterdes.this);
+        progressDialog.show();
+        progressDialog.setContentView(R.layout.activity_progress_dialog);
+        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         mAuth = FirebaseAuth.getInstance();
         userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
         DocumentReference documentReference = fstore.collection("users").document(userID).collection("Joined").document();
@@ -179,6 +189,10 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
 
     @Override
     public void onPaymentError(int i, String s) {
+        progressDialog = new ProgressDialog(CodAfterdes.this);
+        progressDialog.show();
+        progressDialog.setContentView(R.layout.activity_progress_dialog);
+        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         Intent intent = new Intent(CodAfterdes.this,Paymentsuccesssfull.class);
         startActivity(intent);
 

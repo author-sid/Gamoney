@@ -29,7 +29,6 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
-    private Button newbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,26 +128,31 @@ public class SupportUs extends AppCompatActivity implements NavigationView.OnNav
                 shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
 
                 startActivity(Intent.createChooser(shareIntent, "Share Using"));
+                break;
 
             case R.id.nav_Resetpassword:
                 final EditText password = new EditText(this);
                 AlertDialog.Builder resetpassword = new AlertDialog.Builder(SupportUs.this);
                 resetpassword.setTitle("Reset Password");
-                resetpassword.setMessage("Are you sure you want to Reset Password?");
+                resetpassword.setMessage("Enter your Email");
                 resetpassword.setView(password);
                 resetpassword.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String mail = password.getText().toString();
-                        mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(SupportUs.this, "Reset Link Sent to Your Email", Toast.LENGTH_SHORT).show();
-                                FirebaseAuth.getInstance().signOut();
-                                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                                finish();
-                            }
-                        });
+                        if (mail.matches("")) {
+                            Toast.makeText(getApplicationContext(), "Please enter Your email", Toast.LENGTH_SHORT).show();
+                        } else {
+                            mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(SupportUs.this, "Reset Link Sent to Your Email", Toast.LENGTH_SHORT).show();
+                                    FirebaseAuth.getInstance().signOut();
+                                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                                    finish();
+                                }
+                            });
+                        }
                     }
                 });
                 resetpassword.setNegativeButton("No", new DialogInterface.OnClickListener() {

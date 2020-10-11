@@ -175,32 +175,37 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 String shareBody = "Download This Application Now:- https://play.google.com/store/apps/details?id=com.battlerooms.rooms&hl=en";
-                String sharesub = "Gamoney App" ;
+                String sharesub = "Gamoney App";
 
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
-                shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, sharesub);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
 
-                startActivity(Intent.createChooser(shareIntent,"Share Using"));
+                startActivity(Intent.createChooser(shareIntent, "Share Using"));
+                break;
 
             case R.id.nav_Resetpassword:
                 final EditText password = new EditText(this);
                 AlertDialog.Builder resetpassword = new AlertDialog.Builder(Policy.this);
                 resetpassword.setTitle("Reset Password");
-                resetpassword.setMessage("Are you sure you want to Reset Password?");
+                resetpassword.setMessage("Enter your Email");
                 resetpassword.setView(password);
                 resetpassword.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String mail = password.getText().toString();
-                        mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(Policy.this,"Reset Link Sent to Your Email",Toast.LENGTH_SHORT).show();
-                                FirebaseAuth.getInstance().signOut();
-                                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-                                finish();
-                            }
-                        });
+                        if (mail.matches("")) {
+                            Toast.makeText(getApplicationContext(), "Please enter Your email", Toast.LENGTH_SHORT).show();
+                        } else {
+                            mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(Policy.this, "Reset Link Sent to Your Email", Toast.LENGTH_SHORT).show();
+                                    FirebaseAuth.getInstance().signOut();
+                                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                                    finish();
+                                }
+                            });
+                        }
                     }
                 });
                 resetpassword.setNegativeButton("No", new DialogInterface.OnClickListener() {

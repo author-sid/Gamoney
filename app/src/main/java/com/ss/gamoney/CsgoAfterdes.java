@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -39,6 +40,7 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
     String userID, priceafter3, username, phonenumber, email, date , time, month, location, tournament,tournamentimg;
     int randomNumber;
     public static final String TAG = "TAG";
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +122,10 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
                     PhoneNo.setError("Phone number is required");
                     return;
                 }
-
+                progressDialog = new ProgressDialog(CsgoAfterdes.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
                 userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                 DocumentReference documentReference = fstore.collection("users").document(userID).collection("Team Info").document("CsgoTeam");
@@ -178,6 +183,10 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
 
     @Override
     public void onPaymentSuccess(String s) {
+        progressDialog = new ProgressDialog(CsgoAfterdes.this);
+        progressDialog.show();
+        progressDialog.setContentView(R.layout.activity_progress_dialog);
+        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         mAuth = FirebaseAuth.getInstance();
         userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
         DocumentReference documentReference = fstore.collection("users").document(userID).collection("Joined").document();
@@ -197,6 +206,10 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
 
     @Override
     public void onPaymentError(int i, String s) {
+        progressDialog = new ProgressDialog(CsgoAfterdes.this);
+        progressDialog.show();
+        progressDialog.setContentView(R.layout.activity_progress_dialog);
+        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         Intent intent = new Intent(CsgoAfterdes.this,Paymentsuccesssfull.class);
         startActivity(intent);
 

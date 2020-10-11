@@ -1,6 +1,7 @@
 package com.ss.gamoney;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -39,6 +39,7 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
     Button payment;
     String userID, priceafter, username, phonenumber, email, date , time, month, location, tournament,tournamentimg;
     int randomNumber;
+    ProgressDialog progressDialog;
     public static final String TAG1 = "TAG";
 
     @Override
@@ -103,6 +104,10 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
                     return;
                 }
 
+                progressDialog = new ProgressDialog(PubgAfterdes.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
                 userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                 DocumentReference documentReference = fstore.collection("users").document(userID).collection("Team Info").document("PubgTeam");
@@ -164,6 +169,10 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
 
     @Override
     public void onPaymentSuccess(String s) {
+        progressDialog = new ProgressDialog(PubgAfterdes.this);
+        progressDialog.show();
+        progressDialog.setContentView(R.layout.activity_progress_dialog);
+        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         mAuth = FirebaseAuth.getInstance();
         userID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
         DocumentReference documentReference = fstore.collection("users").document(userID).collection("Joined").document();
@@ -184,6 +193,10 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
 
     @Override
     public void onPaymentError(int i, String s) {
+        progressDialog = new ProgressDialog(PubgAfterdes.this);
+        progressDialog.show();
+        progressDialog.setContentView(R.layout.activity_progress_dialog);
+        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         Intent intent = new Intent(PubgAfterdes.this,paymentunsuccessful.class);
         startActivity(intent);
     }
