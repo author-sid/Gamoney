@@ -94,6 +94,10 @@
             android:background="@drawable/newbutton"
             android:layout_alignBaseline="@id/bottom_navigation"/>
 
+
+
+        
+
     </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
