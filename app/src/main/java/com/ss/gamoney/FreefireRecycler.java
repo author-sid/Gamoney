@@ -58,7 +58,7 @@ public class FreefireRecycler extends AppCompatActivity implements NavigationVie
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Freefire Tournaments"), model_freefire.class)
                         .build();
 
-        adapter = new adapter_freefire(options,getApplicationContext());
+        adapter = new adapter_freefire(options,this);
         recview.setAdapter(adapter);
     }
 

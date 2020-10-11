@@ -58,7 +58,7 @@ public class csgoRecycler extends AppCompatActivity implements NavigationView.On
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("CSGO Tournaments"), model_csgo.class)
                         .build();
 
-        adapter = new adapter_csgo(options,getApplicationContext());
+        adapter = new adapter_csgo(options,this);
         recview.setAdapter(adapter);
     }
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     ImageView image;
     TextView logoText,sloganText;
     TextInputLayout mEmail,mPassword;
-    ProgressBar progressBar;
+    ProgressDialog progressDialog;
     FirebaseAuth mAuth;
 
 
@@ -50,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
         mEmail = findViewById(R.id.email_main);
         mPassword = findViewById(R.id.password_main);
         mLoginBtn = findViewById(R.id.Login_btn);
-        progressBar = findViewById(R.id.progressBar2);
         forgotPass = findViewById(R.id.forgotPassword);
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser[] user = {mAuth.getCurrentUser()};
@@ -86,9 +86,10 @@ public class LoginActivity extends AppCompatActivity {
                     mPassword.setError("Password must be 6 Characters long");
                     return;
                 }
-
-
-                progressBar.setVisibility(View.VISIBLE);
+                progressDialog = new ProgressDialog(LoginActivity.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
                 //authenticate the user
 
@@ -101,13 +102,14 @@ public class LoginActivity extends AppCompatActivity {
                             if (user[0].isEmailVerified()){
                                 Toast.makeText(LoginActivity.this,"Logged in Successfully",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                progressDialog.dismiss();
                             }else {
                                 Toast.makeText(LoginActivity.this,"Please verify your email",Toast.LENGTH_SHORT).show();
-                                progressBar.setVisibility(View.INVISIBLE);
+                                progressDialog.dismiss();
                             }
                         }else {
                             Toast.makeText(LoginActivity.this,"Error !"+" " + Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.INVISIBLE);
+                            progressDialog.dismiss();
                         }
 
                     }

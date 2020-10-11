@@ -1,5 +1,6 @@
 package com.ss.gamoney;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -15,9 +16,11 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg, adapter_pubg.pubgviewholder> {
+import java.util.Objects;
 
+public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg, adapter_pubg.pubgviewholder> {
     Context context;
+    ProgressDialog progressDialog;
 
     public adapter_pubg(@NonNull FirebaseRecyclerOptions<model_pubg> options, Context context) {
         super(options);
@@ -26,6 +29,7 @@ public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg, adapter_pu
 
     @Override
     protected void onBindViewHolder(@NonNull pubgviewholder holder, final int position, @NonNull model_pubg model_pubg) {
+        progressDialog = new ProgressDialog(context);
         holder.tournament.setText(model_pubg.getTournament());
         holder.date.setText(model_pubg.getDate());
         holder.month.setText(model_pubg.getMonth());
@@ -36,6 +40,9 @@ public class adapter_pubg extends FirebaseRecyclerAdapter<model_pubg, adapter_pu
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
                 String visit_user_id = getRef(position).getKey();
                 Intent profileIntent = new Intent(context, PubgDescription.class);
                 profileIntent.putExtra("visit_user_id", visit_user_id);

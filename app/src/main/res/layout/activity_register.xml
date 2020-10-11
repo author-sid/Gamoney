@@ -128,12 +128,4 @@
         android:text="@string/already_have_an_account_login"
         android:transitionName="login_signup_trans" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible" />
-
-
 </LinearLayout>

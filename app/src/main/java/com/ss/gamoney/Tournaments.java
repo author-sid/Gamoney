@@ -1,6 +1,7 @@
 package com.ss.gamoney;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,16 +23,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 public class Tournaments extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
-
-    private Button BTN1;
-    private Button BTN2;
-    private Button BTN3;
-    private Button BTN4;
+    Button BTN1,BTN2,BTN3,BTN4;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +39,13 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.activity_tournaments);
 
         BTN1 = findViewById(R.id.BTN1);
-
         BTN1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
                 Intent categoryintent = new Intent(Tournaments.this, PubgRecycler.class);
                 startActivity(categoryintent);
                 finish();
@@ -50,10 +53,13 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         });
 
         BTN2 = findViewById(R.id.BTN2);
-
         BTN2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
                 Intent categoryintent = new Intent(Tournaments.this, CodRecycler.class);
                 startActivity(categoryintent);
                 finish();
@@ -62,10 +68,13 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
 
 
         BTN3 = findViewById(R.id.BTN3);
-
         BTN3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
                 Intent categoryintent = new Intent(Tournaments.this, FreefireRecycler.class);
                 startActivity(categoryintent);
                 finish();
@@ -74,10 +83,13 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
 
 
         BTN4 = findViewById(R.id.BTN4);
-
         BTN4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
                 Intent categoryintent = new Intent(Tournaments.this, csgoRecycler.class);
                 startActivity(categoryintent);
                 finish();
@@ -114,6 +126,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 switch (menuItem.getItemId()) {
                     case R.id.tournament:
                         return true;
+
                     case R.id.profile:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0, 0);

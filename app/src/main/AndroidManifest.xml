@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".joinedTournament"/>
+        <activity android:name=".ProgressDialog"></activity>
+        <activity android:name=".joinedTournament" />
         <activity android:name=".paymentunsuccessful" />
         <activity android:name=".Paymentsuccesssfull" />
         <activity android:name=".CsgoDescription" />
@@ -29,7 +30,7 @@
         <activity android:name=".CodAfterdes" />
         <activity android:name=".CsgoAfterdes" />
         <activity android:name=".PubgAfterdes" />
-        <activity android:name=".roomidpasss"/>
+        <activity android:name=".roomidpasss" />
         <activity
             android:name=".Register"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

@@ -1,8 +1,6 @@
 package com.ss.gamoney;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,8 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,9 +32,9 @@ public class Register extends AppCompatActivity {
     EditText mFullName, mEmail, mPassword, mPhone;
     Button mRegisterBtn, mLoginBtn;
     FirebaseAuth mAuth;
-    ProgressBar progressBar;
     FirebaseFirestore fstore;
     String userID;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +47,8 @@ public class Register extends AppCompatActivity {
         mPhone = findViewById(R.id.phnNo);
         mRegisterBtn = findViewById(R.id.registerbtn);
         mLoginBtn = findViewById(R.id.alreadybtn);
-
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
-        progressBar = findViewById(R.id.progressBar);
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,15 +94,16 @@ public class Register extends AppCompatActivity {
                     mPassword.setError("Password cannot be empty");
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
-
+                progressDialog = new ProgressDialog(Register.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
                 //register the user in firebase
 
                 mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-
                             //send verification link
                             FirebaseUser fuser = mAuth.getCurrentUser();
                             assert fuser != null;
@@ -119,6 +118,7 @@ public class Register extends AppCompatActivity {
                                     Log.d(TAG,"On Failure : Email not sent "+ e.getMessage());
                                 }
                             });
+
                             userID = mAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fstore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
@@ -137,12 +137,11 @@ public class Register extends AppCompatActivity {
                                 }
                             });
                             startActivity(new Intent(Register.this,LoginActivity.class));
-
+                            progressDialog.dismiss();
 
                         }else{
                             Toast.makeText(Register.this,"Error!" + Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
-
+                            progressDialog.dismiss();
                         }
                     }
                 });

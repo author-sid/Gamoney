@@ -1,5 +1,6 @@
 package com.ss.gamoney;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -15,8 +16,12 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
+import java.util.Objects;
+
 public class adapter_freefire extends FirebaseRecyclerAdapter<model_freefire,adapter_freefire.freefireholder> {
     Context context;
+    ProgressDialog progressDialog;
+
     public adapter_freefire(@NonNull FirebaseRecyclerOptions<model_freefire> options, Context context) {
         super(options);
         this.context = context;
@@ -24,6 +29,7 @@ public class adapter_freefire extends FirebaseRecyclerAdapter<model_freefire,ada
 
     @Override
     protected void onBindViewHolder(@NonNull freefireholder holder, final int position, @NonNull model_freefire model_freefire) {
+        progressDialog = new ProgressDialog(context);
         holder.tournament.setText(model_freefire.getTournament());
         holder.date.setText(model_freefire.getDate());
         holder.month.setText(model_freefire.getMonth());
@@ -34,6 +40,9 @@ public class adapter_freefire extends FirebaseRecyclerAdapter<model_freefire,ada
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
                 String user_id = getRef(position).getKey();
                 Intent profileIntent = new Intent(context, FreefireDescription.class);
                 profileIntent.putExtra("user_id", user_id);
