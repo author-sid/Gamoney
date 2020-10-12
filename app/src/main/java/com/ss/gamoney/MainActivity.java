@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.faq:
-                        startActivity(new Intent(getApplicationContext(), joinedTournament.class));
+                        startActivity(new Intent(getApplicationContext(), Faq.class));
                         overridePendingTransition(0, 0);
                         return true;
 
@@ -153,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Name must be at least 5 characters long", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
                 progressDialog = new ProgressDialog(MainActivity.this);
                 progressDialog.show();
                 progressDialog.setContentView(R.layout.activity_progress_dialog);

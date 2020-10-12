@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#da3f3d"
+    android:background="@mipmap/splashscreenbg"
     tools:context=".Splash_activity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:src="@drawable/logo_startup"
+        android:layout_width="399dp"
+        android:layout_height="404dp"
+        android:layout_marginTop="52dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo_nav"
         android:transitionName="logo_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/logo"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -28,7 +28,7 @@
         android:fontFamily="@font/bangers"
         android:text="@string/gamoney"
         android:textAlignment="center"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="70sp"
         android:transitionName="logo_text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
         android:fontFamily="@font/antic"
         android:text="@string/earn_money_through_gaming"
         android:textAlignment="center"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
