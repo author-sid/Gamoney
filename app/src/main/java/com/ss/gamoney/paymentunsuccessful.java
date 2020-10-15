@@ -1,6 +1,7 @@
 package com.ss.gamoney;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,6 +18,7 @@ import org.json.JSONObject;
 
 public class paymentunsuccessful extends AppCompatActivity {
      TextView Backtohome;
+     Toolbar toolbar;
      Button Retry;
 
     @Override
@@ -26,6 +28,8 @@ public class paymentunsuccessful extends AppCompatActivity {
 
         Backtohome = findViewById(R.id.Backtohome);
         Retry = findViewById(R.id.Retry);
+        toolbar = findViewById(R.id.toolbar);
+
         Backtohome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +39,7 @@ public class paymentunsuccessful extends AppCompatActivity {
             }
         });
 
+        setSupportActionBar(toolbar);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.ss.gamoney;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -213,6 +214,7 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
         }
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
         switch (menuitem.getItemId()) {
@@ -235,8 +237,13 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                 break;
 
             case R.id.nav_Supportus:
-                Intent intent3 = new Intent(getApplicationContext(), SupportUs.class);
-                startActivity(intent3);
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("market://details?id=" + getPackageName())));
+                } catch (ActivityNotFoundException e){
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+                }
                 break;
 
             case R.id.nav_Logout:

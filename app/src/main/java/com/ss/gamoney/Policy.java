@@ -9,8 +9,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -124,6 +126,7 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
         }
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
         switch (menuitem.getItemId()){
@@ -146,9 +149,13 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
                 break;
 
             case R.id.nav_Supportus:
-                Intent intent3 = new Intent(getApplicationContext(),SupportUs.class);
-                startActivity(intent3);
-                break;
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("market://details?id=" + getPackageName())));
+                } catch (ActivityNotFoundException e){
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+                }
 
             case R.id.nav_Logout:
                 AlertDialog.Builder builder = new AlertDialog.Builder(Policy.this);

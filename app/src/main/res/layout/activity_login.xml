@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".LoginActivity"
-    android:background="@drawable/loginbg">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/logo_image"
         android:layout_width="217dp"
         android:layout_height="157dp"
-        android:src="@drawable/logo"
-        android:transitionName="logo_image"
+        android:layout_marginTop="-10dp"
         android:contentDescription="@string/logo"
-        android:layout_marginTop="-10dp"/>
+        android:src="@drawable/logo"
+        android:transitionName="logo_image" />
 
     <TextView
         android:id="@+id/logo_name"
@@ -50,17 +50,17 @@
             android:id="@+id/email_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:transitionName="email_trans"
-            android:textColorHint="#fff"
+            android:background="@drawable/edittextbg"
             android:textColor="#fff"
-            android:background="@drawable/edittextbg">
+            android:textColorHint="#fff"
+            android:transitionName="email_trans">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
-                android:textColorHint="#fff"
-                android:textColor="#fff"/>
+                android:textColor="#fff"
+                android:textColorHint="#fff" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,21 +68,20 @@
             android:id="@+id/password_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittextbg"
+            android:textColorHint="#fff"
             android:transitionName="password_trans"
             app:passwordToggleEnabled="true"
-            android:textColorHint="#fff"
-            android:background="@drawable/edittextbg"
-            android:layout_marginTop="5dp"
-            app:passwordToggleTint="#fff"
-            >
+            app:passwordToggleTint="#fff">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:textColorHint="#fff"
-                android:textColor="#fff"/>
+                android:textColor="#fff"
+                android:textColorHint="#fff" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

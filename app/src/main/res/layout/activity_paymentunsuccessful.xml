@@ -1,61 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundgamoney"
     tools:context=".paymentunsuccessful">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="300dp"
-        android:layout_marginBottom="100dp"
-        android:src="@drawable/wrongg"
-        android:contentDescription="@string/payment_unsuccessful_n_n_please_try_again"/>
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
 
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="280dp"
-        android:text="@string/payment_unsuccessful_n_n_please_try_again"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp"
-        android:textStyle="italic"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="300dp"
+            android:layout_marginBottom="100dp"
+            android:src="@drawable/wrongg"
+            android:contentDescription="@string/payment_unsuccessful_n_nplease_try_again_later" />
 
-    <Button
-        android:id="@+id/Retry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="120dp"
-        android:background="@drawable/newbutton"
-        android:text="@string/retry"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="italic" />
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="210dp"
+            android:text="@string/payment_unsuccessful_n_nplease_try_again_later"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/bungee"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/Backtohome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="650dp"
-        android:layout_marginEnd="140dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="@string/home1"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp"
-        android:textStyle="italic"/>
+        <Button
+            android:id="@+id/Retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="101dp"
+            android:layout_marginTop="350dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="120dp"
+            android:background="@drawable/newbutton"
+            android:text="@string/retry"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/Backtohome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="500dp"
+            android:layout_marginEnd="140dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/home1"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="italic"/>
 
 
-</RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+</ScrollView>

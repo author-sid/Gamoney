@@ -1,6 +1,7 @@
 package com.ss.gamoney;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 public class Paymentsuccesssfull extends AppCompatActivity {
     TextView Backtohome2,Referenceno;
+    Toolbar toolbar;
     int reference;
 
     @SuppressLint("SetTextI18n")
@@ -21,6 +23,8 @@ public class Paymentsuccesssfull extends AppCompatActivity {
         Referenceno = findViewById(R.id.referencenumber);
         Referenceno.setText(""+reference);
         Backtohome2 = findViewById(R.id.Backtohome2);
+        toolbar = findViewById(R.id.toolbar);
+
         Backtohome2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,5 +33,7 @@ public class Paymentsuccesssfull extends AppCompatActivity {
                 finish();
             }
         });
+
+        setSupportActionBar(toolbar);
     }
 }
