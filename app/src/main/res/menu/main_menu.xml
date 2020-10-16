@@ -11,7 +11,7 @@
 
         <item
             android:id="@+id/joined_tournament"
-            android:title="Joined Tournaments"
+            android:title="@string/joined_tournaments"
             android:icon="@drawable/joineed"/>
 
         <item

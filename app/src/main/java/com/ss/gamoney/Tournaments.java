@@ -334,6 +334,11 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 resetpassword.show();
                 break;
 
+            case R.id.joined_tournament:
+                Intent intent5 = new Intent(getApplicationContext(), joinedTournament.class);
+                startActivity(intent5);
+                finish();
+
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
