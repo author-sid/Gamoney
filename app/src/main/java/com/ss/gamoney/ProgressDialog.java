@@ -6,6 +6,7 @@ import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.CubeGrid;
 import com.github.ybq.android.spinkit.style.FoldingCube;
 
 public class ProgressDialog extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class ProgressDialog extends AppCompatActivity {
         setContentView(R.layout.activity_progress_dialog);
 
         progressBar = findViewById(R.id.spin_kit);
-        Sprite foldingCube = new FoldingCube();
-        progressBar.setIndeterminateDrawable(foldingCube);
+        Sprite cubeGrid = new CubeGrid();
+        progressBar.setIndeterminateDrawable(cubeGrid);
     }
 }

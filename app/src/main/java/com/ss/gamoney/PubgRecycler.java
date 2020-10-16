@@ -9,9 +9,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -74,6 +77,7 @@ public class PubgRecycler extends AppCompatActivity implements NavigationView.On
         adapter.stopListening();
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
         switch (menuitem.getItemId()) {
@@ -96,8 +100,13 @@ public class PubgRecycler extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_Supportus:
-                Intent intent4 = new Intent(getApplicationContext(), SupportUs.class);
-                startActivity(intent4);
+                try{
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("market://details?id=" + getPackageName())));
+                }catch (ActivityNotFoundException e){
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+                }
                 break;
 
             case R.id.nav_Logout:

@@ -25,6 +25,11 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
@@ -35,11 +40,81 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
     FirebaseAuth mAuth;
     Button BTN1,BTN2,BTN3,BTN4;
     ProgressDialog progressDialog;
+    DatabaseReference databaseReference1,databaseReference2,databaseReference3,databaseReference4;
+    int PUBGtournamentcount, CODtournamentcount, FreeFiretournamentcount, CSGOtournamentcount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tournaments);
+        databaseReference1 = FirebaseDatabase.getInstance().getReference().child("Pubg Tournaments");
+        databaseReference2 = FirebaseDatabase.getInstance().getReference().child("Cod Tournaments");
+        databaseReference3 = FirebaseDatabase.getInstance().getReference().child("Freefire Tournaments");
+        databaseReference4 = FirebaseDatabase.getInstance().getReference().child("CSGO Tournaments");
+
+        databaseReference1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    PUBGtournamentcount = (int) snapshot.getChildrenCount();
+                }else {
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        databaseReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    CODtournamentcount = (int) snapshot.getChildrenCount();
+                }else {
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        databaseReference3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    FreeFiretournamentcount = (int) snapshot.getChildrenCount();
+                }else{
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        databaseReference4.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    CSGOtournamentcount = (int) snapshot.getChildrenCount();
+                }else {
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         BTN1 = findViewById(R.id.BTN1);
         BTN1.setOnClickListener(new View.OnClickListener() {
