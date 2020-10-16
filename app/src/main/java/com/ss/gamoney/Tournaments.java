@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -38,7 +39,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
-    Button BTN1,BTN2,BTN3,BTN4;
+    ImageView pubgtour , csgotour , codtour , freefiretour ;
     ProgressDialog progressDialog;
     DatabaseReference databaseReference1,databaseReference2,databaseReference3,databaseReference4;
     int PUBGtournamentcount, CODtournamentcount, FreeFiretournamentcount, CSGOtournamentcount;
@@ -116,63 +117,61 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
             }
         });
 
-        BTN1 = findViewById(R.id.BTN1);
-        BTN1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressDialog = new ProgressDialog(Tournaments.this);
-                progressDialog.show();
-                progressDialog.setContentView(R.layout.activity_progress_dialog);
-                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent categoryintent = new Intent(Tournaments.this, PubgRecycler.class);
-                startActivity(categoryintent);
-                finish();
-            }
-        });
+       pubgtour = findViewById(R.id.pubgtour);
+       pubgtour.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               progressDialog = new ProgressDialog(Tournaments.this);
+               progressDialog.show();
+               progressDialog.setContentView(R.layout.activity_progress_dialog);
+               Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+               Intent intentpubgtour = new Intent(Tournaments.this , PubgRecycler.class);
+               startActivity(intentpubgtour);
+               finish();
+           }
+       });
 
-        BTN2 = findViewById(R.id.BTN2);
-        BTN2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressDialog = new ProgressDialog(Tournaments.this);
-                progressDialog.show();
-                progressDialog.setContentView(R.layout.activity_progress_dialog);
-                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent categoryintent = new Intent(Tournaments.this, CodRecycler.class);
-                startActivity(categoryintent);
-                finish();
-            }
-        });
+                csgotour = findViewById(R.id.csgotour);
+                csgotour.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        progressDialog = new ProgressDialog(Tournaments.this);
+                        progressDialog.show();
+                        progressDialog.setContentView(R.layout.activity_progress_dialog);
+                        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                        Intent intentcsgotour = new Intent(Tournaments.this , csgoRecycler.class);
+                        startActivity(intentcsgotour);
+                        finish();
+                    }
+                });
 
+                codtour = findViewById(R.id.codtour);
+                codtour.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        progressDialog = new ProgressDialog(Tournaments.this);
+                        progressDialog.show();
+                        progressDialog.setContentView(R.layout.activity_progress_dialog);
+                        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                        Intent intentcodtour = new Intent(Tournaments.this , CodRecycler.class);
+                        startActivity(intentcodtour);
+                        finish();
+                    }
+                });
 
-        BTN3 = findViewById(R.id.BTN3);
-        BTN3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressDialog = new ProgressDialog(Tournaments.this);
-                progressDialog.show();
-                progressDialog.setContentView(R.layout.activity_progress_dialog);
-                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent categoryintent = new Intent(Tournaments.this, FreefireRecycler.class);
-                startActivity(categoryintent);
-                finish();
-            }
-        });
-
-
-        BTN4 = findViewById(R.id.BTN4);
-        BTN4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressDialog = new ProgressDialog(Tournaments.this);
-                progressDialog.show();
-                progressDialog.setContentView(R.layout.activity_progress_dialog);
-                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent categoryintent = new Intent(Tournaments.this, csgoRecycler.class);
-                startActivity(categoryintent);
-                finish();
-            }
-        });
+                freefiretour = findViewById(R.id.freefiretour);
+                freefiretour.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        progressDialog = new ProgressDialog(Tournaments.this);
+                        progressDialog.show();
+                        progressDialog.setContentView(R.layout.activity_progress_dialog);
+                        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                        Intent intentfreefiretour = new Intent(Tournaments.this , FreefireRecycler.class);
+                        startActivity(intentfreefiretour);
+                        finish();
+                    }
+                });
 
 
         drawerLayout = findViewById(R.id.drawer_layout);

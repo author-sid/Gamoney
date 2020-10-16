@@ -24,7 +24,6 @@
         <activity android:name=".FreefireRecycler" />
         <activity android:name=".CodRecycler" />
         <activity android:name=".PubgRecycler" />
-        <activity android:name=".SupportUs" />
         <activity android:name=".ContactUs" />
         <activity android:name=".Policy" />
         <activity android:name=".FreefireAfterdes" />
