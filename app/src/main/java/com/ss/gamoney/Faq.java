@@ -217,6 +217,11 @@ public class Faq extends AppCompatActivity implements NavigationView.OnNavigatio
                 resetpassword.show();
                 break;
 
+            case R.id.joined_tournament:
+                Intent intent5 = new Intent(getApplicationContext(), joinedTournament.class);
+                startActivity(intent5);
+                finish();
+
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,11 +36,22 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
     FirebaseAuth mAuth;
     Button BTN1,BTN2,BTN3,BTN4;
     ProgressDialog progressDialog;
+    TextView joined_tournament;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tournaments);
+
+        joined_tournament = findViewById(R.id.joined_tournament);
+        joined_tournament.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentjoinedtournaments = new Intent(Tournaments.this , joinedTournament.class);
+                startActivity(intentjoinedtournaments);
+                finish();
+            }
+        });
 
         BTN1 = findViewById(R.id.BTN1);
         BTN1.setOnClickListener(new View.OnClickListener() {
@@ -258,6 +270,12 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 });
                 resetpassword.show();
                 break;
+
+            case R.id.joined_tournament:
+                Intent intent5 = new Intent(getApplicationContext(), joinedTournament.class);
+                startActivity(intent5);
+                finish();
+
 
         }
 

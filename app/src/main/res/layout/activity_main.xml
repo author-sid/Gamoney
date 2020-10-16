@@ -8,10 +8,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
 
 
         <RelativeLayout
@@ -54,6 +57,11 @@
 
 
         </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -144,6 +152,8 @@
 
         </LinearLayout>
 
+        </ScrollView>
+
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -155,6 +165,8 @@
         app:itemIconTint="#F5F5DC"
         app:itemTextColor="#F5F5DC"
         app:menu="@menu/menu" />
+
+
 
 
 </RelativeLayout>

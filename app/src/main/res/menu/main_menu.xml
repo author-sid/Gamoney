@@ -10,6 +10,11 @@
             android:icon="@drawable/tournament_info"/>
 
         <item
+            android:id="@+id/joined_tournament"
+            android:title="Joined Tournaments"
+            android:icon="@drawable/joineed"/>
+
+        <item
             android:id="@+id/nav_Faq"
             android:title="@string/faq1"
             android:icon="@drawable/faq"/>

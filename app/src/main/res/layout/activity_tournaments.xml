@@ -9,92 +9,112 @@
     tools:context=".Tournaments">
 
     <com.google.android.material.navigation.NavigationView
-        android:layout_gravity="start"
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:itemTextColor="#F5F5DC"
-        app:itemIconTint="#F5F5DC"
+        android:layout_gravity="start"
         android:background="@drawable/sidenav1"
         app:headerLayout="@layout/header"
-        app:menu="@menu/main_menu"/>
+        app:itemIconTint="#F5F5DC"
+        app:itemTextColor="#F5F5DC"
+        app:menu="@menu/main_menu" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/backgroundgamoney">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/bottomnav1"
-            app:itemIconTint="#F5F5DC"
-            app:itemTextColor="#F5F5DC"
-            app:menu="@menu/menu" />
-
-
-        <Button
-            android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:id="@+id/BTN1"
-            android:text="@string/pubg"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:background="@drawable/newbutton"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_alignBaseline="@id/bottom_navigation" />
+            android:background="@drawable/backgroundgamoney">
 
 
-        <Button
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/BTN2"
-            android:text="@string/cod"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_alignBaseline="@id/bottom_navigation"
-            android:background="@drawable/newbutton"
-            android:layout_marginTop="250dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            />
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bottomnav1"
+                app:itemIconTint="#F5F5DC"
+                app:itemTextColor="#F5F5DC"
+                app:menu="@menu/menu" />
 
 
-        <Button
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/BTN3"
-            android:text="@string/freefire"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:background="@drawable/newbutton"
-            android:layout_marginTop="400dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-           />
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
 
-        <Button
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/BTN4"
-            android:text="@string/csgo"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_marginTop="550dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/newbutton"
-            android:layout_alignBaseline="@id/bottom_navigation"/>
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/joined_tournament"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar"
+                android:layout_marginStart="230dp"
+                android:layout_marginTop="1dp"
+                android:clickable="true"
+                android:fontFamily="@font/bangers"
+                android:text="Joined Tournaments"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/BTN1"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/newbutton"
+                android:text="@string/pubg"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/BTN2"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="250dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/newbutton"
+                android:text="@string/cod"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/BTN3"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="400dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/newbutton"
+                android:text="@string/freefire"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/BTN4"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="550dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/newbutton"
+                android:text="@string/csgo"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
 
