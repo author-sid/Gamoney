@@ -19,7 +19,6 @@
         app:itemTextColor="#F5F5DC"
         app:menu="@menu/main_menu" />
 
-
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -35,46 +34,141 @@
                 layout="@layout/toolbar" />
 
 
-           <ImageView
-               android:layout_width="200dp"
-               android:layout_height="200dp"
-               android:src="@drawable/pubgmain"
-               android:layout_marginTop="100dp"
-               android:layout_marginStart="5dp"
-               android:clickable="true"
-               android:focusable="true"
-               android:id="@+id/pubgtour"/>
-
             <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:src="@drawable/csgomain"
-                android:layout_marginTop="100dp"
-                android:layout_marginStart="180dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:id="@+id/csgotour"/>
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:src="@drawable/codmain"
-                android:layout_marginTop="380dp"
+                android:id="@+id/pubgtour"
+                android:layout_width="186dp"
+                android:layout_height="253dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="100dp"
                 android:clickable="true"
+                android:contentDescription="@string/pubg"
                 android:focusable="true"
-                android:id="@+id/codtour"/>
+                android:src="@drawable/pubgmain" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/pubgtour"
+                android:layout_marginStart="40sp"
+                android:layout_marginTop="190dp"
+                android:fontFamily="@font/bungee"
+                android:text="@string/total_matches"
+                android:textColor="#fff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/pubgtournamentcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/pubgtour"
+                android:layout_marginStart="80sp"
+                android:layout_marginTop="200dp"
+                android:fontFamily="@font/bungee"
+                android:text="@string/_0"
+                android:textColor="#fff"
+                android:textSize="22sp" />
 
             <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:src="@drawable/freefiremain"
-                android:layout_marginTop="380dp"
-                android:layout_marginStart="180dp"
+                android:id="@+id/codtour"
+                android:layout_width="186dp"
+                android:layout_height="253dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="100dp"
                 android:clickable="true"
+                android:contentDescription="@string/csgo"
                 android:focusable="true"
-                android:id="@+id/freefiretour"/>
+                android:src="@drawable/codmain" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/codtour"
+                android:layout_marginStart="240dp"
+                android:layout_marginTop="190dp"
+                android:fontFamily="@font/bungee"
+                android:text="@string/total_matches"
+                android:textColor="#fff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/codtournamentcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/codtour"
+                android:layout_marginStart="280sp"
+                android:layout_marginTop="200dp"
+                android:fontFamily="@font/bungee"
+                android:text="@string/_0"
+                android:textColor="#fff"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/csgotour"
+                android:layout_width="186dp"
+                android:layout_height="253dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="380dp"
+                android:clickable="true"
+                android:contentDescription="@string/csgo"
+                android:focusable="true"
+                android:src="@drawable/csgomain" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/csgotour"
+                android:layout_marginStart="40sp"
+                android:layout_marginTop="190dp"
+                android:fontFamily="@font/bungee"
+                android:text="@string/total_matches"
+                android:textColor="#fff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/csgotournamentcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/csgotour"
+                android:layout_marginStart="80sp"
+                android:layout_marginTop="200dp"
+                android:fontFamily="@font/bungee"
+                android:text="@string/_0"
+                android:textColor="#fff"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/freefiretour"
+                android:layout_width="186dp"
+                android:layout_height="253dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="380dp"
+                android:clickable="true"
+                android:contentDescription="@string/freefire"
+                android:focusable="true"
+                android:src="@drawable/freefiremain" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/freefiretour"
+                android:layout_marginStart="240dp"
+                android:layout_marginTop="190dp"
+                android:fontFamily="@font/bungee"
+                android:text="@string/total_matches"
+                android:textColor="#fff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/freefirecount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/freefiretour"
+                android:layout_marginStart="280sp"
+                android:layout_marginTop="200dp"
+                android:fontFamily="@font/bungee"
+                android:text="@string/_0"
+                android:textColor="#fff"
+                android:textSize="22sp" />
 
         </RelativeLayout>
 
@@ -82,7 +176,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="45dp">
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
@@ -93,11 +187,7 @@
             app:itemTextColor="#F5F5DC"
             app:menu="@menu/menu" />
 
-
-
     </RelativeLayout>
-
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

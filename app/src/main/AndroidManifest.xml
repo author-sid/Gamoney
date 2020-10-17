@@ -10,9 +10,8 @@
         android:label="Gamoney"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:hardwareAccelerated="false">
-        <activity android:name=".ProgressDialog"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".ProgressDialog"/>
         <activity android:name=".joinedTournament" />
         <activity android:name=".paymentunsuccessful" />
         <activity android:name=".Paymentsuccesssfull" />
@@ -31,6 +30,7 @@
         <activity android:name=".CsgoAfterdes" />
         <activity android:name=".PubgAfterdes" />
         <activity android:name=".roomidpasss" />
+
         <activity
             android:name=".Register"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -42,7 +42,6 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -53,6 +52,7 @@
         <meta-data
             android:name="com.razorpay.ApiKey"
             android:value="rzp_test_L7rUAT54uR8uKu" />
+
     </application>
 
 </manifest>

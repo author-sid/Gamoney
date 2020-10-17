@@ -1,172 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_gravity="start"
+        android:background="@drawable/sidenav1"
+        app:headerLayout="@layout/header"
+        app:itemIconTint="#F5F5DC"
+        app:itemTextColor="#F5F5DC"
+        app:menu="@menu/main_menu" />
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@drawable/main_bg_img"
-            android:padding="20dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_pic"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/profilepic_sam" />
-
-
-            <ImageView
-                android:id="@+id/change_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/profile_pic"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="-22dp"
-                android:layout_marginEnd="260dp"
-                android:src="@drawable/edit_image"
-                app:tint="#fff"
-                android:contentDescription="@string/profile_picture"/>
-
-            <TextView
-                android:id="@+id/full_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
-                android:layout_toEndOf="@id/profile_pic"
-                android:fontFamily="@font/bungee"
-                android:includeFontPadding="false"
-                android:textColor="#fff"
-                android:textSize="20sp" />
-
-
-        </RelativeLayout>
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="386dp"
-            android:orientation="vertical"
-            android:padding="20dp"
-            android:background="@drawable/bottomain">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:layout_height="300dp"
+                android:padding="20dp"
+                android:background="@drawable/mainactivitybackground">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/full_namefield"
-                    android:layout_width="match_parent"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_pic"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/profilepic_sam" />
+
+                <ImageView
+                    android:id="@+id/change_profile"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/username_small_icon"
-                    android:drawablePadding="10dp"
-                    android:hint="@string/full_name">
+                    android:layout_below="@+id/profile_pic"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="-22dp"
+                    android:layout_marginEnd="260dp"
+                    android:src="@drawable/edit_image"
+                    app:tint="#fff"
+                    android:contentDescription="@string/profile_picture"/>
 
-                </com.google.android.material.textfield.TextInputEditText>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/email_field"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/full_name"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/email_small_icon"
-                    android:drawablePadding="10dp"
-                    android:hint="@string/email">
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/profile_pic"
+                    android:fontFamily="@font/bungee"
+                    android:includeFontPadding="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
 
-                </com.google.android.material.textfield.TextInputEditText>
+            </RelativeLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bottomain">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phone_field"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/phone_small_icon"
-                    android:drawablePadding="10dp"
-                    android:hint="@string/number">
+                    android:layout_height="386dp"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-                </com.google.android.material.textfield.TextInputEditText>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/full_namefield"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/username_small_icon"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/full_name">
 
-            <Button
-                android:id="@+id/update"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/buttonbg"
-                android:fontFamily="@font/bungee"
-                android:text="@string/update"
-                android:textColor="#FFFFFF" />
+                        </com.google.android.material.textfield.TextInputEditText>
 
-            <ProgressBar
-                android:id="@+id/progressBar3"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:visibility="gone" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/logout"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:background="@drawable/buttonbg"
-                android:fontFamily="@font/bungee"
-                android:onClick="logout"
-                android:text="@string/logout"
-                android:textColor="#fff" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email_field"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/email_small_icon"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/email">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/phone_field"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/phone_small_icon"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/number">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/update"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/buttonbg"
+                        android:fontFamily="@font/bungee"
+                        android:text="@string/update"
+                        android:textColor="#FFFFFF" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar3"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/buttonbg"
+                        android:fontFamily="@font/bungee"
+                        android:onClick="logout"
+                        android:text="@string/logout"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+
+            </ScrollView>
 
         </LinearLayout>
 
-        </ScrollView>
-
-    </LinearLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/bottomnav1"
-        app:itemIconTint="#F5F5DC"
-        app:itemTextColor="#F5F5DC"
-        app:menu="@menu/menu" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottomnav1"
+            app:itemIconTint="#F5F5DC"
+            app:itemTextColor="#F5F5DC"
+            app:menu="@menu/menu" />
+    </RelativeLayout>
 
 
-
-
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

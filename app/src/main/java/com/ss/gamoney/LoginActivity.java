@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                             assert user[0] != null;
                             if (user[0].isEmailVerified()){
                                 Toast.makeText(LoginActivity.this,"Logged in Successfully",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                startActivity(new Intent(getApplicationContext(),Tournaments.class));
                                 progressDialog.dismiss();
                             }else {
                                 Toast.makeText(LoginActivity.this,"Please verify your email",Toast.LENGTH_SHORT).show();

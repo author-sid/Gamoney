@@ -10,9 +10,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -43,23 +43,31 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
     ProgressDialog progressDialog;
     DatabaseReference databaseReference1,databaseReference2,databaseReference3,databaseReference4;
     int PUBGtournamentcount, CODtournamentcount, FreeFiretournamentcount, CSGOtournamentcount;
+    TextView PUBGtourcount, CODtourcount , Freefiretourcount , CSGotourcount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tournaments);
+        PUBGtourcount = findViewById(R.id.pubgtournamentcount);
+        CODtourcount = findViewById(R.id.codtournamentcount);
+        Freefiretourcount = findViewById(R.id.freefirecount);
+        CSGotourcount = findViewById(R.id.csgotournamentcount);
+
         databaseReference1 = FirebaseDatabase.getInstance().getReference().child("Pubg Tournaments");
         databaseReference2 = FirebaseDatabase.getInstance().getReference().child("Cod Tournaments");
         databaseReference3 = FirebaseDatabase.getInstance().getReference().child("Freefire Tournaments");
         databaseReference4 = FirebaseDatabase.getInstance().getReference().child("CSGO Tournaments");
 
         databaseReference1.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     PUBGtournamentcount = (int) snapshot.getChildrenCount();
+                    PUBGtourcount.setText(""+PUBGtournamentcount);
                 }else {
-
+                    PUBGtourcount.setText("0");
                 }
             }
 
@@ -70,12 +78,14 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         });
 
         databaseReference2.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     CODtournamentcount = (int) snapshot.getChildrenCount();
+                    CODtourcount.setText(""+CODtournamentcount);
                 }else {
-
+                    CODtourcount.setText("0");
                 }
             }
 
@@ -86,12 +96,14 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         });
 
         databaseReference3.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     FreeFiretournamentcount = (int) snapshot.getChildrenCount();
+                    Freefiretourcount.setText(""+FreeFiretournamentcount);
                 }else{
-
+                    Freefiretourcount.setText("0");
                 }
             }
 
@@ -102,12 +114,14 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         });
 
         databaseReference4.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     CSGOtournamentcount = (int) snapshot.getChildrenCount();
+                    CSGotourcount.setText(""+CSGOtournamentcount);
                 }else {
-
+                    CSGotourcount.setText("0");
                 }
             }
 
@@ -172,7 +186,6 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                         finish();
                     }
                 });
-
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -239,6 +252,8 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
     public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
         switch (menuitem.getItemId()) {
             case R.id.nav_tournamentinfo:
+                Intent intent6 = new Intent(getApplicationContext(),Tournaments.class);
+                startActivity(intent6);
                 break;
 
             case R.id.nav_Contactus:

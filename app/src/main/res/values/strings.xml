@@ -108,4 +108,6 @@
     <string name="save_this_id_for_future_purpose">*Save this ID for Future Purpose</string>
     <string name="joined_tournaments">Joined Tournaments</string>
     <string name="payment_unsuccessful_n_nplease_try_again_later">Payment Unsuccessful \n\nPlease Try Again Later</string>
+    <string name="total_matches">Total Matches</string>
+    <string name="_0">0</string>
 </resources>

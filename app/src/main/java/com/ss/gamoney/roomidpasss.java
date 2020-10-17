@@ -37,9 +37,9 @@ import java.util.Objects;
 
 public class roomidpasss extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     TextView Roomidshow, Passwordshow;
+    Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    Toolbar toolbar;
     FirebaseAuth mAuth;
     String tournamentid,pricejoined,checktournament;
     DatabaseReference reff;
@@ -63,6 +63,7 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
         mAuth = FirebaseAuth.getInstance();
         copyRoomID = findViewById(R.id.copyroomid);
         copyPassword = findViewById(R.id.copypass);
+        navigationView.bringToFront();
 
         reff = FirebaseDatabase.getInstance().getReference().child("RoomID").child(checktournament);
         reff.addValueEventListener(new ValueEventListener() {
@@ -120,6 +121,8 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
     public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
         switch (menuitem.getItemId()) {
             case R.id.nav_tournamentinfo:
+                Intent intent6 = new Intent(getApplicationContext(),Tournaments.class);
+                startActivity(intent6);
                 break;
 
             case R.id.nav_Contactus:
@@ -212,6 +215,11 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
                     }
                 });
                 resetpassword.show();
+                break;
+
+            case R.id.joined_tournament:
+                Intent intent5 = new Intent(getApplicationContext(), joinedTournament.class);
+                startActivity(intent5);
                 break;
 
         }
