@@ -45,7 +45,7 @@
             android:layout_marginTop="350dp"
             android:layout_marginEnd="120dp"
             android:layout_marginBottom="120dp"
-            android:background="@drawable/newbutton"
+            android:background="@drawable/roundedcorner"
             android:text="@string/retry"
             android:textColor="#FFFFFF"
             android:textSize="18sp"

@@ -179,11 +179,12 @@
         <Button
             android:id="@+id/payment"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@+id/warning1"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/smallbutons"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/roundedcorner"
             android:text="@string/proceed_to_payment"
             android:textColor="#fff" />
 

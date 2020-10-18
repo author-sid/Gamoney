@@ -87,7 +87,7 @@
             android:layout_marginTop="360dp"
             android:layout_marginEnd="120dp"
             android:layout_marginBottom="120dp"
-            android:background="@drawable/newbutton"
+            android:background="@drawable/roundedcorner"
             android:text="@string/joined_tournaments"
             android:textColor="#FFF"
             android:textSize="18sp"

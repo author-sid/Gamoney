@@ -1,0 +1,623 @@
+Index: app/src/main/res/layout/activity_cod_afterdes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/backgroundgamoney\"\r\n    tools:context=\".CodAfterdes\">\r\n\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tournamenttext1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginBottom=\"14dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/tournaments\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/teamdetails\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/tournamenttext1\"\r\n            android:layout_marginStart=\"80dp\"\r\n            android:text=\"@string/please_enter_your_team_details\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/player1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/teamdetails\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_1\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input1\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_1\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input1\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_2\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input2\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player2\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_2\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input2\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_3\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input3\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player3\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_3\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input3\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_4\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input4\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player4\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_4\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/warning\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input4\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:text=\"@string/NameWarning\"\r\n            android:textColor=\"#FFFFFF\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/PhoneNo\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/warning\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:text=\"@string/phone_number1\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/phoneinput\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/PhoneNo\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/phone_number\"\r\n            android:inputType=\"number\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/warning1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/phoneinput\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:text=\"@string/this_number_will_be_used_for_prize_distribution\"\r\n            android:textColor=\"#FFFFFF\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/payment\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/warning1\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:background=\"@drawable/smallbutons\"\r\n            android:text=\"@string/proceed_to_payment\"\r\n            android:textColor=\"#fff\" />\r\n\r\n    </RelativeLayout>\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_cod_afterdes.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_cod_afterdes.xml	(date 1602882699845)
+@@ -182,9 +182,10 @@
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/warning1"
+-            android:layout_marginStart="100dp"
+-            android:layout_marginTop="10dp"
+-            android:background="@drawable/smallbutons"
++            android:layout_marginStart="50dp"
++            android:layout_marginTop="20dp"
++            android:layout_marginBottom="30dp"
++            android:background="@drawable/roundedcorner"
+             android:text="@string/proceed_to_payment"
+             android:textColor="#fff" />
+ 
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.ss.gamoney\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"Gamoney\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\"\r\n        android:hardwareAccelerated=\"false\">\r\n        <activity android:name=\".ProgressDialog\"></activity>\r\n        <activity android:name=\".joinedTournament\" />\r\n        <activity android:name=\".paymentunsuccessful\" />\r\n        <activity android:name=\".Paymentsuccesssfull\" />\r\n        <activity android:name=\".CsgoDescription\" />\r\n        <activity android:name=\".FreefireDescription\" />\r\n        <activity android:name=\".CodDescription\" />\r\n        <activity android:name=\".PubgDescription\" />\r\n        <activity android:name=\".csgoRecycler\" />\r\n        <activity android:name=\".FreefireRecycler\" />\r\n        <activity android:name=\".CodRecycler\" />\r\n        <activity android:name=\".PubgRecycler\" />\r\n        <activity android:name=\".ContactUs\" />\r\n        <activity android:name=\".Policy\" />\r\n        <activity android:name=\".FreefireAfterdes\" />\r\n        <activity android:name=\".CodAfterdes\" />\r\n        <activity android:name=\".CsgoAfterdes\" />\r\n        <activity android:name=\".PubgAfterdes\" />\r\n        <activity android:name=\".roomidpasss\" />\r\n        <activity\r\n            android:name=\".Register\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\r\n        <activity\r\n            android:name=\".LoginActivity\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\r\n        <activity\r\n            android:name=\".Splash_activity\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n        <activity android:name=\".MainActivity\" />\r\n        <activity android:name=\".Faq\" />\r\n        <activity android:name=\".Tournaments\" />\r\n\r\n        <meta-data\r\n            android:name=\"com.razorpay.ApiKey\"\r\n            android:value=\"rzp_test_L7rUAT54uR8uKu\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/AndroidManifest.xml	(date 1602965794999)
+@@ -6,13 +6,13 @@
+ 
+     <application
+         android:allowBackup="true"
++        android:hardwareAccelerated="false"
+         android:icon="@mipmap/ic_launcher"
+         android:label="Gamoney"
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+-        android:theme="@style/AppTheme"
+-        android:hardwareAccelerated="false">
+-        <activity android:name=".ProgressDialog"></activity>
++        android:theme="@style/AppTheme">
++        <activity android:name=".ProgressDialog" />
+         <activity android:name=".joinedTournament" />
+         <activity android:name=".paymentunsuccessful" />
+         <activity android:name=".Paymentsuccesssfull" />
+Index: app/src/main/res/layout/activity_freefire_description.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/backgroundgamoney\"\r\n    tools:context=\".FreefireDescription\">\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tournamenttext2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginBottom=\"30dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/tournaments\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/image_recycler2\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"100dp\"\r\n            android:layout_below=\"@id/tournamenttext2\"\r\n            android:scaleType=\"centerCrop\"\r\n            android:src=\"@mipmap/ic_launcher\"\r\n            android:contentDescription=\"@string/tournament_poster\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/price2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/image_recycler2\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/entry_fees\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/priceinput2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/image_recycler2\"\r\n            android:layout_marginStart=\"170dp\"\r\n            android:layout_marginTop=\"21.5dp\"\r\n            android:text=\"@string/TestText\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/image_description2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/price2\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:fontFamily=\"@font/antic\"\r\n            android:text=\"@string/TestText\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/generalrule2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/image_description2\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/Generalrules\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/rules2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/generalrule2\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:fontFamily=\"@font/antic\"\r\n            android:text=\"@string/Rules\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"16sp\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/instagram2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"18dp\"\r\n            android:layout_below=\"@id/rules2\"\r\n            android:layout_marginStart=\"160dp\"\r\n            android:layout_marginTop=\"-35dp\"\r\n            android:clickable=\"true\"\r\n            android:focusable=\"true\"\r\n            android:src=\"@drawable/instagram\"\r\n            android:contentDescription=\"@string/instagram\"/>\r\n\r\n        <ImageView\r\n            android:id=\"@+id/facebook2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"18dp\"\r\n            android:layout_below=\"@id/rules2\"\r\n            android:layout_marginStart=\"190dp\"\r\n            android:layout_marginTop=\"-35dp\"\r\n            android:clickable=\"true\"\r\n            android:focusable=\"true\"\r\n            android:src=\"@drawable/facebook\"\r\n            android:contentDescription=\"@string/facebook\"/>\r\n\r\n        <Button\r\n            android:id=\"@+id/jointournament2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/facebook2\"\r\n            android:layout_marginStart=\"135dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:background=\"@drawable/smallbutons\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/join_tournament\"\r\n            android:textColor=\"#FFF\"\r\n            android:textSize=\"13sp\"\r\n            app:cornerRadius=\"400dp\" />\r\n\r\n    </RelativeLayout>\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_freefire_description.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_freefire_description.xml	(date 1602882699896)
+@@ -119,9 +119,9 @@
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/facebook2"
+-            android:layout_marginStart="135dp"
+-            android:layout_marginTop="30dp"
+-            android:background="@drawable/smallbutons"
++            android:layout_marginStart="50dp"
++            android:layout_marginTop="8dp"
++            android:background="@drawable/roundedcorner"
+             android:fontFamily="@font/bungee"
+             android:text="@string/join_tournament"
+             android:textColor="#FFF"
+Index: app/src/main/res/layout/activity_contact_us.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.drawerlayout.widget.DrawerLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/drawer_layout\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".ContactUs\">\r\n\r\n    <com.google.android.material.navigation.NavigationView\r\n        android:id=\"@+id/nav_view\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_gravity=\"start\"\r\n        app:headerLayout=\"@layout/header\"\r\n        android:background=\"@drawable/sidenav1\"\r\n        app:itemTextColor=\"#F5F5DC\"\r\n        app:itemIconTint=\"#F5F5DC\"\r\n        app:menu=\"@menu/main_menu\" />\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\">\r\n\r\n        <include\r\n            android:id=\"@+id/toolbar\"\r\n            layout=\"@layout/toolbar\" />\r\n\r\n        <ScrollView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:layout_marginTop=\"-10dp\"\r\n            android:background=\"@drawable/backgroundgamoney\"\r\n            app:layout_behavior=\"@string/appbar_scrolling_view_behavior\">\r\n\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"80dp\"\r\n                android:orientation=\"vertical\"\r\n                tools:ignore=\"ExtraText\">\r\n\r\n                <TextView\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginStart=\"80dp\"\r\n                    android:layout_marginBottom=\"30dp\"\r\n                    android:fontFamily=\"@font/bungee\"\r\n                    android:text=\"@string/tell_us_about_your_problem\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:textSize=\"15sp\"\r\n                    android:textStyle=\"bold\" />\r\n\r\n                <TextView\r\n                    android:layout_width=\"fill_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginStart=\"3dp\"\r\n                    android:text=\"@string/your_name\"\r\n                    android:textAllCaps=\"true\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:textSize=\"12sp\" />\r\n\r\n\r\n                <EditText\r\n                    android:id=\"@+id/your_name\"\r\n                    android:layout_width=\"fill_parent\"\r\n                    android:layout_height=\"38dp\"\r\n                    android:layout_marginBottom=\"20dp\"\r\n                    android:inputType=\"text\"\r\n                    android:singleLine=\"true\"\r\n                    android:textSize=\"12sp\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:hint=\"@string/name1\"\r\n                    android:textColorHint=\"#FFFFFF\"\r\n                    android:backgroundTint=\"#FFFFFF\"\r\n                    android:autofillHints=\"@string/name1\"/>\r\n\r\n\r\n                <TextView\r\n                    android:layout_width= \"fill_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginStart=\"3dp\"\r\n                    android:text=\"@string/your_email\"\r\n                    android:textAllCaps=\"true\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:textSize=\"12sp\"/>\r\n\r\n                <EditText\r\n                    android:id=\"@+id/your_email\"\r\n                    android:layout_width=\"fill_parent\"\r\n                    android:layout_height=\"38dp\"\r\n                    android:layout_marginBottom=\"20dp\"\r\n                    android:inputType=\"textEmailAddress\"\r\n                    android:singleLine=\"true\"\r\n                    android:textSize=\"12sp\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:hint=\"@string/email1\"\r\n                    android:backgroundTint=\"#FFFFFF\"\r\n                    android:textColorHint=\"#FFFFFF\"\r\n                    android:autofillHints=\"@string/email1\"/>\r\n\r\n\r\n                <TextView\r\n                    android:layout_width=\"fill_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginStart=\"3dp\"\r\n                    android:text=\"@string/subject\"\r\n                    android:textAllCaps=\"true\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:textSize=\"12sp\" />\r\n\r\n\r\n                <EditText\r\n                    android:id=\"@+id/your_subject\"\r\n                    android:layout_width=\"fill_parent\"\r\n                    android:layout_height=\"38dp\"\r\n                    android:layout_marginBottom=\"20dp\"\r\n                    android:inputType=\"text\"\r\n                    android:singleLine=\"true\"\r\n                    android:textSize=\"12sp\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:hint=\"@string/subject1\"\r\n                    android:textColorHint=\"#FFFFFF\"\r\n                    android:autofillHints=\"@string/subject1\"\r\n                    android:backgroundTint=\"#FFFFFF\"/>\r\n\r\n                <TextView\r\n                    android:layout_width=\"fill_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginStart=\"3dp\"\r\n                    android:text=\"@string/message\"\r\n                    android:textAllCaps=\"true\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:textSize=\"12sp\" />\r\n\r\n                <EditText\r\n                    android:id=\"@+id/your_message\"\r\n                    android:layout_width=\"fill_parent\"\r\n                    android:layout_height=\"100dp\"\r\n                    android:layout_marginBottom=\"20dp\"\r\n                    android:inputType=\"textMultiLine\"\r\n                    android:singleLine=\"false\"\r\n                    android:textSize=\"12sp\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:hint=\"@string/message1\"\r\n                    android:textColorHint=\"#FFFFFF\"\r\n                    android:gravity=\"top\"\r\n                    android:autofillHints=\"@string/message1\"\r\n                    android:backgroundTint=\"#FFFFFF\"/>\r\n\r\n                <ImageView\r\n                    android:layout_width=\"100dp\"\r\n                    android:layout_height=\"60dp\"\r\n                    android:src=\"@drawable/recaptcha\"\r\n                    android:contentDescription=\"@string/captcha\"/>\r\n\r\n\r\n                <CheckBox\r\n                    android:id=\"@+id/check_box\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginStart=\"100dp\"\r\n                    android:layout_marginTop=\"-43dp\"\r\n                    android:text=\"@string/i_m_not_a_robot\"\r\n                    android:textSize=\"17sp\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:buttonTint=\"#FFFFFF\" />\r\n\r\n                <Button\r\n                    android:id=\"@+id/post_message\"\r\n                    android:layout_width=\"130dp\"\r\n                    android:layout_height=\"35dp\"\r\n                    android:layout_marginStart=\"120dp\"\r\n                    android:layout_marginTop=\"40dp\"\r\n                    android:text=\"@string/send_message\"\r\n                    android:background=\"@drawable/smallbutons\"\r\n                    android:textColor=\"#FFFFFF\"\r\n                    android:textSize=\"15sp\" />\r\n\r\n                <ImageView\r\n                    android:id=\"@+id/instagram\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginStart=\"150dp\"\r\n                    android:layout_marginTop=\"30dp\"\r\n                    android:clickable=\"true\"\r\n                    android:focusable=\"true\"\r\n                    android:src=\"@drawable/instagram\"\r\n                    android:contentDescription=\"@string/instagram\"/>\r\n\r\n                <ImageView\r\n                    android:id=\"@+id/facebook\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginStart=\"190dp\"\r\n                    android:layout_marginTop=\"-26.5dp\"\r\n                    android:clickable=\"true\"\r\n                    android:focusable=\"true\"\r\n                    android:src=\"@drawable/facebook\"\r\n                    android:contentDescription=\"@string/facebook\"/>\r\n\r\n\r\n            </LinearLayout>\r\n\r\n\r\n        </ScrollView>\r\n\r\n\r\n    </RelativeLayout>\r\n\r\n\r\n</androidx.drawerlayout.widget.DrawerLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_contact_us.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_contact_us.xml	(date 1602881784708)
+@@ -174,7 +174,7 @@
+                     android:layout_marginStart="120dp"
+                     android:layout_marginTop="40dp"
+                     android:text="@string/send_message"
+-                    android:background="@drawable/smallbutons"
++                    android:background="@drawable/roundedcorner"
+                     android:textColor="#FFFFFF"
+                     android:textSize="15sp" />
+ 
+Index: app/src/main/res/layout/activity_csgo_afterdes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/backgroundgamoney\"\r\n    tools:context=\".CsgoAfterdes\">\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tournamenttext1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginBottom=\"14dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/tournaments\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/teamdetails\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/tournamenttext1\"\r\n            android:layout_marginStart=\"80dp\"\r\n            android:text=\"@string/please_enter_your_team_details\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/player1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/teamdetails\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_1\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input1\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_1\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input1\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_2\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input2\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player2\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_2\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input2\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_3\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input3\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player3\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_3\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input3\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_4\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input4\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player4\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_4\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player5\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input4\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_5\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#fff\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input5\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player5\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_5\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/warning\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input5\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:text=\"@string/NameWarning\"\r\n            android:textColor=\"#FFFFFF\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/PhoneNo\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/warning\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:text=\"@string/phone_number1\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/phoneinput\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/PhoneNo\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/phone_number\"\r\n            android:inputType=\"number\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/warning1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/phoneinput\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:text=\"@string/this_number_will_be_used_for_prize_distribution\"\r\n            android:textColor=\"#FFFFFF\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/payment\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/warning1\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:background=\"@drawable/smallbutons\"\r\n            android:text=\"@string/proceed_to_payment\"\r\n            android:textColor=\"#fff\" />\r\n\r\n    </RelativeLayout>\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_csgo_afterdes.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_csgo_afterdes.xml	(date 1602882699832)
+@@ -206,9 +206,10 @@
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/warning1"
+-            android:layout_marginStart="100dp"
+-            android:layout_marginTop="10dp"
+-            android:background="@drawable/smallbutons"
++            android:layout_marginStart="50dp"
++            android:layout_marginTop="20dp"
++            android:layout_marginBottom="30dp"
++            android:background="@drawable/roundedcorner"
+             android:text="@string/proceed_to_payment"
+             android:textColor="#fff" />
+ 
+Index: app/src/main/res/layout/activity_freefire_afterdes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/backgroundgamoney\"\r\n    tools:context=\".FreefireAfterdes\">\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tournamenttext1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginBottom=\"14dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/tournaments\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/teamdetails\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/tournamenttext1\"\r\n            android:layout_marginStart=\"80dp\"\r\n            android:text=\"@string/please_enter_your_team_details\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/player1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/teamdetails\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_1\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input1\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_1\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input1\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_2\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input2\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player2\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_2\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input2\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_3\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input3\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player3\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_3\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input3\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_4\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input4\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player4\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_4\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/warning\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input4\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:text=\"@string/NameWarning\"\r\n            android:textColor=\"#FFFFFF\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/PhoneNo\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/warning\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:text=\"@string/phone_number1\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/phoneinput\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/PhoneNo\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/phone_number\"\r\n            android:inputType=\"number\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/warning1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/phoneinput\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:text=\"@string/this_number_will_be_used_for_prize_distribution\"\r\n            android:textColor=\"#FFFFFF\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/payment\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/warning1\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:background=\"@drawable/smallbutons\"\r\n            android:text=\"@string/proceed_to_payment\"\r\n            android:textColor=\"#fff\" />\r\n\r\n    </RelativeLayout>\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_freefire_afterdes.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_freefire_afterdes.xml	(date 1602882699870)
+@@ -181,9 +181,10 @@
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/warning1"
+-            android:layout_marginStart="100dp"
+-            android:layout_marginTop="10dp"
+-            android:background="@drawable/smallbutons"
++            android:layout_marginStart="50dp"
++            android:layout_marginTop="20dp"
++            android:layout_marginBottom="30dp"
++            android:background="@drawable/roundedcorner"
+             android:text="@string/proceed_to_payment"
+             android:textColor="#fff" />
+ 
+Index: app/src/main/res/drawable/roundedcorner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<shape xmlns:android=\"http://schemas.android.com/apk/res/android\" android:shape=\"rectangle\" >\r\n    <corners\r\n        android:radius=\"100dp\"\r\n        />\r\n    <gradient\r\n        android:angle=\"45\"\r\n        android:centerX=\"35%\"\r\n        android:centerColor=\"#EB0505\"\r\n        android:startColor=\"#E8E8E8\"\r\n        android:endColor=\"#000000\"\r\n        android:type=\"linear\"\r\n        />\r\n    <padding\r\n        android:left=\"0dp\"\r\n        android:top=\"0dp\"\r\n        android:right=\"0dp\"\r\n        android:bottom=\"0dp\"\r\n        />\r\n    <size\r\n        android:width=\"270dp\"\r\n        android:height=\"100dp\"\r\n        />\r\n    <stroke\r\n        android:width=\"3dp\"\r\n        android:color=\"#878787\"\r\n        />\r\n</shape>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/roundedcorner.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/drawable/roundedcorner.xml	(date 1602881234018)
+@@ -6,9 +6,9 @@
+     <gradient
+         android:angle="45"
+         android:centerX="35%"
+-        android:centerColor="#EB0505"
+-        android:startColor="#E8E8E8"
+-        android:endColor="#000000"
++        android:centerColor="#0F2164"
++        android:startColor="#0F2164"
++        android:endColor="#0F2164"
+         android:type="linear"
+         />
+     <padding
+@@ -19,10 +19,10 @@
+         />
+     <size
+         android:width="270dp"
+-        android:height="100dp"
++        android:height="60dp"
+         />
+     <stroke
+         android:width="3dp"
+-        android:color="#878787"
++        android:color="#0F2164"
+         />
+ </shape>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_pubg_afterdes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/backgroundgamoney\"\r\n    tools:context=\".PubgAfterdes\">\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tournamenttext1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginBottom=\"14dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/tournaments\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/teamdetails\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/tournamenttext1\"\r\n            android:layout_marginStart=\"80dp\"\r\n            android:text=\"@string/please_enter_your_team_details\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/player1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/teamdetails\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_1\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input1\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_1\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input1\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_2\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input2\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player2\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_2\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input2\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_3\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input3\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player3\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_3\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/player4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input3\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:text=\"@string/player_4\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/player1input4\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player4\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/player_4\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/warning\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/player1input4\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:text=\"@string/NameWarning\"\r\n            android:textColor=\"#FFFFFF\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/PhoneNo\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/warning\"\r\n            android:layout_marginStart=\"20dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:text=\"@string/phone_number1\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/phoneinput\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/PhoneNo\"\r\n            android:layout_marginStart=\"15dp\"\r\n            android:hint=\"@string/phone_number\"\r\n            android:inputType=\"number\"\r\n            android:textColor=\"#fff\"\r\n            android:textColorHint=\"#fff\"\r\n            android:textSize=\"16sp\"\r\n            android:backgroundTint=\"#fff\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/warning1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/phoneinput\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:text=\"@string/this_number_will_be_used_for_prize_distribution\"\r\n            android:textColor=\"#FFFFFF\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/payment\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/warning1\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:background=\"@drawable/smallbutons\"\r\n            android:text=\"@string/proceed_to_payment\"\r\n            android:textColor=\"#fff\" />\r\n\r\n    </RelativeLayout>\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_pubg_afterdes.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_pubg_afterdes.xml	(date 1602882699857)
+@@ -181,9 +181,10 @@
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/warning1"
+-            android:layout_marginStart="100dp"
+-            android:layout_marginTop="10dp"
+-            android:background="@drawable/smallbutons"
++            android:layout_marginStart="50dp"
++            android:layout_marginTop="20dp"
++            android:layout_marginBottom="30dp"
++            android:background="@drawable/roundedcorner"
+             android:text="@string/proceed_to_payment"
+             android:textColor="#fff" />
+ 
+Index: app/src/main/res/drawable/ic_launcher_foreground.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/ic_launcher_foreground.xml	(date 1603047655774)
++++ app/src/main/res/drawable/ic_launcher_foreground.xml	(date 1603047655774)
+@@ -0,0 +1,15 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108"
++    android:tint="#000000">
++  <group android:scaleX="2.61"
++      android:scaleY="2.61"
++      android:translateX="22.68"
++      android:translateY="22.68">
++      <path
++          android:pathData="M17.6,11.48 L19.44,8.3a0.63,0.63 0,0 0,-1.09 -0.63l-1.88,3.24a11.43,11.43 0,0 0,-8.94 0L5.65,7.67a0.63,0.63 0,0 0,-1.09 0.63L6.4,11.48A10.81,10.81 0,0 0,1 20L23,20A10.81,10.81 0,0 0,17.6 11.48ZM7,17.25A1.25,1.25 0,1 1,8.25 16,1.25 1.25,0 0,1 7,17.25ZM17,17.25A1.25,1.25 0,1 1,18.25 16,1.25 1.25,0 0,1 17,17.25Z"
++          android:fillColor="#FF000000"/>
++  </group>
++</vector>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_pubg_description.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/backgroundgamoney\"\r\n    tools:context=\".PubgDescription\">\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tournamenttext\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginBottom=\"30dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/tournaments\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/image_recycler\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"100dp\"\r\n            android:layout_below=\"@id/tournamenttext\"\r\n            android:scaleType=\"centerCrop\"\r\n            android:src=\"@mipmap/ic_launcher\"\r\n            android:contentDescription=\"@string/tournament_poster\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/price\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/image_recycler\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/entry_fees\"\r\n            android:textColor=\"#FFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/price1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/image_recycler\"\r\n            android:layout_marginStart=\"170dp\"\r\n            android:layout_marginTop=\"21.5dp\"\r\n            android:text=\"@string/TestText\"\r\n            android:textColor=\"#FFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/image_description\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/price\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:fontFamily=\"@font/antic\"\r\n            android:text=\"@string/TestText\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/generalrule\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/image_description\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/Generalrules\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/rules\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/generalrule\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:fontFamily=\"@font/antic\"\r\n            android:text=\"@string/Rules\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"16sp\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/instagram1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"18dp\"\r\n            android:layout_below=\"@id/rules\"\r\n            android:layout_marginStart=\"160dp\"\r\n            android:layout_marginTop=\"-35dp\"\r\n            android:clickable=\"true\"\r\n            android:focusable=\"true\"\r\n            android:src=\"@drawable/instagram\"\r\n            android:contentDescription=\"@string/instagram\"/>\r\n\r\n        <ImageView\r\n            android:id=\"@+id/facebook1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"18dp\"\r\n            android:layout_below=\"@id/rules\"\r\n            android:layout_marginStart=\"190dp\"\r\n            android:layout_marginTop=\"-35dp\"\r\n            android:clickable=\"true\"\r\n            android:focusable=\"true\"\r\n            android:src=\"@drawable/facebook\"\r\n            android:contentDescription=\"@string/facebook\"/>\r\n\r\n        <Button\r\n            android:id=\"@+id/jointournament\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/facebook1\"\r\n            android:layout_marginStart=\"135dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:background=\"@drawable/smallbutons\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/join_tournament\"\r\n            android:textColor=\"#fff\"\r\n            android:textSize=\"13sp\"\r\n            app:cornerRadius=\"400dp\" />\r\n\r\n    </RelativeLayout>\r\n\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_pubg_description.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_pubg_description.xml	(date 1602882699806)
+@@ -119,9 +119,9 @@
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/facebook1"
+-            android:layout_marginStart="135dp"
+-            android:layout_marginTop="30dp"
+-            android:background="@drawable/smallbutons"
++            android:layout_marginStart="50dp"
++            android:layout_marginTop="8dp"
++            android:background="@drawable/roundedcorner"
+             android:fontFamily="@font/bungee"
+             android:text="@string/join_tournament"
+             android:textColor="#fff"
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"PLATFORM\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleJvm\" value=\"1.8\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/gradle.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ .idea/gradle.xml	(date 1602961892412)
+@@ -15,6 +15,7 @@
+           </set>
+         </option>
+         <option name="resolveModulePerSourceSet" value="false" />
++        <option name="useQualifiedModuleNames" value="true" />
+       </GradleProjectSettings>
+     </option>
+   </component>
+Index: app/src/main/res/layout/activity_paymentunsuccessful.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/backgroundgamoney\"\r\n    tools:context=\".paymentunsuccessful\">\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <include\r\n            android:id=\"@+id/toolbar\"\r\n            layout=\"@layout/toolbar\"/>\r\n\r\n        <ImageView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/toolbar\"\r\n            android:layout_marginStart=\"150dp\"\r\n            android:layout_marginTop=\"48dp\"\r\n            android:layout_marginEnd=\"300dp\"\r\n            android:layout_marginBottom=\"100dp\"\r\n            android:src=\"@drawable/wrongg\"\r\n            android:contentDescription=\"@string/payment_unsuccessful_n_nplease_try_again_later\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/text1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"40dp\"\r\n            android:layout_marginTop=\"210dp\"\r\n            android:text=\"@string/payment_unsuccessful_n_nplease_try_again_later\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/Retry\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"101dp\"\r\n            android:layout_marginTop=\"350dp\"\r\n            android:layout_marginEnd=\"120dp\"\r\n            android:layout_marginBottom=\"120dp\"\r\n            android:background=\"@drawable/newbutton\"\r\n            android:text=\"@string/retry\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"italic\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/Backtohome\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"160dp\"\r\n            android:layout_marginTop=\"500dp\"\r\n            android:layout_marginEnd=\"140dp\"\r\n            android:clickable=\"true\"\r\n            android:focusable=\"true\"\r\n            android:text=\"@string/home1\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"italic\"/>\r\n\r\n\r\n    </RelativeLayout>\r\n\r\n\r\n\r\n\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_paymentunsuccessful.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_paymentunsuccessful.xml	(date 1602882365287)
+@@ -45,7 +45,7 @@
+             android:layout_marginTop="350dp"
+             android:layout_marginEnd="120dp"
+             android:layout_marginBottom="120dp"
+-            android:background="@drawable/newbutton"
++            android:background="@drawable/roundedcorner"
+             android:text="@string/retry"
+             android:textColor="#FFFFFF"
+             android:textSize="18sp"
+Index: app/src/main/res/layout/activity_csgo_description.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/backgroundgamoney\"\r\n    tools:context=\".CsgoDescription\">\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tournamenttext3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginBottom=\"30dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/tournaments\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/image_recycler3\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"100dp\"\r\n            android:layout_below=\"@id/tournamenttext3\"\r\n            android:scaleType=\"centerCrop\"\r\n            android:src=\"@mipmap/ic_launcher\"\r\n            android:contentDescription=\"@string/tournament_poster\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/price3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/image_recycler3\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/entry_fees\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/priceinput3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/image_recycler3\"\r\n            android:layout_marginStart=\"170dp\"\r\n            android:layout_marginTop=\"21.5dp\"\r\n            android:text=\"@string/TestText\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/image_description3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/price3\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:fontFamily=\"@font/antic\"\r\n            android:text=\"@string/TestText\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/generalrule3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/image_description3\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/Generalrules\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/rules3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/generalrule3\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:fontFamily=\"@font/antic\"\r\n            android:text=\"@string/Rules\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"16sp\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/instagram3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"18dp\"\r\n            android:layout_below=\"@id/rules3\"\r\n            android:layout_marginStart=\"160dp\"\r\n            android:layout_marginTop=\"-35dp\"\r\n            android:clickable=\"true\"\r\n            android:focusable=\"true\"\r\n            android:src=\"@drawable/instagram\"\r\n            android:contentDescription=\"@string/instagram\"/>\r\n\r\n        <ImageView\r\n            android:id=\"@+id/facebook3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"18dp\"\r\n            android:layout_below=\"@id/rules3\"\r\n            android:layout_marginStart=\"190dp\"\r\n            android:layout_marginTop=\"-35dp\"\r\n            android:clickable=\"true\"\r\n            android:focusable=\"true\"\r\n            android:src=\"@drawable/facebook\"\r\n            android:contentDescription=\"@string/facebook\"/>\r\n\r\n        <Button\r\n            android:id=\"@+id/jointournament3\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/facebook3\"\r\n            android:layout_marginStart=\"135dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:background=\"@drawable/smallbutons\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/join_tournament\"\r\n            android:textColor=\"#FFF\"\r\n            android:textSize=\"13sp\"\r\n            app:cornerRadius=\"400dp\" />\r\n\r\n    </RelativeLayout>\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_csgo_description.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_csgo_description.xml	(date 1602882699818)
+@@ -119,9 +119,9 @@
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/facebook3"
+-            android:layout_marginStart="135dp"
+-            android:layout_marginTop="30dp"
+-            android:background="@drawable/smallbutons"
++            android:layout_marginStart="50dp"
++            android:layout_marginTop="8dp"
++            android:background="@drawable/roundedcorner"
+             android:fontFamily="@font/bungee"
+             android:text="@string/join_tournament"
+             android:textColor="#FFF"
+Index: app/src/main/res/layout/activity_paymentsuccesssfull.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/backgroundgamoney\"\r\n    tools:context=\".Paymentsuccesssfull\">\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <include\r\n            android:id=\"@+id/toolbar\"\r\n            layout=\"@layout/toolbar\"/>\r\n\r\n        <ImageView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/toolbar\"\r\n            android:layout_marginStart=\"150dp\"\r\n            android:layout_marginTop=\"50dp\"\r\n            android:layout_marginEnd=\"300dp\"\r\n            android:layout_marginBottom=\"300dp\"\r\n            android:contentDescription=\"@string/payment_successful\"\r\n            android:src=\"@drawable/tick\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/text1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"110dp\"\r\n            android:layout_marginTop=\"210dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/all_the_best\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"@string/reference_id\"\r\n            android:textStyle=\"bold\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:textSize=\"20sp\"\r\n            android:textColor=\"#fff\"\r\n            android:layout_marginTop=\"270sp\"\r\n            android:layout_marginStart=\"70sp\"/>\r\n\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:textSize=\"25sp\"\r\n            android:textColor=\"#fff\"\r\n            android:text=\"@string/referencenumber\"\r\n            android:layout_marginTop=\"280sp\"\r\n            android:layout_marginStart=\"263dp\"\r\n            android:id=\"@+id/referencenumber\"/>\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:textColor=\"#fff\"\r\n            android:textSize=\"25sp\"\r\n            android:text=\"@string/hashtag\"\r\n            android:layout_marginTop=\"280dp\"\r\n            android:layout_marginStart=\"250dp\"/>\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"70dp\"\r\n            android:layout_marginTop=\"310dp\"\r\n            android:fontFamily=\"@font/antic\"\r\n            android:text=\"@string/save_this_id_for_future_purpose\"\r\n            android:textColor=\"#fff\"\r\n            android:textSize=\"15sp\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/Jointournament\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"101dp\"\r\n            android:layout_marginTop=\"360dp\"\r\n            android:layout_marginEnd=\"120dp\"\r\n            android:layout_marginBottom=\"120dp\"\r\n            android:background=\"@drawable/newbutton\"\r\n            android:text=\"@string/joined_tournaments\"\r\n            android:textColor=\"#FFF\"\r\n            android:textSize=\"18sp\"\r\n            android:textStyle=\"italic\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/Backtohome2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"160dp\"\r\n            android:layout_marginTop=\"460dp\"\r\n            android:layout_marginEnd=\"140dp\"\r\n            android:clickable=\"true\"\r\n            android:focusable=\"true\"\r\n            android:text=\"@string/home1\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"italic\"/>\r\n\r\n    </RelativeLayout>\r\n\r\n</ScrollView>\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_paymentsuccesssfull.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_paymentsuccesssfull.xml	(date 1602882365278)
+@@ -87,7 +87,7 @@
+             android:layout_marginTop="360dp"
+             android:layout_marginEnd="120dp"
+             android:layout_marginBottom="120dp"
+-            android:background="@drawable/newbutton"
++            android:background="@drawable/roundedcorner"
+             android:text="@string/joined_tournaments"
+             android:textColor="#FFF"
+             android:textSize="18sp"
+Index: app/src/main/res/layout/activity_cod_description.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/backgroundgamoney\"\r\n    tools:context=\".CodDescription\">\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tournamenttext1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"100dp\"\r\n            android:layout_marginBottom=\"30dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/tournaments\"\r\n            android:textAllCaps=\"true\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/image_recycler1\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"100dp\"\r\n            android:layout_below=\"@id/tournamenttext1\"\r\n            android:scaleType=\"centerCrop\"\r\n            android:src=\"@mipmap/ic_launcher\"\r\n            android:contentDescription=\"@string/tournament_poster\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/price11\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/image_recycler1\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/entry_fees\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/priceinput1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/image_recycler1\"\r\n            android:layout_marginStart=\"170dp\"\r\n            android:layout_marginTop=\"21.5dp\"\r\n            android:text=\"@string/TestText\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/image_description1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/price11\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:fontFamily=\"@font/antic\"\r\n            android:text=\"@string/TestText\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/generalrule1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/image_description1\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/Generalrules\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/rules1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@+id/generalrule1\"\r\n            android:layout_marginStart=\"18dp\"\r\n            android:fontFamily=\"@font/antic\"\r\n            android:text=\"@string/Rules\"\r\n            android:textColor=\"#FFFFFF\"\r\n            android:textSize=\"16sp\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/instagram1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"18dp\"\r\n            android:layout_below=\"@id/rules1\"\r\n            android:layout_marginStart=\"160dp\"\r\n            android:layout_marginTop=\"-35dp\"\r\n            android:clickable=\"true\"\r\n            android:focusable=\"true\"\r\n            android:contentDescription=\"@string/instagram\"\r\n            android:src=\"@drawable/instagram\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/facebook1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"18dp\"\r\n            android:layout_below=\"@id/rules1\"\r\n            android:layout_marginStart=\"190dp\"\r\n            android:layout_marginTop=\"-35dp\"\r\n            android:clickable=\"true\"\r\n            android:focusable=\"true\"\r\n            android:src=\"@drawable/facebook\"\r\n            android:contentDescription=\"@string/facebook\"/>\r\n\r\n        <Button\r\n            android:id=\"@+id/jointournament1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_below=\"@id/facebook1\"\r\n            android:layout_marginStart=\"135dp\"\r\n            android:layout_marginTop=\"30dp\"\r\n            android:background=\"@drawable/smallbutons\"\r\n            android:fontFamily=\"@font/bungee\"\r\n            android:text=\"@string/join_tournament\"\r\n            android:textColor=\"#FFF\"\r\n            android:textSize=\"13sp\"\r\n            app:cornerRadius=\"400dp\" />\r\n\r\n    </RelativeLayout>\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_cod_description.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/layout/activity_cod_description.xml	(date 1602882699884)
+@@ -119,9 +119,9 @@
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/facebook1"
+-            android:layout_marginStart="135dp"
+-            android:layout_marginTop="30dp"
+-            android:background="@drawable/smallbutons"
++            android:layout_marginStart="50dp"
++            android:layout_marginTop="8dp"
++            android:background="@drawable/roundedcorner"
+             android:fontFamily="@font/bungee"
+             android:text="@string/join_tournament"
+             android:textColor="#FFF"
+Index: app/src/main/res/drawable/ic_launcher_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<vector xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:width=\"108dp\"\r\n    android:height=\"108dp\"\r\n    android:viewportWidth=\"108\"\r\n    android:viewportHeight=\"108\">\r\n    <path\r\n        android:fillColor=\"#3DDC84\"\r\n        android:pathData=\"M0,0h108v108h-108z\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M9,0L9,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,0L19,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M29,0L29,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M39,0L39,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M49,0L49,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M59,0L59,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M69,0L69,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M79,0L79,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M89,0L89,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M99,0L99,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,9L108,9\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,19L108,19\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,29L108,29\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,39L108,39\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,49L108,49\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,59L108,59\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,69L108,69\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,79L108,79\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,89L108,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,99L108,99\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,29L89,29\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,39L89,39\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,49L89,49\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,59L89,59\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,69L89,69\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,79L89,79\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M29,19L29,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M39,19L39,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M49,19L49,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M59,19L59,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M69,19L69,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M79,19L79,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n</vector>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/ic_launcher_background.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/drawable/ic_launcher_background.xml	(date 1603047655585)
+@@ -1,170 +1,74 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
++<vector
+     android:height="108dp"
++    android:width="108dp"
++    android:viewportHeight="108"
+     android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <path
+-        android:fillColor="#3DDC84"
+-        android:pathData="M0,0h108v108h-108z" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M9,0L9,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,0L19,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M29,0L29,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M39,0L39,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M49,0L49,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M59,0L59,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M69,0L69,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M79,0L79,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M89,0L89,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M99,0L99,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,9L108,9"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,19L108,19"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,29L108,29"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,39L108,39"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,49L108,49"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,59L108,59"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,69L108,69"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,79L108,79"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,89L108,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,99L108,99"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,29L89,29"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,39L89,39"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,49L89,49"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,59L89,59"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,69L89,69"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,79L89,79"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M29,19L29,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M39,19L39,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M49,19L49,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M59,19L59,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M69,19L69,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M79,19L79,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
++    xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="#3DDC84"
++          android:pathData="M0,0h108v108h-108z"/>
++    <path android:fillColor="#00000000" android:pathData="M9,0L9,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,0L19,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M29,0L29,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M39,0L39,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M49,0L49,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M59,0L59,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M69,0L69,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M79,0L79,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M89,0L89,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M99,0L99,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,9L108,9"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,19L108,19"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,29L108,29"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,39L108,39"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,49L108,49"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,59L108,59"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,69L108,69"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,79L108,79"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,89L108,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,99L108,99"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,29L89,29"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,39L89,39"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,49L89,49"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,59L89,59"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,69L89,69"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,79L89,79"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M29,19L29,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M39,19L39,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M49,19L49,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M59,19L59,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M69,19L69,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M79,19L79,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+ </vector>
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n    <background android:drawable=\"@drawable/ic_launcher_background\" />\r\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\" />\r\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1603047655219)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <background android:drawable="@drawable/ic_launcher_background"/>
++    <foreground android:drawable="@drawable/ic_launcher_foreground"/>
+ </adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n    <background android:drawable=\"@drawable/ic_launcher_background\" />\r\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\" />\r\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(revision 72e2f64ebb61de1b44f8558eab65190d640f4608)
++++ app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1603047655444)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <background android:drawable="@drawable/ic_launcher_background"/>
++    <foreground android:drawable="@drawable/ic_launcher_foreground"/>
+ </adaptive-icon>
+\ No newline at end of file
