@@ -38,6 +38,7 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
         TextView mMessageWindow=findViewById(R.id.messageWindow);
         mAuth=FirebaseAuth.getInstance();
         String message="Privacy Policy\n" +
+                "\n" +
                 "Siddharth sharma and Lekh Nath Jha built the Gamoney app as a Free app. This SERVICE is provided by them at no cost and is intended for use as is.\n" +
                 "\n" +
                 "This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.\n" +
@@ -71,7 +72,7 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
                 "\n" +
                 "Service Providers\n" +
                 "\n" +
-                "I may employ third-party companies and individuals due to the following reasons:\n" +
+                "We may employ third-party companies and individuals due to the following reasons:\n" +
                 "\n" +
                 "To facilitate our Service;\n" +
                 "To provide the Service on our behalf;\n" +
@@ -85,7 +86,7 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
                 "\n" +
                 "Links to Other Sites\n" +
                 "\n" +
-                "This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.\n" +
+                "This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.\n" +
                 "\n" +
                 "Children’s Privacy\n" +
                 "\n" +

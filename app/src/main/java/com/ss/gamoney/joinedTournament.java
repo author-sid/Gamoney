@@ -116,6 +116,8 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
     public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
         switch (menuitem.getItemId()) {
             case R.id.nav_tournamentinfo:
+                Intent intentnew = new Intent(getApplicationContext(), Tournaments.class);
+                startActivity(intentnew);
                 break;
 
             case R.id.nav_Contactus:
