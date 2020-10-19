@@ -1,9 +1,5 @@
 package com.ss.gamoney;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -13,6 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -122,6 +122,7 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
                     PhoneNo.setError("Phone number is required");
                     return;
                 }
+
                 progressDialog = new ProgressDialog(CsgoAfterdes.this);
                 progressDialog.show();
                 progressDialog.setContentView(R.layout.activity_progress_dialog);
@@ -212,6 +213,5 @@ public class CsgoAfterdes extends AppCompatActivity implements PaymentResultList
         Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         Intent intent = new Intent(CsgoAfterdes.this,Paymentsuccesssfull.class);
         startActivity(intent);
-
     }
 }

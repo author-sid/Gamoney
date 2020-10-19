@@ -2,11 +2,14 @@ package com.ss.gamoney;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +34,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.Objects;
 
@@ -44,6 +48,9 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
     DatabaseReference databaseReference1,databaseReference2,databaseReference3,databaseReference4;
     int PUBGtournamentcount, CODtournamentcount, FreeFiretournamentcount, CSGOtournamentcount;
     TextView PUBGtourcount, CODtourcount , Freefiretourcount , CSGotourcount;
+    public static final  String CHANNEL_ID = "general";
+    public static final String CHANNEL_NAME = "allusers";
+    public static final String CHANNEL_DESC = "generalnotifications";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +60,14 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         CODtourcount = findViewById(R.id.codtournamentcount);
         Freefiretourcount = findViewById(R.id.freefirecount);
         CSGotourcount = findViewById(R.id.csgotournamentcount);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID,CHANNEL_NAME,NotificationManager.IMPORTANCE_HIGH);
+            channel.setDescription(CHANNEL_DESC);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+        FirebaseMessaging.getInstance().subscribeToTopic("general");
 
         databaseReference1 = FirebaseDatabase.getInstance().getReference().child("Pubg Tournaments");
         databaseReference2 = FirebaseDatabase.getInstance().getReference().child("Cod Tournaments");
@@ -358,4 +373,5 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

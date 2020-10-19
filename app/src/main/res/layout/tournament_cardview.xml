@@ -74,7 +74,7 @@
             android:id="@+id/Tournament_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/time1"
+            android:text="@string/time"
             android:textColor="#B9BCB4"
             android:layout_marginStart="95dp"
             android:layout_marginTop="35dp"

@@ -6,7 +6,6 @@
     <string name="login">Login</string>
     <string name="new_user_sign_up">NEW USER? SIGN UP</string>
     <string name="full_name">Full Name</string>
-    <string name="email_1">Email</string>
     <string name="number">Number</string>
     <string name="update">Update</string>
     <string name="logout">LOGOUT</string>
@@ -20,8 +19,6 @@
     <string name="password_register">Password</string>
     <string name="register">Register</string>
     <string name="already_have_an_account_login">Already have an account? LogIn</string>
-    <string name="Gamoney">gamoney</string>
-    <string name="earn_money_while_playing">Earn Money While Playing</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="tournaments">Tournaments</string>
@@ -29,13 +26,8 @@
     <string name="policy">Policy</string>
     <string name="contact_us">Contact Us</string>
     <string name="share">Share</string>
-    <string name="support_us">Support Us</string>
     <string name="reset_password">Reset Password</string>
     <string name="log_out">Log Out</string>
-    <string name="rate_us_5_star_on_play_store">Rate Us 5 Star on Play Store</string>
-    <string name="rate_us">Rate us</string>
-    <string name="support_our_community">Support Our Community  </string>
-    <string name="donate">Donate</string>
     <string name="gamoney">Gamoney</string>
     <string name="tell_us_about_your_problem">Tell us your problem</string>
     <string name="your_name">your name</string>
@@ -43,20 +35,10 @@
     <string name="subject">subject</string>
     <string name="message">message</string>
     <string name="send_message">send message</string>
-    <string name="entry_price">Entry price:-</string>
-    <string name="entry_price1">Entry price</string>
-    <string name="description">Description:-</string>
-    <string name="description1">Description</string>
-    <string name="prize">Prize:-</string>
-    <string name="prize1">Prize</string>
-    <string name="time">Time:-</string>
-    <string name="time1">Time</string>
     <string name="i_m_not_a_robot">I\'m not a robot</string>
-    <string name="tournament_image">Tournament Image</string>
     <string name="TestText">This is a Test Text</string>
     <string name="Generalrules">General Rules:-</string>
     <string name="Rules">1. Room id and password will be displayed 15 minutes before match on tournaments section.Players need to join room 10 minutes prior match.\n\n2. If you find any Hackers or cheaters, Please report them in app.\n\n3. No rematch in case of hackers or cheaters.\n\n4. Hackers will be permanently banned from the app and wont able to participate further.\n\n4. Rewards will be given on basis of rank and number of kills.Rewards will be credited same day after the match.\n\n5. Rewards are liable to change if there are less players.\n \n In case of any further queries or offers follow us on: \n \n</string>
-    <string name="Emptyview">Sorry, No tournaments are available right now, Check again Later</string>
     <string name="player_1">PLAYER-1</string>
     <string name="player_2">PLAYER-2</string>
     <string name="player_3">PLAYER-3</string>
@@ -79,7 +61,6 @@
     <string name="retry">Retry</string>
     <string name="csgo">CSGO</string>
     <string name="freefire">FREEFIRE</string>
-    <string name="cod">COD</string>
     <string name="pubg">Pubg</string>
     <string name="tournament1">Tournament</string>
     <string name="chat1">Chat</string>
@@ -110,4 +91,6 @@
     <string name="payment_unsuccessful_n_nplease_try_again_later">Payment Unsuccessful \n\nPlease Try Again Later</string>
     <string name="total_matches">Total Matches</string>
     <string name="_0">0</string>
+    <string name="time">time</string>
+    <string name="rate_us">Rate us</string>
 </resources>

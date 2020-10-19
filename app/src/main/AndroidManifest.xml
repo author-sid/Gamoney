@@ -3,6 +3,7 @@
     package="com.ss.gamoney">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProgressDialog"/>
+        <activity android:name=".ProgressDialog" />
         <activity android:name=".joinedTournament" />
         <activity android:name=".paymentunsuccessful" />
         <activity android:name=".Paymentsuccesssfull" />
@@ -30,7 +31,6 @@
         <activity android:name=".CsgoAfterdes" />
         <activity android:name=".PubgAfterdes" />
         <activity android:name=".roomidpasss" />
-
         <activity
             android:name=".Register"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -42,6 +42,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -53,6 +54,13 @@
             android:name="com.razorpay.ApiKey"
             android:value="rzp_test_L7rUAT54uR8uKu" />
 
+        <service
+            android:name=".NotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

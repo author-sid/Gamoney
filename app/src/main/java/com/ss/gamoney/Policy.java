@@ -156,6 +156,7 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
                 }
+                break;
 
             case R.id.nav_Logout:
                 AlertDialog.Builder builder = new AlertDialog.Builder(Policy.this);
