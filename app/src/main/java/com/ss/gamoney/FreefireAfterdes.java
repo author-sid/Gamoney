@@ -106,6 +106,7 @@ public class FreefireAfterdes extends AppCompatActivity implements PaymentResult
 
                 progressDialog = new ProgressDialog(FreefireAfterdes.this);
                 progressDialog.show();
+                progressDialog.setCancelable(false);
                 progressDialog.setContentView(R.layout.activity_progress_dialog);
                 Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
@@ -184,7 +185,6 @@ public class FreefireAfterdes extends AppCompatActivity implements PaymentResult
         Intent intent = new Intent(FreefireAfterdes.this,Paymentsuccesssfull.class);
         intent.putExtra("Referenceno",randomNumber);
         startActivity(intent);
-
     }
 
     @Override
@@ -193,8 +193,17 @@ public class FreefireAfterdes extends AppCompatActivity implements PaymentResult
         progressDialog.show();
         progressDialog.setContentView(R.layout.activity_progress_dialog);
         Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-        Intent intent = new Intent(FreefireAfterdes.this,Paymentsuccesssfull.class);
+        Intent intent = new Intent(FreefireAfterdes.this,paymentunsuccessful.class);
+        intent.putExtra("Referencenoun",randomNumber);
+        intent.putExtra("price",priceafter2);
+        intent.putExtra("email",email);
+        intent.putExtra("phonenumber",phonenumber);
+        intent.putExtra("tournament",tournament);
+        intent.putExtra("month",month);
+        intent.putExtra("date",date);
+        intent.putExtra("time",time);
+        intent.putExtra("location",location);
+        intent.putExtra("image",tournamentimg);
         startActivity(intent);
-
     }
 }

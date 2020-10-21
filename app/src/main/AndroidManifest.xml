@@ -3,7 +3,7 @@
     package="com.ss.gamoney">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,8 +11,7 @@
         android:label="Gamoney"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:hardwareAccelerated="false">
+        android:theme="@style/AppTheme">
         <activity android:name=".ProgressDialog" />
         <activity android:name=".joinedTournament" />
         <activity android:name=".paymentunsuccessful" />
@@ -62,6 +61,10 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3219785931545711~2313619257"/>
     </application>
 
 </manifest>

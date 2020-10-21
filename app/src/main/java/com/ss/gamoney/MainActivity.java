@@ -31,6 +31,10 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -211,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 progressDialog = new ProgressDialog(MainActivity.this);
                 progressDialog.show();
+                progressDialog.setCancelable(false);
                 progressDialog.setContentView(R.layout.activity_progress_dialog);
                 Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
@@ -299,6 +304,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void uploadImageToFirebase(Uri imageUri) {
         progressDialog = new ProgressDialog(MainActivity.this);
         progressDialog.show();
+        progressDialog.setCancelable(false);
         progressDialog.setContentView(R.layout.activity_progress_dialog);
         Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         //upload image to firebase storage

@@ -1,12 +1,5 @@
 package com.ss.gamoney;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
@@ -15,9 +8,18 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
@@ -28,83 +30,34 @@ public class Policy extends AppCompatActivity implements NavigationView.OnNaviga
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseAuth mAuth;
+    Button PrivacyPolicy, Terms;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_policy);
-
-        TextView mMessageWindow=findViewById(R.id.messageWindow);
         mAuth=FirebaseAuth.getInstance();
-        String message="Privacy Policy\n" +
-                "\n" +
-                "Siddharth sharma and Lekh Nath Jha built the Gamoney app as a Free app. This SERVICE is provided by them at no cost and is intended for use as is.\n" +
-                "\n" +
-                "This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.\n" +
-                "\n" +
-                "If you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.\n" +
-                "\n" +
-                "The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at Gamoney unless otherwise defined in this Privacy Policy.\n" +
-                "\n" +
-                "Information Collection and Use\n" +
-                "\n" +
-                "For a better experience, while using our Service, We may require you to provide us with certain personally identifiable information, including but not limited to faceboook profile. The information that we request will be retained on your device and is not collected by us in any way.\n" +
-                "\n" +
-                "The app does use third party services that may collect information used to identify you.\n" +
-                "\n" +
-                "Link to privacy policy of third party service providers used by the app\n" +
-                "\n" +
-                "Google Play Services\n" +
-                "AdMob\n" +
-                "Google Analytics for Firebase\n" +
-                "Firebase Crashlytics\n" +
-                "Facebook\n" +
-                "Log Data\n" +
-                "\n" +
-                "We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.\n" +
-                "\n" +
-                "Cookies\n" +
-                "\n" +
-                "Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.\n" +
-                "\n" +
-                "This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.\n" +
-                "\n" +
-                "Service Providers\n" +
-                "\n" +
-                "We may employ third-party companies and individuals due to the following reasons:\n" +
-                "\n" +
-                "To facilitate our Service;\n" +
-                "To provide the Service on our behalf;\n" +
-                "To perform Service-related services; or\n" +
-                "To assist us in analyzing how our Service is used.\n" +
-                "We want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.\n" +
-                "\n" +
-                "Security\n" +
-                "\n" +
-                "We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.\n" +
-                "\n" +
-                "Links to Other Sites\n" +
-                "\n" +
-                "This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.\n" +
-                "\n" +
-                "Children’s Privacy\n" +
-                "\n" +
-                "These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided me with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that we will be able to do necessary actions.\n" +
-                "\n" +
-                "Changes to This Privacy Policy\n" +
-                "\n" +
-                "We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.\n" +
-                "\n" +
-                "This policy is effective as of 2020-08-21\n" +
-                "\n" +
-                "Contact Us\n" +
-                "\n" +
-                "If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at posttosiddharthsharma@gmail.com and jhasameer40@gmail.com";
-        mMessageWindow.setText(message);
+
+        PrivacyPolicy = findViewById(R.id.privacypolicy);
+        Terms = findViewById(R.id.terms);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+
+        PrivacyPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/author-sid/Gamoney-Privacy-policy/blob/master/privacy%20policy.txt")));
+            }
+        });
+
+        Terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/author-sid/Gamoney-Privacy-policy/blob/master/Terms%20of%20condition.txt")));
+            }
+        });
+
         navigationView.bringToFront();
 
         setSupportActionBar(toolbar);

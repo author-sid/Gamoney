@@ -39,7 +39,7 @@
                 android:layout_width="186dp"
                 android:layout_height="253dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="75dp"
                 android:clickable="true"
                 android:contentDescription="@string/pubg"
                 android:focusable="true"
@@ -73,7 +73,7 @@
                 android:layout_width="186dp"
                 android:layout_height="253dp"
                 android:layout_marginStart="200dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="75dp"
                 android:clickable="true"
                 android:contentDescription="@string/csgo"
                 android:focusable="true"
@@ -107,7 +107,7 @@
                 android:layout_width="186dp"
                 android:layout_height="253dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="380dp"
+                android:layout_marginTop="350dp"
                 android:clickable="true"
                 android:contentDescription="@string/csgo"
                 android:focusable="true"
@@ -141,7 +141,7 @@
                 android:layout_width="186dp"
                 android:layout_height="253dp"
                 android:layout_marginStart="200dp"
-                android:layout_marginTop="380dp"
+                android:layout_marginTop="350dp"
                 android:clickable="true"
                 android:contentDescription="@string/freefire"
                 android:focusable="true"
@@ -177,6 +177,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="45dp">
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"

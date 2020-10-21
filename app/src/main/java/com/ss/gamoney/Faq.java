@@ -208,6 +208,7 @@ public class Faq extends AppCompatActivity implements NavigationView.OnNavigatio
                         }
                     }
                 });
+
                 resetpassword.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

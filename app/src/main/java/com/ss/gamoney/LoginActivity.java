@@ -87,6 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 progressDialog = new ProgressDialog(LoginActivity.this);
                 progressDialog.show();
+                progressDialog.setCancelable(false);
                 progressDialog.setContentView(R.layout.activity_progress_dialog);
                 Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 

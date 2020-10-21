@@ -18,30 +18,64 @@
         app:itemIconTint="#F5F5DC"
         app:menu="@menu/main_menu" />
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/scroolview"
         android:background="@drawable/backgroundgamoney">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
-
-        <ScrollView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/toolbar">
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
 
             <TextView
                 android:id="@+id/messageWindow"
+                android:layout_below="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="629dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/century_gothic_regular"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:text="@string/refund_policy_n_n_if_you_have_entered_any_tournament_and_in_any_circumstances_you_are_not_able_to_join_the_tournament_there_will_be_a_5_refund_of_the_amount_paid_n_n_disqualified_member_will_not_get_any_type_refund_n_n_for_refund_please_contact_us_using_contact_us"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/messageWindow"
+                android:id="@+id/privacypolicy"
+                android:fontFamily="@font/antic"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="70dp"
+                android:textColor="#fff"
+                android:background="@drawable/roundedcorner"
+                android:textSize="20sp"
+                android:text="@string/privacy_policy"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <Button
+                android:id="@+id/terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/privacypolicy"
+                android:layout_marginStart="70dp"
+                android:background="@drawable/roundedcorner"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/antic"
+                android:text="@string/u_terms_and_conditions_u"
                 android:textColor="#fff"
                 android:textSize="18sp" />
 
-        </ScrollView>
 
-    </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

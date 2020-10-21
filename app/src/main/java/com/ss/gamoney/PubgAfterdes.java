@@ -106,6 +106,7 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
 
                 progressDialog = new ProgressDialog(PubgAfterdes.this);
                 progressDialog.show();
+                progressDialog.setCancelable(false);
                 progressDialog.setContentView(R.layout.activity_progress_dialog);
                 Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
@@ -193,11 +194,18 @@ public class PubgAfterdes extends AppCompatActivity implements PaymentResultList
 
     @Override
     public void onPaymentError(int i, String s) {
-        progressDialog = new ProgressDialog(PubgAfterdes.this);
-        progressDialog.show();
-        progressDialog.setContentView(R.layout.activity_progress_dialog);
-        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         Intent intent = new Intent(PubgAfterdes.this,paymentunsuccessful.class);
+        intent.putExtra("Referencenoun",randomNumber);
+        intent.putExtra("price",priceafter);
+        intent.putExtra("email",email);
+        intent.putExtra("phonenumber",phonenumber);
+        intent.putExtra("tournament",tournament);
+        intent.putExtra("month",month);
+        intent.putExtra("date",date);
+        intent.putExtra("time",time);
+        intent.putExtra("location",location);
+        intent.putExtra("image",tournamentimg);
         startActivity(intent);
     }
+
 }

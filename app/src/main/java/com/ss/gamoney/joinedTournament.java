@@ -66,7 +66,7 @@ public class joinedTournament extends AppCompatActivity implements NavigationVie
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_tournamentinfo);
+        navigationView.setCheckedItem(R.id.joined_tournament);
 
         Query query = firebaseFirestore.collection("users").document(userID).collection("Joined");
         FirestoreRecyclerOptions<joinedtournamentsModel> options = new FirestoreRecyclerOptions.Builder<joinedtournamentsModel>()

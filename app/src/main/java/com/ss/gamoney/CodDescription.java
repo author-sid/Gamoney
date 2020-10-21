@@ -49,13 +49,13 @@ public class CodDescription extends AppCompatActivity {
         Facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://www.facebook.com/");
+                Uri uri = Uri.parse("https://www.facebook.com/Gamoney-104888134744902");
                 Intent facebook = new Intent(Intent.ACTION_VIEW, uri);
                 facebook.setPackage("com.facebook.katana");
                 try {
                     startActivity(facebook);
                 } catch (ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Gamoney-104888134744902")));
                 }
             }
         });
@@ -64,13 +64,13 @@ public class CodDescription extends AppCompatActivity {
         Insta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://www.instagram.com/accounts/login/");
+                Uri uri = Uri.parse("https://www.instagram.com/gamoney1/");
                 Intent instagram = new Intent(Intent.ACTION_VIEW, uri);
                 instagram.setPackage("com.instagram.android");
                 try {
                     startActivity(instagram);
                 } catch (ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/accounts/login/")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/gamoney1/")));
                 }
             }
         });

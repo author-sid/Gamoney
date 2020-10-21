@@ -79,7 +79,7 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                                 }
                             });
                 } else {
-                    checkBox.setTextColor(Color.BLACK);
+                    checkBox.setTextColor(Color.RED);
                 }
 
             }
@@ -89,13 +89,13 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
         Facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://www.facebook.com/");
+                Uri uri = Uri.parse("https://www.facebook.com/Gamoney-104888134744902");
                 Intent facebook = new Intent(Intent.ACTION_VIEW, uri);
                 facebook.setPackage("com.facebook.katana");
                 try {
                     startActivity(facebook);
                 } catch (ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Gamoney-104888134744902")));
                 }
             }
         });
@@ -105,13 +105,13 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
         Insta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://www.instagram.com/accounts/login/");
+                Uri uri = Uri.parse("https://www.instagram.com/gamoney1/");
                 Intent instagram = new Intent(Intent.ACTION_VIEW, uri);
                 instagram.setPackage("com.instagram.android");
                 try {
                     startActivity(instagram);
                 } catch (ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/accounts/login/")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/gamoney1/")));
                 }
             }
         });
@@ -168,7 +168,7 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
 
                 //Fill it with Data
                 sendEmail.setType("plain/text");
-                sendEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{"posttosiddharthsharma@gmail.com"});
+                sendEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{"contactgamoney@gmail.com"});
                 sendEmail.putExtra(Intent.EXTRA_SUBJECT, subject);
                 sendEmail.putExtra(Intent.EXTRA_TEXT,
                         "name:" + name + '\n' + "Email ID:" + email + '\n' + "Message:" + '\n' + message);

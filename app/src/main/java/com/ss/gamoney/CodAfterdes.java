@@ -106,6 +106,7 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
 
                 progressDialog = new ProgressDialog(CodAfterdes.this);
                 progressDialog.show();
+                progressDialog.setCancelable(false);
                 progressDialog.setContentView(R.layout.activity_progress_dialog);
                 Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
 
@@ -193,7 +194,17 @@ public class CodAfterdes extends AppCompatActivity implements PaymentResultListe
         progressDialog.show();
         progressDialog.setContentView(R.layout.activity_progress_dialog);
         Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-        Intent intent = new Intent(CodAfterdes.this,Paymentsuccesssfull.class);
+        Intent intent = new Intent(CodAfterdes.this,paymentunsuccessful.class);
+        intent.putExtra("Referencenoun",randomNumber);
+        intent.putExtra("price",priceafter1);
+        intent.putExtra("email",email);
+        intent.putExtra("phonenumber",phonenumber);
+        intent.putExtra("tournament",tournament);
+        intent.putExtra("month",month);
+        intent.putExtra("date",date);
+        intent.putExtra("time",time);
+        intent.putExtra("location",location);
+        intent.putExtra("image",tournamentimg);
         startActivity(intent);
 
     }

@@ -25,6 +25,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -51,6 +55,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
     public static final  String CHANNEL_ID = "general";
     public static final String CHANNEL_NAME = "allusers";
     public static final String CHANNEL_DESC = "generalnotifications";
+    InterstitialAd pubgtournamentad,codtournamentad,csgotournamentad,freefiretournamentad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +65,23 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         CODtourcount = findViewById(R.id.codtournamentcount);
         Freefiretourcount = findViewById(R.id.freefirecount);
         CSGotourcount = findViewById(R.id.csgotournamentcount);
+
+        pubgtournamentad = new InterstitialAd(this);
+        pubgtournamentad.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        pubgtournamentad.loadAd(new AdRequest.Builder().build());
+
+        codtournamentad = new InterstitialAd(this);
+        codtournamentad.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        codtournamentad.loadAd(new AdRequest.Builder().build());
+
+        freefiretournamentad = new InterstitialAd(this);
+        freefiretournamentad.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        freefiretournamentad.loadAd(new AdRequest.Builder().build());
+
+        csgotournamentad = new InterstitialAd(this);
+        csgotournamentad.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        csgotournamentad.loadAd(new AdRequest.Builder().build());
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID,CHANNEL_NAME,NotificationManager.IMPORTANCE_HIGH);
@@ -150,57 +172,146 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
        pubgtour.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               progressDialog = new ProgressDialog(Tournaments.this);
-               progressDialog.show();
-               progressDialog.setContentView(R.layout.activity_progress_dialog);
-               Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-               Intent intentpubgtour = new Intent(Tournaments.this , PubgRecycler.class);
-               startActivity(intentpubgtour);
-               finish();
+               if (pubgtournamentad.isLoaded()){
+                   pubgtournamentad.show();
+               }
            }
        });
 
-                csgotour = findViewById(R.id.csgotour);
-                csgotour.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        progressDialog = new ProgressDialog(Tournaments.this);
-                        progressDialog.show();
-                        progressDialog.setContentView(R.layout.activity_progress_dialog);
-                        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                        Intent intentcsgotour = new Intent(Tournaments.this , csgoRecycler.class);
-                        startActivity(intentcsgotour);
-                        finish();
-                    }
-                });
+        csgotour = findViewById(R.id.csgotour);
+        csgotour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (csgotournamentad.isLoaded()){
+                    csgotournamentad.show();
+                }
+            }
+        });
 
-                codtour = findViewById(R.id.codtour);
-                codtour.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        progressDialog = new ProgressDialog(Tournaments.this);
-                        progressDialog.show();
-                        progressDialog.setContentView(R.layout.activity_progress_dialog);
-                        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                        Intent intentcodtour = new Intent(Tournaments.this , CodRecycler.class);
-                        startActivity(intentcodtour);
-                        finish();
-                    }
-                });
+        codtour = findViewById(R.id.codtour);
+        codtour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (codtournamentad.isLoaded()){
+                    codtournamentad.show();
+                }
+            }
+        });
 
-                freefiretour = findViewById(R.id.freefiretour);
-                freefiretour.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        progressDialog = new ProgressDialog(Tournaments.this);
-                        progressDialog.show();
-                        progressDialog.setContentView(R.layout.activity_progress_dialog);
-                        Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                        Intent intentfreefiretour = new Intent(Tournaments.this , FreefireRecycler.class);
-                        startActivity(intentfreefiretour);
-                        finish();
-                    }
-                });
+        freefiretour = findViewById(R.id.freefiretour);
+        freefiretour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (freefiretournamentad.isLoaded()){
+                    freefiretournamentad.show();
+                }
+            }
+        });
+
+        pubgtournamentad.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(LoadAdError adError) {
+                // Code to be executed when an ad request fails.
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setCancelable(false);
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                Intent intentpubgtour = new Intent(Tournaments.this , PubgRecycler.class);
+                startActivity(intentpubgtour);
+                finish();
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when the interstitial ad is closed.
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setCancelable(false);
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                Intent intentpubgtour = new Intent(Tournaments.this , PubgRecycler.class);
+                startActivity(intentpubgtour);
+                finish();
+            }
+        });
+
+        codtournamentad.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(LoadAdError adError) {
+                // Code to be executed when an ad request fails.
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                Intent intentcodtour = new Intent(Tournaments.this , CodRecycler.class);
+                startActivity(intentcodtour);
+                finish();
+            }
+
+            @Override
+            public void onAdClosed() {
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                Intent intentcodtour = new Intent(Tournaments.this , CodRecycler.class);
+                startActivity(intentcodtour);
+                finish();
+            }
+        });
+
+        csgotournamentad.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(LoadAdError adError) {
+                // Code to be executed when an ad request fails.
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                Intent intentcsgotour = new Intent(Tournaments.this , csgoRecycler.class);
+                startActivity(intentcsgotour);
+                finish();
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when the interstitial ad is closed.
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                Intent intentcsgotour = new Intent(Tournaments.this , csgoRecycler.class);
+                startActivity(intentcsgotour);
+                finish();
+            }
+        });
+
+        freefiretournamentad.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(LoadAdError adError) {
+                // Code to be executed when an ad request fails.
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                Intent intentfreefiretour = new Intent(Tournaments.this , FreefireRecycler.class);
+                startActivity(intentfreefiretour);
+                finish();
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when the interstitial ad is closed.
+                progressDialog = new ProgressDialog(Tournaments.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.activity_progress_dialog);
+                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
+                Intent intentfreefiretour = new Intent(Tournaments.this , FreefireRecycler.class);
+                startActivity(intentfreefiretour);
+                finish();
+            }
+        });
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);

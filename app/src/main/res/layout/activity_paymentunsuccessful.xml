@@ -10,18 +10,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gamoney"
+            android:id="@+id/topbar"
+            android:textColor="#fff"
+            android:fontFamily="@font/bungee"
+            android:textSize="29sp"
+            android:layout_marginStart="130dp"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/toolbar"
             android:layout_marginStart="150dp"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="300dp"
             android:layout_marginBottom="100dp"
+            android:id="@+id/cross"
+            android:layout_below="@+id/topbar"
             android:src="@drawable/wrongg"
             android:contentDescription="@string/payment_unsuccessful_n_nplease_try_again_later" />
 
@@ -30,11 +37,58 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="210dp"
+            android:layout_marginTop="240dp"
             android:text="@string/payment_unsuccessful_n_nplease_try_again_later"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/bungee"
             android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="340dp"
+            android:text="@string/reference_id"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/bungee"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="340dp"
+            android:text="@string/hashtag"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/bungee"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="340dp"
+            android:text="@string/referencenumber"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/bungee"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="389dp"
+            android:text="@string/save_this_id_for_future_purpose"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <Button
@@ -42,14 +96,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="101dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="440dp"
             android:layout_marginEnd="120dp"
             android:layout_marginBottom="120dp"
             android:background="@drawable/roundedcorner"
             android:text="@string/retry"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="italic" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/Backtohome"
@@ -60,10 +113,10 @@
             android:layout_marginEnd="140dp"
             android:clickable="true"
             android:focusable="true"
+            android:fontFamily="@font/bungee"
             android:text="@string/home1"
             android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            android:textStyle="italic"/>
+            android:textSize="25sp" />
 
 
     </RelativeLayout>

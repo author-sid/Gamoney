@@ -70,6 +70,7 @@
                     android:textColor="#fff"
                     android:textSize="20sp" />
 
+
             </RelativeLayout>
 
             <ScrollView
