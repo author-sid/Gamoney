@@ -9,6 +9,7 @@
     android:padding="20dp"
     tools:context=".LoginActivity">
 
+
     <ImageView
         android:id="@+id/logo_image"
         android:layout_width="217dp"
@@ -39,6 +40,11 @@
         android:textSize="18sp"
         android:transitionName="logo_desc" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,6 +60,8 @@
             android:textColor="#fff"
             android:textColorHint="#fff"
             android:transitionName="email_trans">
+
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -127,5 +135,8 @@
 
     </LinearLayout>
 
+    </ScrollView>
+
 
 </LinearLayout>
+

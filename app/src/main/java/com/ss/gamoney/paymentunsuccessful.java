@@ -62,6 +62,16 @@ public class paymentunsuccessful extends AppCompatActivity implements PaymentRes
                 finish();
             }
         });
+        
+        Retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentretry = new Intent(paymentunsuccessful.this, Tournaments.class);
+                startActivity(intentretry);
+                finish();
+            }
+        });
+
 
         Retry.setOnClickListener(new View.OnClickListener() {
             @Override
