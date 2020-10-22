@@ -36,104 +36,112 @@
         android:textSize="18sp"
         android:textColor="#fff"/>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#fff"
-            android:background="@drawable/edittextbg">
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/full_name_register"
-                android:inputType="text"
                 android:textColorHint="#fff"
-                android:textColor="#fff"/>
+                android:background="@drawable/edittextbg">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/full_name_register"
+                    android:inputType="text"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="#fff"
-            android:background="@drawable/edittextbg"
-            android:layout_marginTop="5dp">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email_register"
-                android:inputType="text"
                 android:textColorHint="#fff"
-                android:textColor="#fff"/>
+                android:background="@drawable/edittextbg"
+                android:layout_marginTop="5dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email_register"
+                    android:inputType="text"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="#fff"
-            android:background="@drawable/edittextbg"
-            android:layout_marginTop="5dp">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phnNo"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/phone_no_register"
-                android:inputType="number"
                 android:textColorHint="#fff"
-                android:textColor="#fff"/>
+                android:background="@drawable/edittextbg"
+                android:layout_marginTop="5dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phnNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phone_no_register"
+                    android:inputType="number"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:transitionName="password_trans"
-            app:passwordToggleEnabled="true"
-            android:textColorHint="#fff"
-            app:passwordToggleTint="#fff"
-            android:background="@drawable/edittextbg"
-            android:layout_marginTop="5dp">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/password_register"
-                android:inputType="textPassword"
+                android:layout_height="wrap_content"
+                android:transitionName="password_trans"
+                app:passwordToggleEnabled="true"
                 android:textColorHint="#fff"
-                android:textColor="#fff"/>
+                app:passwordToggleTint="#fff"
+                android:background="@drawable/edittextbg"
+                android:layout_marginTop="5dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/password_register"
+                    android:inputType="textPassword"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"/>
 
-    </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/registerbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:background="#000"
-        android:textColor="#fff"
-        android:transitionName="button_trans" />
 
-    <Button
-        android:id="@+id/alreadybtn"
-        android:layout_width="371dp"
-        android:layout_height="53dp"
-        android:background="#fff"
-        android:text="@string/already_have_an_account_login"
-        android:transitionName="login_signup_trans" />
+                <Button
+                    android:id="@+id/registerbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register"
+                    android:background="#000"
+                    android:textColor="#fff"
+                    android:transitionName="button_trans" />
+
+                <Button
+                    android:id="@+id/alreadybtn"
+                    android:layout_width="371dp"
+                    android:layout_height="53dp"
+                    android:background="#fff"
+                    android:text="@string/already_have_an_account_login"
+                    android:transitionName="login_signup_trans" />
+
+                </LinearLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>

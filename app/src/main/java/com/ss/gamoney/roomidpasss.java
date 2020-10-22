@@ -45,7 +45,7 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
     DatabaseReference reff;
     String ID;
     String Password;
-    ImageView copyRoomID, copyPassword;
+    ImageView copyRoomID, copyPassword, facebookbtn, instabtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,9 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
         checktournament = tournamentid+" "+pricejoined;
         toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
+        facebookbtn = findViewById(R.id.facebookbtn);
+        instabtn = findViewById(R.id.instagrambtn);
+
         navigationView = findViewById(R.id.nav_view);
         mAuth = FirebaseAuth.getInstance();
         copyRoomID = findViewById(R.id.copyroomid);
@@ -111,6 +114,34 @@ public class roomidpasss extends AppCompatActivity implements NavigationView.OnN
                 tournamentpass.setPrimaryClip(tournamentpass1);
 
                 Toast.makeText(roomidpasss.this,"Copied",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        instabtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://www.instagram.com/gamoney1/");
+                Intent instagram = new Intent(Intent.ACTION_VIEW, uri);
+                instagram.setPackage("com.instagram.android");
+                try {
+                    startActivity(instagram);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/gamoney1/")));
+                }
+            }
+        });
+
+        facebookbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://www.facebook.com/Gamoney-104888134744902");
+                Intent facebook = new Intent(Intent.ACTION_VIEW, uri);
+                facebook.setPackage("com.facebook.katana");
+                try {
+                    startActivity(facebook);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Gamoney-104888134744902")));
+                }
             }
         });
 

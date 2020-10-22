@@ -67,19 +67,19 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
         CSGotourcount = findViewById(R.id.csgotournamentcount);
 
         pubgtournamentad = new InterstitialAd(this);
-        pubgtournamentad.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        pubgtournamentad.setAdUnitId("ca-app-pub-3219785931545711/1048940369");
         pubgtournamentad.loadAd(new AdRequest.Builder().build());
 
         codtournamentad = new InterstitialAd(this);
-        codtournamentad.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        codtournamentad.setAdUnitId("ca-app-pub-3219785931545711/1125456824");
         codtournamentad.loadAd(new AdRequest.Builder().build());
 
         freefiretournamentad = new InterstitialAd(this);
-        freefiretournamentad.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        freefiretournamentad.setAdUnitId("ca-app-pub-3219785931545711/8429054163");
         freefiretournamentad.loadAd(new AdRequest.Builder().build());
 
         csgotournamentad = new InterstitialAd(this);
-        csgotournamentad.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        csgotournamentad.setAdUnitId("ca-app-pub-3219785931545711/7890515036");
         csgotournamentad.loadAd(new AdRequest.Builder().build());
 
 

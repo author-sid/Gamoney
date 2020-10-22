@@ -11,8 +11,7 @@
         android:label="Gamoney"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:hardwareAccelerated="false">
+        android:theme="@style/AppTheme">
         <activity android:name=".ProgressDialog" />
         <activity android:name=".joinedTournament" />
         <activity android:name=".paymentunsuccessful" />

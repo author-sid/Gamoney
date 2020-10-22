@@ -73,7 +73,7 @@ public class ContactUs extends AppCompatActivity implements NavigationView.OnNav
                                 public void onResult(@NonNull SafetyNetApi.RecaptchaTokenResult recaptchaTokenResult) {
                                     Status status = recaptchaTokenResult.getStatus();
                                     if ((status != null) && status.isSuccess()) {
-                                        Toast.makeText(getApplicationContext(), "Successfully Verifies...", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Successfully Verified!", Toast.LENGTH_SHORT).show();
                                         checkBox.setTextColor(Color.GREEN);
                                     }
                                 }

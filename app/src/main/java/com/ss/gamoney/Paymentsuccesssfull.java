@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class Paymentsuccesssfull extends AppCompatActivity {
     TextView Backtohome2,Referenceno;
-    Toolbar toolbar;
     int reference;
     Button Jointournament;
 
@@ -25,7 +24,6 @@ public class Paymentsuccesssfull extends AppCompatActivity {
         Referenceno = findViewById(R.id.referencenumber);
         Referenceno.setText(""+reference);
         Backtohome2 = findViewById(R.id.Backtohome2);
-        toolbar = findViewById(R.id.toolbar);
 
         Backtohome2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +44,5 @@ public class Paymentsuccesssfull extends AppCompatActivity {
             }
         });
 
-        setSupportActionBar(toolbar);
     }
 }

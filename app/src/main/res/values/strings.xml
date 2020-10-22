@@ -96,4 +96,5 @@
     <string name="refund_policy_n_n_if_you_have_entered_any_tournament_and_in_any_circumstances_you_are_not_able_to_join_the_tournament_there_will_be_a_5_refund_of_the_amount_paid_n_n_disqualified_member_will_not_get_any_type_refund_n_n_for_refund_please_contact_us_using_contact_us">REFUND POLICY: \n \n If You Have Entered any Tournament and in any circumstances you are not able to join the tournament there will be a 5% refund of the amount paid.\n \n Disqualified Member will not get any type refund. \n \n Refund can take up–to 6-7 days to process\n\nFor Refund please contact us using Contact us.</string>
     <string name="privacy_policy">PRIVACY POLICY</string>
     <string name="u_terms_and_conditions_u"> TERMS AND CONDITIONS </string>
+    <string name="joined">Joined</string>
 </resources>
