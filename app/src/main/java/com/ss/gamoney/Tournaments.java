@@ -212,14 +212,8 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
             @Override
             public void onAdFailedToLoad(LoadAdError adError) {
                 // Code to be executed when an ad request fails.
-                progressDialog = new ProgressDialog(Tournaments.this);
-                progressDialog.show();
-                progressDialog.setCancelable(false);
-                progressDialog.setContentView(R.layout.activity_progress_dialog);
-                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent intentpubgtour = new Intent(Tournaments.this , PubgRecycler.class);
-                startActivity(intentpubgtour);
-                finish();
+                Toast.makeText(getApplicationContext(),"Error!"+adError,Toast.LENGTH_SHORT).show();
+                
             }
 
             @Override
@@ -230,7 +224,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 progressDialog.setCancelable(false);
                 progressDialog.setContentView(R.layout.activity_progress_dialog);
                 Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent intentpubgtour = new Intent(Tournaments.this , PubgRecycler.class);
+                Intent intentpubgtour = new Intent(getApplicationContext() , PubgRecycler.class);
                 startActivity(intentpubgtour);
                 finish();
             }
@@ -240,13 +234,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
             @Override
             public void onAdFailedToLoad(LoadAdError adError) {
                 // Code to be executed when an ad request fails.
-                progressDialog = new ProgressDialog(Tournaments.this);
-                progressDialog.show();
-                progressDialog.setContentView(R.layout.activity_progress_dialog);
-                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent intentcodtour = new Intent(Tournaments.this , CodRecycler.class);
-                startActivity(intentcodtour);
-                finish();
+                Toast.makeText(getApplicationContext(),"Error!"+adError,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -255,7 +243,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 progressDialog.show();
                 progressDialog.setContentView(R.layout.activity_progress_dialog);
                 Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent intentcodtour = new Intent(Tournaments.this , CodRecycler.class);
+                Intent intentcodtour = new Intent(getApplicationContext() , CodRecycler.class);
                 startActivity(intentcodtour);
                 finish();
             }
@@ -265,13 +253,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
             @Override
             public void onAdFailedToLoad(LoadAdError adError) {
                 // Code to be executed when an ad request fails.
-                progressDialog = new ProgressDialog(Tournaments.this);
-                progressDialog.show();
-                progressDialog.setContentView(R.layout.activity_progress_dialog);
-                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent intentcsgotour = new Intent(Tournaments.this , csgoRecycler.class);
-                startActivity(intentcsgotour);
-                finish();
+                Toast.makeText(getApplicationContext(),"Error!"+adError,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -281,7 +263,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 progressDialog.show();
                 progressDialog.setContentView(R.layout.activity_progress_dialog);
                 Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent intentcsgotour = new Intent(Tournaments.this , csgoRecycler.class);
+                Intent intentcsgotour = new Intent(getApplicationContext() , csgoRecycler.class);
                 startActivity(intentcsgotour);
                 finish();
             }
@@ -291,13 +273,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
             @Override
             public void onAdFailedToLoad(LoadAdError adError) {
                 // Code to be executed when an ad request fails.
-                progressDialog = new ProgressDialog(Tournaments.this);
-                progressDialog.show();
-                progressDialog.setContentView(R.layout.activity_progress_dialog);
-                Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent intentfreefiretour = new Intent(Tournaments.this , FreefireRecycler.class);
-                startActivity(intentfreefiretour);
-                finish();
+                Toast.makeText(getApplicationContext(),"Error!"+adError,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -307,7 +283,7 @@ public class Tournaments extends AppCompatActivity implements NavigationView.OnN
                 progressDialog.show();
                 progressDialog.setContentView(R.layout.activity_progress_dialog);
                 Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
-                Intent intentfreefiretour = new Intent(Tournaments.this , FreefireRecycler.class);
+                Intent intentfreefiretour = new Intent(getApplicationContext() , FreefireRecycler.class);
                 startActivity(intentfreefiretour);
                 finish();
             }
