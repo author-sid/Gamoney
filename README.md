@@ -5,6 +5,8 @@ Hey there, This repository is made for my app named Gamoney.
 This app helps user to earn while playing games, which is a lot of fun and profitable as well. Best of both world
 This code is only for education purpose
 
+You can find the java code in app > src > main > java 
+a
 
 You can find me on [![Instagram][1.2]][1], or on [![LinkedIn][2.2]][2].
 
